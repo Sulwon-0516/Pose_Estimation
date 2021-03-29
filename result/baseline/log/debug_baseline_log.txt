@@ -1,0 +1,3 @@
+(0,1) 0 step loss : 4626.665527\n(0,1) 1 step loss : 6523.947266\n(0,1) 2 step loss : 7093.515137\n(0,1) 3 step loss : 1749.283081\n(0,1) 4 step loss : 1283.975220\n(0,1) 5 step loss : 592.696533\n(0,1) 0 step loss : 4648.553223\n(0,1) 1 step loss : 7567.679688\n(0,1) 2 step loss : 6511.446289\n(0,1) 3 step loss : 2423.865723\n(0,1) 4 step loss : 1823.282349\n(0,1) 5 step loss : 866.132324\n(0,1) 6 step loss : 794.440674\n(0,1) epoch loss : 3846.331299\n(0,1) 0 step loss : 5674.649414
+(0,1) 1 step loss : 7047.007812
+(0,1) epoch loss : 6360.828613

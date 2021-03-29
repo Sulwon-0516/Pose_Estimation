@@ -1,0 +1,7 @@
+*.JPEG
+./coco
+./sample
+*.jpg
+*.zip
+*.json
+*.pt

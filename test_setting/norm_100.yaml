@@ -1,0 +1,84 @@
+DATA:
+  CHECK_HEATMAP: 5
+  GAUSSIAN_SCALE: 1
+  HEIGHT: 192
+  IMG_RATIO:
+  - 3
+  - 4
+  INCRE_RATIO: 1.0
+  IN_OUT_RATIO: 4
+  IS_FLIP: false
+  IS_INCRE: false
+  IS_ROTATE: false
+  IS_SCALE: false
+  NUM_KEYS: 17
+  NUM_TOT_DATA: 16
+  ROTATE_RANGE:
+  - -40
+  - 40
+  SAVE_RESIZED: true
+  SCALE_RANGE:
+  - 0.7
+  - 1.3
+  SIGMA: 2
+  WIDTH: 256
+IS_GPU: false
+IS_TEST: true
+IS_TRAIN: false
+IS_VALID: true
+LOG:
+  EPOCH_FORMAT: '(%d,%d) epoch loss : %f\n'
+  FILE_NAME: '%s_%s_log.txt'
+  FREQ: 1
+  PATH: result/%s/log
+  SAVE_ACC: true
+  SAVE_LOSS: true
+  STEP_FORMAT: '(%d,%d) %d step loss : %f\n'
+MODEL: baseline
+PATH:
+  BEST_FILE: '%s%d_best_model.pt'
+  BEST_MODEL_PATH: best
+  CHECKPOINT_FILE: '%s%d_best_loss%f(%d_%d).pt'
+  CHECKPOINT_PATH: checkpoint
+  COCO_PATH: ./coco
+  COCO_VAL_INS_PATH: annotations/instances_val2017.json
+  COCO_VAL_KEY_PATH: annotations/person_keypoints_val2017.json
+  MODEL: baseline
+  PRED_NAME: '%s_result_%d.json'
+  PRED_PATH: prediction
+  RESIZED: resized
+  RESULT_PATH: ./result
+  SAMPLE: ./sample
+TEST:
+  BATCH_SIZE: 16
+  FLIP_ENSEMBLE: false
+  GET_RESULT: true
+  IS_TEST: false
+  MODEL_FILE: normalize_STD_trial_baseline16_best_model.pt
+  MODEL_PATH: result/%s/best/
+  SAVE_HEATMAP: 5
+  SAVE_IMG_PER_BATCH: 2
+  SAVE_PREDICTED: true
+THEME: normalize_STD_trial
+TRAIN:
+  BATCH_SIZE: 8
+  CHECK_FREQ: 20
+  DECAY_RATE: 0.1
+  EPOCH: 140
+  IS_LOSS_MASK: true
+  IS_SCHED: true
+  IS_SHUFFLE: false
+  LOAD_PREV: false
+  LOSS: MSE
+  LR: 0.0005
+  MILTESTONES:
+  - 90
+  - 120
+  OPTIM: Adam
+  PREV_MODEL: 100_best_loss_tensor(1.6312e-05)(109_140).pt
+  PREV_PATH: '%s/checkpoint'
+  SCHED: MultiStepLR
+TYPE: 2
+VAL:
+  IS_TRAIN: false
+  RES_FILE: 12
