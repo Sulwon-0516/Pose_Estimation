@@ -29,7 +29,7 @@ def test(config,device):
     if config.MODEL == "baseline":
         model = baseline()
     elif config.MODEL == "HRNet":
-        model = HRNet()
+        model = HRNet(device)
     else:
         print("wrong model name : {}".format(config.MODEL))
         assert(0)
@@ -52,4 +52,5 @@ def test(config,device):
             PATH = config.PATH, 
             TITLE = config.THEME, 
             config = config.TEST, 
+            num_worker = config.TEST.NUM_WORKER,
             device = device)

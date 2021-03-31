@@ -4,13 +4,15 @@ import yaml
 
 config = edict()
 
-config.IS_GPU = False               # use GPU? 
+config.GPU_NUM = 0                  # use GPU? 
 config.THEME = "trial"              # Name of the training
 config.IS_TRAIN = True              # Ask whether train this time
 config.IS_TEST = True               # Ask whether test
 config.IS_VALID = True              # Aske whether valid
 config.MODEL = "baseline"           # It's model name
 config.TYPE = 2                     # 0 : segm, 1 : bbox, 2 : keypoints
+config.AE = False                   # Use associative Embedding or not
+
 
 # Data preprocessing configs
 config.DATA = edict()
@@ -42,7 +44,9 @@ config.TRAIN.PREV_MODEL = '100_best_loss_tensor(1.6312e-05)(109_140).pt'
 config.TRAIN.LOAD_PREV_OPTIM = True
 config.TRAIN.LOAD_PREV_SCHED = True
 
-
+config.TRAIN.NUM_WORKER = 0
+config.TRAIN.TEST_EPOCH = 0
+config.TRAIN.TEST_PER_BATCH = 10
 config.TRAIN.LR = 1e-3
 config.TRAIN.LOSS = 'MSE'
 config.TRAIN.OPTIM = 'Adam'
@@ -66,6 +70,7 @@ config.TEST.BATCH_SIZE = 8          # Inference batch size
 config.TEST.MODEL_PATH = "result/%s/checkpoint/"
 config.TEST.MODEL_FILE = "100_best_loss_tensor(1.6312e-05)(109_140).pt"
 config.TEST.FLIP_ENSEMBLE = False   # If True, use both flipped and un-flipped image to make result
+config.TEST.NUM_WORKER = 0
 
 config.TEST.SAVE_PREDICTED = True   # save prediction image
 config.TEST.SAVE_IMG_PER_BATCH = 2  # Images save per every batches

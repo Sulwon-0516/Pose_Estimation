@@ -89,7 +89,7 @@ class COCO_DataLoader(Dataset):
         self.RESIZED = in_config.PATH.RESIZED
         self.train = train
         self.check_heatmaps = in_config.DATA.CHECK_HEATMAP
-        self.flag = True
+        self.flag = False           # It's used for checking first call. When it's true, heatmaps will be printed in seperately
         if train:
             coco = COCO("""train path""")
         else:
@@ -155,6 +155,8 @@ class COCO_DataLoader(Dataset):
                 self.data.append(data)
 
     def __len__(self):
+        if self.config.NUM_TOT_DATA == 0:
+            return len(self.data)
         return self.config.NUM_TOT_DATA
         #return len(self.data)
 
@@ -232,6 +234,7 @@ class COCO_DataLoader(Dataset):
         if (self.check_heatmaps>0) and annotations['num_keypoints'] > 8:
             self.show_heatmaps(id,re_heatmaps,re_image)
             self.check_heatmaps -= 1
+        
         
         return re_image, re_heatmaps, np.array(new_bbox), id, np.array(annotations['keypoints']), annotations['num_keypoints']
     
@@ -445,7 +448,7 @@ class COCO_DataLoader(Dataset):
                 result = np.append(result,v,axis=0)
         return torch.from_numpy(result)
 
-    def show_heatmaps(self,id,heatmaps,re_image,test=False):
+    def show_heatmaps(self,id,heatmaps,re_image,test=False,debug=0):
         annotations = self.data[id]
         img_id = annotations['image_id']
 
@@ -484,6 +487,8 @@ class COCO_DataLoader(Dataset):
             plt.imshow(heatmaps[i]/(max_val+0.0001))
         if test:
             plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(id)+"check_heatmaps_out.jpg"))
+        elif debug!=0:
+            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(debug)+"_"+str(id)+"check_heatmaps_debug.jpg"))
         else:
             plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(id)+"check_heatmaps.jpg"))
 
@@ -496,7 +501,8 @@ class COCO_DataLoader(Dataset):
 
     def get_imgIds(self):
         img_ids = []
-        for i in range(self.config.NUM_TOT_DATA):
+        num = self.__len__()
+        for i in range(num):
             annotations = self.data[i]
             img_id = annotations['image_id']
             img_ids.append(img_id)

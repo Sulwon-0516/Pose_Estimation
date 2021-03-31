@@ -8,7 +8,7 @@ import numpy as np
 import torch.nn as nn
 import os
 from baseline.baseline import baseline
-from HRNet.HRNet import HRNet
+from HRNet.HRNet import HRNet, HigherHRNet
 # import all model files right know.
 from .functions._train import _train
 from .utils.tools import coco_loss_mask, load_model, save_model
@@ -26,7 +26,9 @@ def train(config,device):
     if config.MODEL == "baseline":
         model = baseline()
     elif config.MODEL == "HRNet":
-        model = HRNet()
+        model = HRNet(device)
+    elif config.MODEL == "HigherHRNet":
+        model = HigherHRNet(device)
     else:
         print("wrong model name : {}".format(config.MODEL))
         assert(0)
@@ -63,7 +65,7 @@ def train(config,device):
     
     # train_dataset = coco_data_loader.DataLoader(True)
     train_dataset = COCO_DataLoader(False,config)
-    train_dataloader = DataLoader(dataset = train_dataset, batch_size = config.TRAIN.BATCH_SIZE, shuffle = config.TRAIN.IS_SHUFFLE)
+    train_dataloader = DataLoader(dataset = train_dataset, batch_size = config.TRAIN.BATCH_SIZE, shuffle = config.TRAIN.IS_SHUFFLE, num_workers = config.TRAIN.NUM_WORKER)
 
 
     #check_grad_mode(model.parameters())
@@ -79,16 +81,32 @@ def train(config,device):
         print(lr_state_log)
         lr_state_log = lr_state_log + "\n"
         
+        if epoch <=start_epoch:
+            is_first=True
+        else:
+            is_first=False
+        
+        if config.TRAIN.TEST_EPOCH != 0:
+            if epoch % config.TRAIN.TEST_EPOCH == 0:
+                is_debug = True
+            else:
+                is_debug = False
+        else:
+            is_debug = False
+
         avg_loss = _train(model = model, 
                             criterion = criterion, 
                             optimizer = optimizer, 
+                            dataset = train_dataset,
                             train_dataloader = train_dataloader, 
                             epoch = epoch,
                             config = config,
                             n_steps = n_steps,
                             lr_log = lr_state_log,
                             device = device,
-                            loss_mask = coco_loss_mask)
+                            is_first=is_first,
+                            loss_mask = coco_loss_mask,
+                            debug = is_debug)
         t.toc()
         epoch_time = t.tocvalue()
         print("[%d/%d] epochs loss : %f"%(epoch,EPOCH,avg_loss))
@@ -103,9 +121,11 @@ def train(config,device):
                 print("Invalid save path")
                 assert(0)
             BEST_MODEL_PATH = os.path.join(BEST_MODEL_PATH,config.PATH.BEST_MODEL_PATH)
+            '''
             if not os.path.isdir(BEST_MODEL_PATH):
                 print("Invalid save path")
                 assert(0)
+            '''
             lowest_loss = avg_loss
             save_model(BEST_MODEL_PATH,model,optimizer,scheduler,avg_loss,epoch,EPOCH,n_images,config.PATH.BEST_FILE,MODEL_NAME,True)
         # save every 10 epochs.
@@ -115,9 +135,7 @@ def train(config,device):
                 print("Invalid save path")
                 assert(0)
             CHECKPOINT_PATH = os.path.join(CHECKPOINT_PATH,config.PATH.CHECKPOINT_PATH)
-            if not os.path.isdir(CHECKPOINT_PATH):
-                print("Invalid save path")
-                assert(0)
+            
             save_model(CHECKPOINT_PATH,model,optimizer,scheduler,avg_loss,epoch,EPOCH,n_images,config.PATH.CHECKPOINT_FILE,MODEL_NAME)
         
         if config.TRAIN.IS_SCHED:

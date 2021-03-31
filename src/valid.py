@@ -32,7 +32,7 @@ def valid(config):
 
     # Get the Img Ids
     imgIds = sorted(val_dataset.get_imgIds())
-    print(imgIds)
+    # print(imgIds)
 
     # Evaluation
     cocoEval = COCOeval(cocoGT,cocoDT,annType)

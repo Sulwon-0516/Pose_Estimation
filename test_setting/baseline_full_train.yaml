@@ -1,9 +1,9 @@
-IS_GPU: false
-IS_TEST: true
+GPU_NUM: 0 
+IS_TEST: false
 IS_TRAIN: false
-IS_VALID: false
-MODEL: HRNet
-THEME: HRNet_first_re
+IS_VALID: true
+MODEL: baseline
+THEME: baseline_full_train
 TYPE: 2
 DATA:
   CHECK_HEATMAP: 0
@@ -14,9 +14,9 @@ DATA:
   IS_INCRE: false
   IS_ROTATE: false
   IS_SCALE: false
-  NUM_TOT_DATA: 32
+  NUM_TOT_DATA: 0
   SIGMA: 2
-  SAVE_RESIZED: true
+  SAVE_RESIZED: false
   LARGE_HEATMAP: false
 LOG:
   FILE_NAME: '%s_%s_log.txt'
@@ -27,38 +27,41 @@ LOG:
 PATH:
   BEST_FILE: '%s%d_best_model.pt'
   BEST_MODEL_PATH: best
-  MODEL: HRNet
+  MODEL: baseline
   PRED_NAME: '%s_result_%d.json'
   PRED_PATH: prediction
 TEST:
-  BATCH_SIZE: 16
+  NUM_WORKER: 8
+  BATCH_SIZE: 64
   FLIP_ENSEMBLE: false
   GET_RESULT: true
   IS_TEST: false
-  MODEL_FILE: HRNet_first_re_HRNet32_best_model.pt
+  MODEL_FILE: baseline_full_train_baseline6352_best_model.pt
   MODEL_PATH: result/%s/best/
-  SAVE_HEATMAP: 3
-  SAVE_IMG_PER_BATCH: 16
+  SAVE_HEATMAP: 5
+  SAVE_IMG_PER_BATCH: 10
   SAVE_PREDICTED: true
 TRAIN:
-  BATCH_SIZE: 16
-  CHECK_FREQ: 1000
-  DECAY_RATE: 0.01
-  EPOCH: 1100
+  NUM_WORKER: 8
+  BATCH_SIZE: 64
+  CHECK_FREQ: 100
+  DECAY_RATE: 0.1
+  EPOCH: 140
   IS_LOSS_MASK: true
   IS_SCHED: true
   IS_SHUFFLE: false
   LOAD_PREV: true
   LOAD_PREV_OPTIM: true
-  LOAD_PREV_SCHED: false
+  LOAD_PREV_SCHED: true
   LOSS: MSE
-  LR: 0.001
+  LR: 0.0001
   MILTESTONES:
-  - 900
+  - 90
+  - 120
   OPTIM: Adam
-  PREV_MODEL: HRNet_first_re_HRNet32_best_model.pt
+  PREV_MODEL: baseline_full_train_baseline6352_best_model.pt
   PREV_PATH: '%s/best'
   SCHED: MultiStepLR
 VAL:
   IS_TRAIN: false
-  RES_FILE: 15
+  RES_FILE: 1

@@ -4,12 +4,13 @@ import json
 from pathlib import Path
 from torch.autograd import Variable
 from ..dataloader import coco_data_loader
+from pytictoc import TicToc
 
-
-def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,device):
-    dataloader = torch.utils.data.DataLoader(dataset = dataset, batch_size = batch_size, shuffle = False)
+def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker,device):
+    dataloader = torch.utils.data.DataLoader(dataset = dataset, batch_size = batch_size, shuffle = False, num_workers = num_worker)
     # load model
     print(M_PATH)
+    
     with torch.no_grad():
         checkpoint = torch.load(M_PATH)
         model.load_state_dict(checkpoint['model_state_dict'])
@@ -18,39 +19,40 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,device):
         tot_data = []
         tot_loss = 0
         tot_OKS = 0
+        t = TicToc()
         save_predict_heatmap = config.SAVE_HEATMAP
         for i, data in enumerate(dataloader):
+            t.tic()
             imgs, heatmaps, old_bboxs, ids , keypoints, n_keys = data
             #print(old_bboxs)
 
             
-            imgs, heatmaps = Variable(imgs).float(), Variable(heatmaps).float()
-            imgs.to(device)
-            heatmaps.to(device)
+            imgs, heatmaps = imgs.float().to(device), heatmaps.float().to(device)
 
 
             p_heatmaps = model(imgs)
             loss = criterion(heatmaps,p_heatmaps)
-            loss = loss.sum(axis = (2,3))
+            loss = loss.mean(axis = (2,3))
             
-
+            cpu_p_heatmaps = p_heatmaps.cpu()
             for j in range(ids.shape[0]):
-                re_keypoints = coco_data_loader.restore_heatmap(p_heatmaps[j], old_bboxs[j],keypoints[j])
+                re_keypoints = coco_data_loader.restore_heatmap(cpu_p_heatmaps[j], old_bboxs[j],keypoints[j])
                 if config.SAVE_PREDICTED and j<config.SAVE_IMG_PER_BATCH:
                     re_anns = dataset.save_key_img(ids[j],True,re_keypoints,True)
                 else:
                     re_anns = dataset.save_key_img(ids[j],True,re_keypoints)
                 if save_predict_heatmap > 0 and n_keys[j]>8:
                     print("called")
-                    dataset.show_heatmaps(ids[j],p_heatmaps[j],imgs[j],True)
+                    dataset.show_heatmaps(ids[j],cpu_p_heatmaps[j],imgs[j].cpu(),True)
                     save_predict_heatmap -= 1
                 
-                re_anns['score'] = - loss[j].sum().item()
+                re_anns['score'] = - loss[j].cpu().sum().item()
                 tot_data.append(re_anns)
             
-            tot_loss += loss.sum(axis = (0,1))
+            tot_loss += loss.cpu().sum(axis = (0,1))
 
-            print("step %d, loss : %f" %(i,loss.sum()))
+            print("step %d, loss : %f" %(i,loss.mean()))
+            t.toc() 
         tot_loss = tot_loss/n_keys
 
 

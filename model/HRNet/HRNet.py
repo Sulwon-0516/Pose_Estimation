@@ -140,10 +140,11 @@ class Base_Block(nn.Module):
         return out
 
 class HRNet_Stage(nn.Module):
-    def __init__(self, num_channels, num_subNets, is_expand = False):
+    def __init__(self, num_channels, num_subNets, device, is_expand = False):
         super(HRNet_Stage,self).__init__()
         self.is_expand = is_expand
         self.num_subNets = num_subNets
+        self.device = device
 
         '''repeat residual blocks'''
         self.subNets = []
@@ -152,7 +153,7 @@ class HRNet_Stage(nn.Module):
             channels = num_channels * (2**i)
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
-            self.subNets.append(nn.Sequential(*Blocks))
+            self.subNets.append(nn.Sequential(*Blocks).to(device))
         
         '''exchange stage'''
         self.exchanges = []
@@ -175,7 +176,7 @@ class HRNet_Stage(nn.Module):
                                     momentum = BN_MOMENTUM
             ))
             expand.append(nn.ReLU())
-            self.expand = nn.Sequential(*expand)
+            self.expand = nn.Sequential(*expand).to(self.device)
 
     def _exchange_init_(self,num_channels, num_subNets, current_order):
         if current_order >= num_subNets:
@@ -206,9 +207,9 @@ class HRNet_Stage(nn.Module):
                                     momentum = BN_MOMENTUM
                 ))
                 module.append(nn.ReLU())
-                result.append(nn.Sequential(*module))
+                result.append(nn.Sequential(*module).to(self.device))
         
-        result.append(nn.Identity())
+        result.append(nn.Identity().to(self.device))
 
         if num_down>0:
             for i in range(num_down):
@@ -229,7 +230,7 @@ class HRNet_Stage(nn.Module):
                     ))
                     module.append(nn.ReLU())
                     channel = channel*2
-                result.append(nn.Sequential(*module))
+                result.append(nn.Sequential(*module).to(self.device))
         
         return result
         
@@ -264,9 +265,10 @@ class HRNet_Stage(nn.Module):
         return final_out
 
 class HRNet_Final(nn.Module):
-    def __init__(self,num_channels,num_subNets):
+    def __init__(self,num_channels,num_subNets,device):
         super(HRNet_Final,self).__init__()
         self.num_subNets = num_subNets
+        self.device = device
 
         '''repeat residual blocks'''
         self.subNets = []
@@ -275,7 +277,7 @@ class HRNet_Final(nn.Module):
             channels = num_channels * (2**i)
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
-            self.subNets.append(nn.Sequential(*Blocks))
+            self.subNets.append(nn.Sequential(*Blocks).to(device))
 
         '''connect all blocks into one'''
         self.final = self._fusing_(num_channels,num_subNets)
@@ -301,7 +303,7 @@ class HRNet_Final(nn.Module):
                                 momentum = BN_MOMENTUM
             ))
             module.append(nn.ReLU())
-            fuse.append(nn.Sequential(*module))
+            fuse.append(nn.Sequential(*module).to(self.device))
         return fuse
     
     def forward(self,input):
@@ -319,11 +321,12 @@ class HRNet_Final(nn.Module):
 
 # It's simply the first stage
 class back_HRNet(nn.Module):
-    def __init__(self, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS):
+    def __init__(self, device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS):
         super(back_HRNet,self).__init__()
         self.num_res = N_RESIDUAL
         self.num_stage = NUM_STAGE
         self.max_subnets = MAX_SUBNETS
+        self.device = device
         if len(NUM_STAGE) != MAX_SUBNETS:
             print("num stage : {}, max subnets : {}, different!".format(len(NUM_STAGE),MAX_SUBNETS))
 
@@ -350,7 +353,7 @@ class back_HRNet(nn.Module):
                             momentum = BN_MOMENTUM
             ))
             module.append(nn.ReLU())
-            self.first_trans.append(nn.Sequential(*module))
+            self.first_trans.append(nn.Sequential(*module).to(device))
 
         if self.num_stage[0] != 1:
             print("setting first stage longer than one isn't implemented yer")
@@ -363,15 +366,15 @@ class back_HRNet(nn.Module):
             self.stages.append(self._make_steps_(N_CHANNELS,step+2,NUM_STAGE[step+1]))
 
         '''Final Module'''
-        self.final = HRNet_Final(N_CHANNELS,MAX_SUBNETS)
+        self.final = HRNet_Final(N_CHANNELS,MAX_SUBNETS,device)
 
     def _make_steps_(self,N_CHANNELS,num_subNets,num_stage):
         stage = []
         for step in range(num_stage):
             if step != num_stage-1:
-                stage.append(HRNet_Stage(N_CHANNELS,num_subNets))
+                stage.append(HRNet_Stage(N_CHANNELS,num_subNets,self.device))
             else:
-                stage.append(HRNet_Stage(N_CHANNELS,num_subNets,True))
+                stage.append(HRNet_Stage(N_CHANNELS,num_subNets,self.device,True))
         return stage
 
     def forward(self,input):
@@ -390,9 +393,9 @@ class back_HRNet(nn.Module):
 
 
 class HRNet(nn.Module):
-    def __init__(self, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
+    def __init__(self, device, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
         super(HRNet,self).__init__()
-        self.backbone = back_HRNet(N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
+        self.backbone = back_HRNet(device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
         self.to_heat = nn.Conv2d(
                             in_channels = N_CHANNELS,
                             out_channels = 17,
@@ -409,12 +412,13 @@ class HRNet(nn.Module):
 
 
 class Add_Module(nn.Module):
-    def __init__(self,N_Module,N_out,N_CHANNEL,N_JOINTS=17):
+    def __init__(self,device, N_Module,N_out,N_CHANNEL,N_JOINTS=17):
         super(Add_Module,self).__init__()
+        self.device = device
         self.N_Module = N_Module
         self.init_conv = nn.Conv2d(
                             in_channels = N_CHANNEL,
-                            out_channels = N_JOINTS,
+                            out_channels = N_JOINTS*2,
                             kernel_size = 1,
                             stride = 1,
                             padding = (0,0))
@@ -445,18 +449,18 @@ class Add_Module(nn.Module):
                             num_features=N_out,
                             momentum=BN_MOMENTUM))
         deconv_blocks.append(nn.ReLU())
-        deconv_block = nn.Sequential(*deconv_blocks)
+        deconv_block = nn.Sequential(*deconv_blocks).to(self.device)
 
         res_blocks = []
         for i in range(4):
             res_blocks.append(Base_Block(N_out))
         res_blocks.append(nn.Conv2d(
                             in_channels = N_out,
-                            out_channels = N_JOINTS,
+                            out_channels = N_JOINTS*2,
                             kernel_size = 1,
                             stride = 1,
                             padding = (0,0)))
-        res_block = nn.Sequential(*res_blocks)
+        res_block = nn.Sequential(*res_blocks).to(self.device)
         
         return deconv_block, res_block
 
@@ -475,13 +479,13 @@ class Add_Module(nn.Module):
         return pose_out
 
 class HigherHRNet(nn.Module):
-    def __init__(self,N_Module = 1, N_out = 48, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
+    def __init__(self, device, N_Module = 1, N_out = 48, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
         super(HigherHRNet,self).__init__()
         self.NORMALIZE = True
         self.N_Module = N_Module
         '''Add some code for pre-trained HRNet loader'''
-        self.backbone = back_HRNet(N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
-        self.add_mod = Add_Module(N_Module, N_out, N_CHANNELS)
+        self.backbone = back_HRNet(device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
+        self.add_mod = Add_Module(device,N_Module, N_out, N_CHANNELS)
 
     def forward(self,input):
         output = self.backbone(input)

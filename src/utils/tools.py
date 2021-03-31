@@ -20,6 +20,8 @@ def save_model(path, model, optimizer,scheduler,tot_loss,epoch,tot_EPOCH,num_tot
     else:
         f_name = os.path.join(path,F_NAME%(MODEL_NAME,num_tot_data,tot_loss,epoch,tot_EPOCH))
     
+    Path(path).mkdir(exist_ok = True)
+
     if scheduler == None:
         torch.save({'epoch': epoch, 
             'model' : MODEL_NAME,
