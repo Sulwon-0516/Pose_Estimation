@@ -3,10 +3,11 @@ IS_TEST: false
 IS_TRAIN: true
 IS_VALID: false
 MODEL: HRNet
-THEME: HRNet_debug
+THEME: HRNet_2_16_wo_sum_trial2
 TYPE: 2
 DATA:
-  CHECK_HEATMAP: 0
+  MINIMUM_KEY: 17
+  CHECK_HEATMAP: 3
   GAUSSIAN_SCALE: 1
   HEIGHT: 256
   WIDTH: 192
@@ -14,9 +15,9 @@ DATA:
   IS_INCRE: false
   IS_ROTATE: false
   IS_SCALE: false
-  NUM_TOT_DATA: 4
+  NUM_TOT_DATA: 16
   SIGMA: 2
-  SAVE_RESIZED: true
+  SAVE_RESIZED: false
   LARGE_HEATMAP: false
 LOG:
   FILE_NAME: '%s_%s_log.txt'
@@ -27,24 +28,25 @@ LOG:
 PATH:
   BEST_FILE: '%s%d_best_model.pt'
   BEST_MODEL_PATH: best
-  MODEL: HRNet
   PRED_NAME: '%s_result_%d.json'
   PRED_PATH: prediction
 TEST:
-  BATCH_SIZE: 4
+  NUM_WORKER: 4
+  BATCH_SIZE: 16
   FLIP_ENSEMBLE: false
   GET_RESULT: true
   IS_TEST: false
-  MODEL_FILE: HRNet_first_re_HRNet32_best_model.pt
+  MODEL_FILE: HRNet_2_16_wo_sum_HRNet16_best_model.pt
   MODEL_PATH: result/%s/best/
-  SAVE_HEATMAP: 3
-  SAVE_IMG_PER_BATCH: 16
+  SAVE_HEATMAP: 5
+  SAVE_IMG_PER_BATCH: 2
   SAVE_PREDICTED: true
 TRAIN:
+  NUM_WORKER: 4
   BATCH_SIZE: 16
-  CHECK_FREQ: 80000
-  DECAY_RATE: 2
-  EPOCH: 2100
+  CHECK_FREQ: 200
+  DECAY_RATE: 0.1
+  EPOCH: 600
   IS_LOSS_MASK: true
   IS_SCHED: true
   IS_SHUFFLE: false
@@ -52,16 +54,16 @@ TRAIN:
   LOAD_PREV_OPTIM: true
   LOAD_PREV_SCHED: false
   LOSS: MSE
-  LR: 0.001
+  LR: 0.01
   MILTESTONES: 
-  - 1700
-  - 2100
+  - 340
+  - 450
   OPTIM: Adam
-  PREV_MODEL: HRNet_debug_HRNet4_best_model.pt
-  PREV_PATH: '%s/best'
+  PREV_MODEL: HRNet_full_single_img_HRNet16_best_loss0.005507(800_801).pt
+  PREV_PATH: '%s/checkpoint'
   SCHED: MultiStepLR
-  TEST_EPOCH: 150
-  TEST_PER_BATCH: 10
+  TEST_EPOCH: 30
+  TEST_PER_BATCH: 5
 VAL:
   IS_TRAIN: false
-  RES_FILE: 15
+  RES_FILE: 9

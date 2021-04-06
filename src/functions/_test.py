@@ -14,7 +14,14 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
     with torch.no_grad():
         checkpoint = torch.load(M_PATH)
         model.load_state_dict(checkpoint['model_state_dict'])
+        
+        if False:
+            for m in model.modules():
+                if isinstance(m, torch.nn.BatchNorm2d):
+                    m.reset_running_stats
+        
         model.eval()
+        
         n_keys = dataset.__len__()
         tot_data = []
         tot_loss = 0
@@ -25,6 +32,7 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
             t.tic()
             imgs, heatmaps, old_bboxs, ids , keypoints, n_keys = data
             #print(old_bboxs)
+            old_bboxs, keypoints = old_bboxs.to(device), keypoints.to(device)
 
             
             imgs, heatmaps = imgs.float().to(device), heatmaps.float().to(device)
@@ -36,11 +44,15 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
             
             cpu_p_heatmaps = p_heatmaps.cpu()
             for j in range(ids.shape[0]):
-                re_keypoints = coco_data_loader.restore_heatmap(cpu_p_heatmaps[j], old_bboxs[j],keypoints[j])
+                re_keypoints = coco_data_loader.restore_heatmap_gpu(p_heatmaps[j],
+                                                                    old_bboxs[j],
+                                                                    keypoints[j],
+                                                                    device)
+                
                 if config.SAVE_PREDICTED and j<config.SAVE_IMG_PER_BATCH:
-                    re_anns = dataset.save_key_img(ids[j],True,re_keypoints,True)
+                    re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu(),True)
                 else:
-                    re_anns = dataset.save_key_img(ids[j],True,re_keypoints)
+                    re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu())
                 if save_predict_heatmap > 0 and n_keys[j]>8:
                     print("called")
                     dataset.show_heatmaps(ids[j],cpu_p_heatmaps[j],imgs[j].cpu(),True)

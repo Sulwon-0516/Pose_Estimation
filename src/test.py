@@ -3,8 +3,8 @@ import torch.nn as nn
 import os
 
 from . import _init_paths
-from baseline.baseline import baseline
-from HRNet.HRNet import HRNet
+from baseline import baseline
+from HRNet import HRNet
 from .functions._test import _test
 from .dataloader.coco_data_loader import COCO_DataLoader
 

@@ -11,3 +11,4 @@ pycocotools
 pytictoc
 pyyaml
 json
+visdom

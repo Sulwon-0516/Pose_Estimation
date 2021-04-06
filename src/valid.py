@@ -16,7 +16,7 @@ def valid(config):
     cocoGT = val_dataset.coco
 
     # Get result File from the folder.
-    res_path = os.path.join(config.PATH.RESULT_PATH,config.PATH.MODEL)
+    res_path = os.path.join(config.PATH.RESULT_PATH,config.MODEL)
     if not os.path.isdir(res_path):
         print("Invalid result path")
         assert(0)

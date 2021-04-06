@@ -2,9 +2,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F 
 from torchsummaryX import summary
+import visdom
+import time
 
-MAX_SUBNETS = 4
-NUM_STAGE = [1, 1, 4, 2]
+MAX_SUBNETS = 2
+NUM_STAGE = [1, 2]
 BN_MOMENTUM = 0.1
 STEM_RES_CHANNEL = 64
 STAGE_NUM_BLOCK = 4
@@ -184,7 +186,7 @@ class HRNet_Stage(nn.Module):
             assert(0)
         result = []
         num_up = current_order
-        num_down = num_subNets - current_order -1
+        num_down = num_subNets - current_order - 1
         channels = num_channels * (2**current_order)
 
         if num_up>0:
@@ -321,14 +323,32 @@ class HRNet_Final(nn.Module):
 
 # It's simply the first stage
 class back_HRNet(nn.Module):
-    def __init__(self, device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS):
+    def __init__(self, device, is_debug, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS):
         super(back_HRNet,self).__init__()
         self.num_res = N_RESIDUAL
-        self.num_stage = NUM_STAGE
+        self.num_stage = N_STAGE
         self.max_subnets = MAX_SUBNETS
         self.device = device
-        if len(NUM_STAGE) != MAX_SUBNETS:
-            print("num stage : {}, max subnets : {}, different!".format(len(NUM_STAGE),MAX_SUBNETS))
+
+        self.is_debug = is_debug
+        if is_debug:
+            self.vis = visdom.Visdom(env="HRNet")
+            self.env_list = ["first_res",
+                             "second_res",
+                             "third_res",
+                             "fourth_res",
+                             "input"]
+            self.stage_list = ["first_stage",
+                               "second_stage",
+                               "thrid_stage",
+                               "fourth_stage"]
+            self.cnt = 0
+            for i in range(len(self.env_list)):
+                self.vis.delete_env(env= self.env_list[i])
+
+        if len(N_STAGE) != MAX_SUBNETS:
+            print("num stage : {}, max subnets : {}, different!".format(N_STAGE,
+                                                                        MAX_SUBNETS))
 
         '''stem + first stage'''
         res_units = []
@@ -358,15 +378,14 @@ class back_HRNet(nn.Module):
         if self.num_stage[0] != 1:
             print("setting first stage longer than one isn't implemented yer")
             assert(0)
-        
+
 
         '''from second to fourth stage'''
         self.stages = []
         for step in range(MAX_SUBNETS-1):
-            self.stages.append(self._make_steps_(N_CHANNELS,step+2,NUM_STAGE[step+1]))
+            self.stages.append(self._make_steps_(N_CHANNELS,step+2,N_STAGE[step+1]))
 
-        '''Final Module'''
-        self.final = HRNet_Final(N_CHANNELS,MAX_SUBNETS,device)
+        
 
     def _make_steps_(self,N_CHANNELS,num_subNets,num_stage):
         stage = []
@@ -378,24 +397,95 @@ class back_HRNet(nn.Module):
         return stage
 
     def forward(self,input):
+        print_img = False
+        if self.is_debug:
+            self.cnt += 1
+            if self.cnt == 10:
+                self.cnt = 0
+                print_img = True
+            else:
+                print_img = False
+        
+        if print_img:
+            self.vis.image(input[0],
+                           env=self.env_list[4],
+                           opts=dict(title=self.env_list[4]))
+        
+        
         first_out = self.first_stage(input)
         output = []
         for i in range(2):
             output.append(self.first_trans[i](first_out))
+            
+            '''visdom'''
+            if print_img:
+                temp = output[i][0].detach()
+                temp = temp.unsqueeze(1)/torch.max(temp)
+                self.vis.images(
+                        temp,
+                        env=self.env_list[i],
+                        opts=dict(title=self.stage_list[0]+"_"+self.env_list[i]))
+            
+            '''dead-relu counting'''
+            if self.is_debug:
+                temp = torch.sum(output[i][0] == 0)
+                size = output[i][0].view(-1).size()[0]
+                print("{}_{} dead relu:{}, dead rate:{}".format(self.stage_list[0],
+                                                                  self.env_list[i],
+                                                                  temp,
+                                                                  temp/size*100))
+                
+    
 
         for i in range(self.max_subnets-1):
             for j in range(self.num_stage[i+1]):
                 output = self.stages[i][j](output)
-        
-        output = self.final(output)
+            if print_img:
+                for k in range(i+2):
+                    temp = output[k][0].detach()
+                    temp = temp.unsqueeze(1)/torch.max(temp)
+                    self.vis.images(
+                        temp,
+                        env=self.env_list[k],
+                        opts=dict(title=self.stage_list[i+1]+"_"+self.env_list[k]))
+            
+            '''dead-relu counting'''
+            if self.is_debug:
+                for k in range(i+2):
+                    temp = torch.sum(output[k][0] == 0)
+                    size = output[k][0].view(-1).size()[0]
+                    print("{}_{} dead relu:{}, dead rate:{}".format(self.stage_list[i+1],
+                                                                    self.env_list[k],
+                                                                    temp,
+                                                                    temp/size*100))
 
         return output
 
 
 class HRNet(nn.Module):
-    def __init__(self, device, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
+    def __init__(self, 
+                 device, 
+                 is_debug = False, 
+                 N_RESIDUAL = STAGE_NUM_BLOCK, 
+                 MAX_SUBNETS = MAX_SUBNETS, 
+                 N_STAGE = NUM_STAGE, 
+                 N_CHANNELS = 32,
+                 Version = 1):
+        
         super(HRNet,self).__init__()
-        self.backbone = back_HRNet(device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
+        self.version = Version
+        
+        self.backbone = back_HRNet(device, 
+                                   is_debug, 
+                                   N_RESIDUAL, 
+                                   MAX_SUBNETS,
+                                   N_STAGE,
+                                   N_CHANNELS)
+        
+        '''Final Module'''
+        if Version==2:
+            self.final = HRNet_Final(N_CHANNELS,MAX_SUBNETS,device)
+        
         self.to_heat = nn.Conv2d(
                             in_channels = N_CHANNELS,
                             out_channels = 17,
@@ -403,9 +493,15 @@ class HRNet(nn.Module):
                             stride = 1,
                             padding= (0,0)
         )
+        
+        init_weights(self)
 
     def forward(self,input):
         output = self.backbone(input)
+        if self.version == 2:
+            output = self.final(output)
+        else:
+            output = output[0]
         output = self.to_heat(output)
 
         return output
@@ -479,7 +575,15 @@ class Add_Module(nn.Module):
         return pose_out
 
 class HigherHRNet(nn.Module):
-    def __init__(self, device, N_Module = 1, N_out = 48, N_RESIDUAL = STAGE_NUM_BLOCK, MAX_SUBNETS = MAX_SUBNETS, N_STAGE = NUM_STAGE, N_CHANNELS = 32):
+    def __init__(self, 
+                 device, 
+                 N_Module = 1, 
+                 N_out = 48,
+                 N_RESIDUAL = STAGE_NUM_BLOCK,
+                 MAX_SUBNETS = MAX_SUBNETS, 
+                 N_STAGE = NUM_STAGE,
+                 N_CHANNELS = 32):
+        
         super(HigherHRNet,self).__init__()
         self.NORMALIZE = True
         self.N_Module = N_Module
@@ -509,10 +613,29 @@ class HigherHRNet(nn.Module):
         return pred
 
 
-
+def init_weights(model):
+    for m in model.modules():
+        
+        if isinstance(m, nn.Conv2d):
+            # nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+            nn.init.normal_(m.weight, std=0.001)
+            for name, _ in m.named_parameters():
+                if name in ['bias']:
+                    nn.init.constant_(m.bias, 0)
+        elif isinstance(m, nn.BatchNorm2d):
+            nn.init.constant_(m.weight, 1)
+            nn.init.constant_(m.bias, 0)
+        elif isinstance(m, nn.ConvTranspose2d):
+            nn.init.normal_(m.weight, std=0.001)
+            for name, _ in m.named_parameters():
+                if name in ['bias']:
+                    nn.init.constant_(m.bias, 0)
 
 '''For debugging'''
 if __name__ == '__main__':
+    bottle = HRNet(torch.device("cpu"))
+    
+    '''
     with torch.autograd.detect_anomaly():
         hrnet = HRNet()
         test_Net = HigherHRNet()
@@ -533,5 +656,5 @@ if __name__ == '__main__':
         print(loss)
         for i in range(2):
             loss[i].backward(retain_graph=True)
-        
+    '''
 

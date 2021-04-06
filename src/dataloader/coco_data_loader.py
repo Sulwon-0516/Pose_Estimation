@@ -18,7 +18,13 @@ SAMPLE_PATH = "./sample"
 
 
 
-def restore_heatmap(heatmaps_in, old_bbox,org_key, flip = False, flipped_heatmaps_in = None):
+def restore_heatmap(
+            heatmaps_in, 
+            old_bbox,
+            org_key, 
+            flip = False, 
+            flipped_heatmaps_in = None):
+    
     #print("org size :",heatmaps_in.shape,"new_size:",old_bbox)
     trans = transforms.Resize((old_bbox[3]+1,old_bbox[2]+1))
     old_heatmaps = trans(heatmaps_in)
@@ -55,6 +61,52 @@ def restore_heatmap(heatmaps_in, old_bbox,org_key, flip = False, flipped_heatmap
     
     return pred_keypoints
 
+
+def restore_heatmap_gpu(
+            heatmaps_in, 
+            old_bbox,
+            org_key, 
+            device,
+            flip = False, 
+            flipped_heatmaps_in = None):
+    
+    #print("org size :",heatmaps_in.shape,"new_size:",old_bbox)
+    trans = transforms.Resize((old_bbox[3]+1,old_bbox[2]+1))
+    old_heatmaps = trans(heatmaps_in)
+    #print(old_heatmaps.shape)
+    #print(old_bbox)
+    mask = org_key[2::3]
+
+    # when using flipped input
+    if flip:
+        old_heatmaps += transforms.RandomHorizontalFlip(p=1.0)
+        # do additional things.
+        #
+        #
+        #
+    else:
+        max1, arg1 = torch.max(old_heatmaps,dim = 1)
+        max2, arg2 = torch.max(max1,dim=1)
+
+        #print(arg1)
+        #print(arg2)
+
+        pred_keypoints = torch.zeros(17*3,device=device)
+        for i in range(17):
+            #print(max2[i])
+            
+            if mask[i] != 0:
+                pred_keypoints[i*3]=old_bbox[0] + arg2[i]
+                pred_keypoints[i*3+1]=old_bbox[1] + arg1[i,arg2[i]]
+                pred_keypoints[i*3+2]= mask[i]
+            else:
+                pred_keypoints[i*3]=0
+                pred_keypoints[i*3+1]=0
+            
+    
+    return pred_keypoints
+
+
 def safe_resize(x,width,Max_width,increment):
     # increment is size 2 array
     new_x = x
@@ -81,7 +133,9 @@ def increase_img(bbox,tot_pad):
 
 class COCO_DataLoader(Dataset):
     def __init__(self, train, in_config):
-        #make sure images are located in directories that the label files mention
+
+        '''make sure images are located in directories that the label files mention'''
+
         self.config = in_config.DATA
         self.THEME = in_config.THEME
         self.COCO_PATH = in_config.PATH.COCO_PATH
@@ -89,9 +143,24 @@ class COCO_DataLoader(Dataset):
         self.RESIZED = in_config.PATH.RESIZED
         self.train = train
         self.check_heatmaps = in_config.DATA.CHECK_HEATMAP
-        self.flag = False           # It's used for checking first call. When it's true, heatmaps will be printed in seperately
+
+        ''' It's used for checking first call. When it's true,
+         heatmaps will be printed in seperately'''
+        self.flag = False           
+        
         if train:
-            coco = COCO("""train path""")
+            TRAIN_KEY_PATH = os.path.join(self.COCO_PATH,
+                                          in_config.PATH.COCO_TRAIN_KEY_PATH)
+            if not os.path.isfile(TRAIN_KEY_PATH):
+                print("Invalid train key path {}".format(TRAIN_KEY_PATH))
+                assert(0)
+            coco = COCO(TRAIN_KEY_PATH)
+            
+            TRAIN_INS_PATH = os.path.join(self.COCO_PATH,in_config.PATH.COCO_TRAIN_INS_PATH)
+            if not os.path.isfile(VAL_TRAIN_PATH):
+                print("Invalid train ins path {}".format(VAL_TRAIN_PATH))
+                assert(0)
+            coco_bb = COCO(TRAIN_INS_PATH)
         else:
             VAL_KEY_PATH = os.path.join(self.COCO_PATH,in_config.PATH.COCO_VAL_KEY_PATH)
             if not os.path.isfile(VAL_KEY_PATH):
@@ -115,7 +184,9 @@ class COCO_DataLoader(Dataset):
         
         self.transforms_heatmaps = transforms.Compose(
             [
-                transforms.Resize((self.config.HEIGHT//self.config.IN_OUT_RATIO,self.config.WIDTH//self.config.IN_OUT_RATIO))
+                transforms.Resize((
+                    self.config.HEIGHT//self.config.IN_OUT_RATIO,
+                    self.config.WIDTH//self.config.IN_OUT_RATIO))
             ]
         )
 
@@ -139,14 +210,15 @@ class COCO_DataLoader(Dataset):
             height = img_info[0]['height']
             width = img_info[0]['width']
 
-            #easy to exlude unwanted examples for training here
-            # with this method, all instances will be treated in different model.
-            # it will make it easy to make heat-map, but hard to train all instances at once.
-            # However still it has benefit that don't need Bbox regression..
+            '''easy to exlude unwanted examples for training here
+            with this method, all instances(no img) will be treated in independent one.
+            it will make it easy to make heat-map,
+            but hard to train all instances at once.
+            However still it has benefit that don't need Bbox regression.. '''
 
-            # I will train it separately in Top-down method, so no problem to implement baseline model.
+
             for i,data in enumerate(anns):
-                if data['num_keypoints']==0:
+                if data['num_keypoints'] < self.config.MINIMUM_KEY:
                     continue
                 data['bbox']=bb_anns[i]['bbox']
                 data['height']=height
@@ -185,19 +257,35 @@ class COCO_DataLoader(Dataset):
         new_y = new_bbox[1]+tot_pad[1][0]
         
         ratio = self.config.HEIGHT/new_bbox[3]
-        # print(ratio,self.config.HEIGHT/new_bbox[3],self.config.WIDTH/new_bbox[3],self.config.HEIGHT/new_bbox[2] )
+        # print(ratio,
+        #       self.config.HEIGHT/new_bbox[3],
+        #       self.config.WIDTH/new_bbox[3],
+        #       self.config.HEIGHT/new_bbox[2] )
         
         #---------------------------#
         #    cropping + resizing    #
-        pad_image = cv2.copyMakeBorder(org_image,tot_pad[1][0],tot_pad[1][1],tot_pad[0][0],tot_pad[0][1],cv2.BORDER_CONSTANT,value=[0,0,0])
+        pad_image = cv2.copyMakeBorder(org_image,
+                                       tot_pad[1][0],
+                                       tot_pad[1][1],
+                                       tot_pad[0][0],
+                                       tot_pad[0][1],
+                                       cv2.BORDER_CONSTANT,
+                                       value=[0,0,0])
         re_image = pad_image[new_y:new_y+new_bbox[3],new_x:new_x+new_bbox[2],:]
 
         if self.config.LARGE_HEATMAP:
             heatmaps = self.Large_heatmap_generation(id,ratio)
             re_heatmaps = np.zeros((1,re_image.shape[0],re_image.shape[1]))
             for heatmap in heatmaps:
-                pad_heat_map = cv2.copyMakeBorder(heatmap,tot_pad[1][0],tot_pad[1][1],tot_pad[0][0],tot_pad[0][1],cv2.BORDER_CONSTANT,value=0)
-                re_heatmap = pad_heat_map[new_y:new_y+new_bbox[3],new_x:new_x+new_bbox[2]]
+                pad_heat_map = cv2.copyMakeBorder(heatmap,
+                                                  tot_pad[1][0],
+                                                  tot_pad[1][1],
+                                                  tot_pad[0][0],
+                                                  tot_pad[0][1],
+                                                  cv2.BORDER_CONSTANT,
+                                                  value=0)
+                re_heatmap = pad_heat_map[new_y:new_y+new_bbox[3],
+                                          new_x:new_x+new_bbox[2]]
                 re_heatmaps = np.append(re_heatmaps,[re_heatmap],axis=0)
                 re_heatmaps[0] +=re_heatmap
             re_heatmaps = self.transforms_heatmaps(torch.from_numpy(re_heatmaps))
@@ -221,11 +309,13 @@ class COCO_DataLoader(Dataset):
             plot_img = np.transpose(plot_img,[1,2,0])
             plt.imshow(plot_img)
             # self.coco.showAnns([annotations],True)  
-            plt.savefig(os.path.join(path,(self.THEME+"_resized_img_"+img_id+"heatmaps"+".jpg")))
+            plt.savefig(os.path.join(path,(self.THEME+"_resized_img_"\
+                                            +img_id+"heatmaps"+".jpg")))
             # test
             plt.clf()
             plt.imshow(re_heatmaps[0].numpy())
-            plt.savefig(os.path.join(path,(self.THEME+"_resized_heat_"+img_id+"heatmaps"+".jpg")))
+            plt.savefig(os.path.join(path,(self.THEME+"_resized_heat_"+\
+                                            img_id+"heatmaps"+".jpg")))
             #print(re_heatmaps.shape)
             self.data[id]['is_loaded'] = True
         
@@ -238,48 +328,47 @@ class COCO_DataLoader(Dataset):
         
         return re_image, re_heatmaps, np.array(new_bbox), id, np.array(annotations['keypoints']), annotations['num_keypoints']
     
-    def save_key_img(self,id,is_key = False, key=None, save_img = False):
+    def save_key_img(self, id, is_key = False, key=None, save_img = False):
         annotations = self.data[id]
-        img_id = annotations['image_id']
+        inst_id = annotations['id']
     
-        
-        img_id = str(img_id)                                # define file name (12 zeros)
-        img_id = img_id.zfill(12)               
-        if self.train:
-            img_name = "images/train2017/"+img_id+".jpg"
-        else:
-            img_name = "images/val2017/"+img_id+".jpg"
-        img_file_name = os.path.join(self.COCO_PATH,img_name)
-        
-        image = img.imread(img_file_name)
-        plt.clf()
-        if is_key:
-            plt.subplot(2,1,1)
-        plt.axis("off")
-        plt.imshow(image)
-        self.coco.showAnns([annotations],True)
-
-        if is_key:
-            #print("------------")
-            #for i in range(17):
-            #    print("true : ",annotations['keypoints'][i*3:i*3+3])
-            #    print("pred : ",np.int32(key[i*3:i*3+2]),", conf : ",key[i*3+2])
-
-            annotations['keypoints'] = np.int32(key).tolist()
-            plt.subplot(2,1,2)
+        if save_img:
+            img_id = annotations['image_id']
+            img_id = str(img_id)                                # define file name (12 zeros)
+            img_id = img_id.zfill(12)               
+            if self.train:
+                img_name = "images/train2017/"+img_id+".jpg"
+            else:
+                img_name = "images/val2017/"+img_id+".jpg"
+            img_file_name = os.path.join(self.COCO_PATH,img_name)
+            
+            image = img.imread(img_file_name)
+            plt.clf()
+            if is_key:
+                plt.subplot(2,1,1)
             plt.axis("off")
             plt.imshow(image)
             self.coco.showAnns([annotations],True)
 
-        inst_id = annotations['id']
+            if is_key:
+                #print("------------")
+                #for i in range(17):
+                #    print("true : ",annotations['keypoints'][i*3:i*3+3])
+                #    print("pred : ",np.int32(key[i*3:i*3+2]),", conf : ",key[i*3+2])
 
-        if is_key and save_img:
-            Path(os.path.join(SAMPLE_PATH,"pred")).mkdir(exist_ok=True) 
-            plt.savefig(os.path.join(os.path.join(SAMPLE_PATH,"pred"),(self.THEME+img_id+"_"+str(inst_id)+".jpg")))
-            
-        elif save_img:
-            Path(os.path.join(SAMPLE_PATH,"train")).mkdir(exist_ok=True)
-            plt.savefig(os.path.join(os.path.join(SAMPLE_PATH,"train"),(self.THEME+img_id+"_"+str(inst_id)+".jpg")))
+                annotations['keypoints'] = np.int32(key).tolist()
+                plt.subplot(2,1,2)
+                plt.axis("off")
+                plt.imshow(image)
+                self.coco.showAnns([annotations],True)
+
+            if is_key:
+                Path(os.path.join(SAMPLE_PATH,"pred")).mkdir(exist_ok=True) 
+                plt.savefig(os.path.join(os.path.join(SAMPLE_PATH,"pred"),(self.THEME+img_id+"_"+str(inst_id)+".jpg")))
+                
+            else:
+                Path(os.path.join(SAMPLE_PATH,"train")).mkdir(exist_ok=True)
+                plt.savefig(os.path.join(os.path.join(SAMPLE_PATH,"train"),(self.THEME+img_id+"_"+str(inst_id)+".jpg")))
         
         if is_key:
             req_anno = {}
@@ -288,9 +377,6 @@ class COCO_DataLoader(Dataset):
             req_anno['keypoints'] = key.tolist()
             req_anno['id'] = inst_id
             annotations = req_anno
-        
-        
-
 
         return annotations
     
@@ -320,30 +406,48 @@ class COCO_DataLoader(Dataset):
         tot_pad = [[0,0],[0,0]]
         # Check the bbox ratio and resize it. 
         # i want 3:4 size.
-        if (new_bbox[2]+1)/self.config.IMG_RATIO[0] > (new_bbox[3]+1)/self.config.IMG_RATIO[1]:
+        if (new_bbox[2]+1)/self.config.IMG_RATIO[0] >\
+                (new_bbox[3]+1)/self.config.IMG_RATIO[1]:
             #when I need to increase in height.
             rem = (new_bbox[2]+1)%self.config.IMG_RATIO[0]
             if rem !=0:
                 rem = self.config.IMG_RATIO[0]-rem
-                new_bbox[0],new_bbox[2],tot_pad[0] = safe_resize(new_bbox[0],new_bbox[2],img_width,(rem//2,rem//2+rem%2))
+                new_bbox[0],new_bbox[2],tot_pad[0] = safe_resize(new_bbox[0],
+                                                                 new_bbox[2],
+                                                                 img_width,
+                                                                 (rem//2,rem//2+rem%2))
             if (new_bbox[2]+1)%self.config.IMG_RATIO[0] != 0:
                 print("error_width")
                 assert(0)
-            req_incre = self.config.IMG_RATIO[1]*(new_bbox[2]+1)//self.config.IMG_RATIO[0] - (new_bbox[3]+1)
-            new_bbox[1],new_bbox[3],tot_pad[1] = safe_resize(new_bbox[1],new_bbox[3],img_height,(req_incre//2,req_incre//2+req_incre%2))                
+            req_incre = self.config.IMG_RATIO[1]*\
+                            (new_bbox[2]+1)//self.config.IMG_RATIO[0] - (new_bbox[3]+1)
+            new_bbox[1],new_bbox[3],tot_pad[1] = safe_resize(new_bbox[1],
+                                                             new_bbox[3],
+                                                             img_height,
+                                                             (req_incre//2,
+                                                              req_incre//2+req_incre%2))                
 
-        elif (new_bbox[2]+1)/self.config.IMG_RATIO[0] < (new_bbox[3]+1)/self.config.IMG_RATIO[1]:
+        elif (new_bbox[2]+1)/self.config.IMG_RATIO[0] <\
+                (new_bbox[3]+1)/self.config.IMG_RATIO[1]:
             #whn I need to increase in width
             rem = (new_bbox[3]+1)%self.config.IMG_RATIO[1]
             if rem !=0:
                 rem = self.config.IMG_RATIO[1]-rem
-                new_bbox[1],new_bbox[3],tot_pad[1] = safe_resize(new_bbox[1],new_bbox[3],img_height,(rem//2,rem//2+rem%2))
+                new_bbox[1],new_bbox[3],tot_pad[1] = safe_resize(new_bbox[1],
+                                                                 new_bbox[3],
+                                                                 img_height,
+                                                                 (rem//2,rem//2+rem%2))
             if (new_bbox[3]+1)%self.config.IMG_RATIO[1] != 0:
                 print("error_height")
                 print(new_bbox[3],bbox[3],rem)
                 assert(0)
-            req_incre = self.config.IMG_RATIO[0]*(new_bbox[3]+1)//self.config.IMG_RATIO[1] - (new_bbox[2]+1)
-            new_bbox[0],new_bbox[2],tot_pad[0] = safe_resize(new_bbox[0],new_bbox[2],img_width,(req_incre//2,req_incre//2+req_incre%2))  
+            req_incre = self.config.IMG_RATIO[0]*(new_bbox[3]+1)//\
+                            self.config.IMG_RATIO[1] - (new_bbox[2]+1)
+            new_bbox[0],new_bbox[2],tot_pad[0] = safe_resize(new_bbox[0],
+                                                             new_bbox[2],
+                                                             img_width,
+                                                             (req_incre//2,
+                                                              req_incre//2+req_incre%2))  
         
 
         # now increase the image 15% larger.
@@ -377,7 +481,7 @@ class COCO_DataLoader(Dataset):
                 y_i = np.arange(-key_y,img_height-key_y,1,dtype=float)
 
                 x,y = np.meshgrid(x_i,y_i,indexing='xy')
-                d = np.sqrt(x*x + y*y)*ratio*ratio/(self.config.SIGMA*self.config.SIGMA*2)
+                d = np.sqrt(x*x+y*y)*ratio*ratio/(self.config.SIGMA*self.config.SIGMA*2)
                 # A = 1/(2*math.pi*self.config.SIGMA*self.config.SIGMA)
                 A = 1
                 v = A * np.exp(-d)
@@ -425,15 +529,24 @@ class COCO_DataLoader(Dataset):
             key_x[i] = math.ceil((key_x[i] - new_bbox[0])*ratio)
             key_y[i] = math.ceil((key_y[i] - new_bbox[1])*ratio)
 
-        result = np.zeros((1,self.config.HEIGHT//self.config.IN_OUT_RATIO,self.config.WIDTH//self.config.IN_OUT_RATIO),dtype=float)
+        result = np.zeros((1,
+                           self.config.HEIGHT//self.config.IN_OUT_RATIO,
+                           self.config.WIDTH//self.config.IN_OUT_RATIO),
+                          dtype=float)
         
         for i in range(len(keypoints)//3):
             if keypoints[i*3+2] != 0:
             
                 # print(i*3+2,":",key_x[i],",",key_y[i],",",key_label[i])
 
-                x_i = np.arange(-key_x[i],self.config.WIDTH//self.config.IN_OUT_RATIO-key_x[i],1,dtype=float)
-                y_i = np.arange(-key_y[i],self.config.HEIGHT//self.config.IN_OUT_RATIO-key_y[i],1,dtype=float)
+                x_i = np.arange(-key_x[i],
+                                self.config.WIDTH//self.config.IN_OUT_RATIO-key_x[i],
+                                1,
+                                dtype=float)
+                y_i = np.arange(-key_y[i],
+                                self.config.HEIGHT//self.config.IN_OUT_RATIO-key_y[i],
+                                1,
+                                dtype=float)
 
                 x,y = np.meshgrid(x_i,y_i,indexing='xy')
                 d = np.sqrt(x*x + y*y)/(self.config.SIGMA*self.config.SIGMA*2)
@@ -444,7 +557,10 @@ class COCO_DataLoader(Dataset):
                 result = np.append(result,[v],axis=0)
                 result[0] += v
             else :
-                v = np.zeros((1,self.config.HEIGHT//self.config.IN_OUT_RATIO,self.config.WIDTH//self.config.IN_OUT_RATIO),dtype=float)
+                v = np.zeros((1,
+                              self.config.HEIGHT//self.config.IN_OUT_RATIO,
+                              self.config.WIDTH//self.config.IN_OUT_RATIO),
+                             dtype=float)
                 result = np.append(result,v,axis=0)
         return torch.from_numpy(result)
 
@@ -456,7 +572,7 @@ class COCO_DataLoader(Dataset):
             print("wrong heatmap size %d"%heatmaps.shape[0])
             assert(0)
     
-        img_id = str(img_id)                                # define file name (12 zeros)
+        img_id = str(img_id)                               # define file name (12 zeros)
         img_id = img_id.zfill(12)               
         if self.train:
             img_name = "images/train2017/"+img_id+".jpg"
@@ -486,11 +602,15 @@ class COCO_DataLoader(Dataset):
             plt.subplot(5,4,4+i)
             plt.imshow(heatmaps[i]/(max_val+0.0001))
         if test:
-            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(id)+"check_heatmaps_out.jpg"))
+            plt.savefig(os.path.join(self.SAMPLE_PATH,
+                                     self.THEME+str(id)+"check_heatmaps_out.jpg"))
         elif debug!=0:
-            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(debug)+"_"+str(id)+"check_heatmaps_debug.jpg"))
+            plt.savefig(os.path.join(self.SAMPLE_PATH,
+                                     self.THEME+str(debug)+"_"+\
+                                        str(id)+"check_heatmaps_debug.jpg"))
         else:
-            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+str(id)+"check_heatmaps.jpg"))
+            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+\
+                                        str(id)+"check_heatmaps.jpg"))
 
         if self.flag and annotations['num_keypoints']>8 and test:
             for i in range(17):

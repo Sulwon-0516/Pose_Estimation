@@ -16,6 +16,7 @@ config.AE = False                   # Use associative Embedding or not
 
 # Data preprocessing configs
 config.DATA = edict()
+config.DATA.MINIMUM_KEY = 0        # Use # >= MINIMUM_KEY, defautl : 1
 config.DATA.NUM_KEYS = 17 
 config.DATA.SIGMA = 2               # Gaussain heatmap sigma
 config.DATA.GAUSSIAN_SCALE = 1      # the maximum value scale of the heatmap
@@ -75,12 +76,15 @@ config.TEST.NUM_WORKER = 0
 config.TEST.SAVE_PREDICTED = True   # save prediction image
 config.TEST.SAVE_IMG_PER_BATCH = 2  # Images save per every batches
 config.TEST.SAVE_HEATMAP = 5
+config.TEST.IS_TRAIN = False        # Checking overfitting on the training set,
+
 # Validation Hyper params
 config.VAL = edict()
 config.VAL.IS_TRAIN = False         # If True, evaluate the result.
 config.VAL.RES_FILE = 1             # Set the number as 1
 
 # Log 
+'''It will be deprecated due to the VISDOM'''
 config.LOG = edict()
 config.LOG.FREQ = 1            # Save log every 10 steps
 config.LOG.SAVE_LOSS = True
@@ -93,23 +97,45 @@ config.LOG.FILE_NAME = "%s_%s_log.txt"
 # Path
 config.PATH = edict()
 config.PATH.RESULT_PATH = "./result"
-config.PATH.MODEL = "baseline"
 config.PATH.PRED_PATH = "prediction"
 config.PATH.PRED_NAME = "%s_result_%d.json"
 config.PATH.COCO_PATH = "./coco"
 config.PATH.COCO_VAL_INS_PATH = "annotations/instances_val2017.json"
 config.PATH.COCO_VAL_KEY_PATH = "annotations/person_keypoints_val2017.json"
+config.PATH.COCO_TRAIN_INS_PATH = "annotations/instances_train2017.json"
+config.PATH.COCO_TRAIN_KEY_PATH = "annotations/person_keypoints_train2017.json"
 
+config.PATH.MDOEL = "somethings"
 config.PATH.BEST_MODEL_PATH = "best"
 config.PATH.CHECKPOINT_PATH = "checkpoint"
 
 config.PATH.BEST_FILE = "%s%d_best_model.pt"
 config.PATH.CHECKPOINT_FILE = "%s%d_best_loss%f(%d_%d).pt"
 
-
 config.PATH.SAMPLE = "./sample"
 config.PATH.RESIZED = "resized"
 
+
+
+# Visdom
+config.VIS = edict()
+config.VIS.IS_USE = True
+config.VIS.IS_SAVE = False
+config.VIS.IS_RESET = False
+config.VIS.ENV_NAMES = ["inputs", "outputs"]              # List of the env_names will be used
+config.VIS.STEP_FREQ = 10                               # plotting step frequency
+
+
+
+
+
+
+
+# Debug options
+config.DEBUG = edict()
+config.DEBUG.CHECK_ACC = False            # Check accuracy per every epoch
+config.DEBUG.CHECK_ACC_CYC = 20           # Test on validation set for every acc cycles.
+config.DEBUG.CHECK_MODEL = False          # Check model filter params if true
 
 
 
@@ -134,7 +160,7 @@ def update_config(config_file):
             else:
                 print("{} no exist in config".format(k))
                 assert(0)
-
+        config['PATH']['MODEL'] = config['MODEL']
 
 # get from the official Baseline Implementation
 # ref : https://github.com/microsoft/human-pose-estimation.pytorch/blob/master/lib/core/config.py
