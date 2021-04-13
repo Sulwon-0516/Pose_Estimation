@@ -10,6 +10,10 @@ import cv2
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import torch
+import copy
+
+
+
 
 COCO_PATH = "./coco"
 VAL_INS_PATH = os.path.join(COCO_PATH,"annotations/instances_val2017.json")
@@ -326,7 +330,7 @@ class COCO_DataLoader(Dataset):
             self.check_heatmaps -= 1
         
         
-        return re_image, re_heatmaps, np.array(new_bbox), id, np.array(annotations['keypoints']), annotations['num_keypoints']
+        return re_image, re_heatmaps, np.array(new_bbox), id, np.array(annotations['keypoints']), annotations['num_keypoints'], img_id
     
     def save_key_img(self, id, is_key = False, key=None, save_img = False):
         annotations = self.data[id]
@@ -629,6 +633,403 @@ class COCO_DataLoader(Dataset):
         
         img_ids = set(img_ids)
         return img_ids
+        
+        
+class Bottom_Up_COCO_DataLoader(Dataset):
+    def __init__(self, train, in_config):
+        
+        '''make sure images are located in directories that the label files mention'''
+
+        self.config = in_config.DATA
+        self.THEME = in_config.THEME
+        self.COCO_PATH = in_config.PATH.COCO_PATH
+        self.SAMPLE_PATH = in_config.PATH.SAMPLE
+        self.RESIZED = in_config.PATH.RESIZED
+        self.train = train
+        #self.check_heatmaps = in_config.DATA.CHECK_HEATMAP
+        self.NUM_RES = [4, 2]
+        self.NEW_RES = 512
+
+        ''' It's used for checking first call. When it's true,
+         heatmaps will be printed in seperately'''
+        #self.flag = False           
+        
+        if train:
+            TRAIN_KEY_PATH = os.path.join(self.COCO_PATH,
+                                          in_config.PATH.COCO_TRAIN_KEY_PATH)
+            if not os.path.isfile(TRAIN_KEY_PATH):
+                print("Invalid train key path {}".format(TRAIN_KEY_PATH))
+                assert(0)
+            coco = COCO(TRAIN_KEY_PATH)
+            
+            TRAIN_INS_PATH = os.path.join(self.COCO_PATH,in_config.PATH.COCO_TRAIN_INS_PATH)
+            if not os.path.isfile(VAL_TRAIN_PATH):
+                print("Invalid train ins path {}".format(VAL_TRAIN_PATH))
+                assert(0)
+            coco_bb = COCO(TRAIN_INS_PATH)
+        else:
+            VAL_KEY_PATH = os.path.join(self.COCO_PATH,in_config.PATH.COCO_VAL_KEY_PATH)
+            if not os.path.isfile(VAL_KEY_PATH):
+                print("Invalid validataion key path {}".format(VAL_KEY_PATH))
+                assert(0)
+            coco = COCO(VAL_KEY_PATH)
+
+            VAL_INS_PATH = os.path.join(self.COCO_PATH,in_config.PATH.COCO_VAL_INS_PATH)
+            if not os.path.isfile(VAL_INS_PATH):
+                print("Invalid validation ins path {}".format(VAL_INS_PATH))
+                assert(0)
+            coco_bb = COCO(VAL_INS_PATH)
+
+        
+        self.transforms_image = transforms.Compose(
+            [
+                transforms.Normalize((0.485,0.456,0.406),(0.229,0.224,0.225))
+            ]
+        )
+        
+
+        #get categories - for pose catIds are only person=0
+        catIds = coco.getCatIds(catNms=['person'])
+        #get imageIDs for all associated categories
+        imgIds = coco.getImgIds(catIds=catIds)
+
+        # I save coco to use showAnns() function. 
+        # If it's able to substitue it, this code should be removed
+        self.coco = coco
+        self.data = []
+
+        for i in imgIds:
+            #get person annotation IDs -> to retrieve from cocotools
+            annIds = coco.getAnnIds(imgIds=i, catIds=catIds, iscrowd=False)
+            #get annotations
+            anns = coco.loadAnns(annIds)
+            bb_anns = coco_bb.loadAnns(annIds)
+            img_info = coco_bb.loadImgs(i)
+            height = img_info[0]['height']
+            width = img_info[0]['width']
+
+            data = {}
+            data['image_id'] = i
+            data['height'] = height
+            data['width'] = width
+            data['num_keypoints'] = []
+            data['keypoints'] = []
+            for i, vals in enumerate(anns):
+                if vals['num_keypoints'] < self.config.MINIMUM_KEY:
+                    continue
+                
+                data['num_keypoints'].append(vals['num_keypoints'])
+                data['keypoints'].append(vals['keypoints'])
+            if len(data['num_keypoints'])!=0:
+                self.data.append(data)
+       
+    def __len__(self):
+        if self.config.NUM_TOT_DATA == 0:
+            return len(self.data)
+        return self.config.NUM_TOT_DATA
+        #return len(self.data)
+       
+    def __getitem__(self, id):
+        annotations = self.data[id]
+        img_id = annotations['image_id']
+        keypointss = annotations['keypoints']
+        
+        #load and modify info here
+        # define file name (12 zeros)
+        img_id = str(img_id)
+        img_id = img_id.zfill(12)
+        if self.train:
+            img_name = "images/train2017/"+img_id+".jpg"
+        else:
+            img_name = "images/val2017/"+img_id+".jpg"
+        img_file_name = os.path.join(self.COCO_PATH,img_name)
+        
+        #org_image = img.imread(img_file_name)
+        org_image = Image.open(img_file_name).convert('RGB')
+        org_image = np.array(org_image)/255
+        
+        
+        re_image, new_keyss = self._transform_(org_image,
+                                               self.NEW_RES,
+                                               keypointss)
+        
+        
+        org_image = np.transpose(re_image,[2,0,1])
+        org_image = torch.from_numpy(org_image)        
+        norm_image = self.transforms_image(org_image)
+        
+        
+        heatmaps = []
+        '''make heatmaps'''
+        
+        for i in range(len(self.NUM_RES)):
+            heatmaps.append(self._heatmap_gen_(id,
+                                               new_keyss[i],
+                                               self.NUM_RES[i]))
+        
+        '''calculate # of keys per each part'''
+        
+        num_keys = np.zeros(17)
+        for i in range(len(keypointss)):
+            for j in range(17):
+                if keypointss[i][j*3+2] != 0:
+                    num_keys[j] +=1
+        
+        return norm_image, heatmaps, new_keyss, num_keys, annotations['image_id']
+        
+    
+    def _heatmap_gen_(self, id, keypointss, ratio):
+        anns = self.data[id]
+        n_people = len(anns['num_keypoints'])
+
+        img_width = math.ceil(self.NEW_RES/ratio)
+        img_height = math.ceil(self.NEW_RES/ratio)
+
+        x = np.arange(0,img_width-1,1)
+        y = np.arange(0,img_height-1,1)
+
+        result = np.zeros((1,img_height,img_width),dtype=float)
+        A = 1
+        
+        
+        for i in range(len(keypointss[0])//3):
+            if keypointss[0][i*3+2] != 0:
+                key_x = math.ceil(keypointss[0][i*3])
+                key_y = math.ceil(keypointss[0][i*3+1])
+                #print(i*3+2,":",key_x,",",key_y,",",keypoints[i+2])
+
+                x_i = np.arange(-key_x,img_width-key_x,1,dtype=float)
+                y_i = np.arange(-key_y,img_height-key_y,1,dtype=float)
+
+                x,y = np.meshgrid(x_i,y_i,indexing='xy')
+                d = np.sqrt(x*x+y*y)/(self.config.SIGMA*self.config.SIGMA*2)
+                # A = 1/(2*math.pi*self.config.SIGMA*self.config.SIGMA)
+                v = A * np.exp(-d)
+                
+                result = np.append(result,[v],axis=0)
+                
+            else :
+                v = np.zeros((1,img_height,img_width),dtype=float)
+                result = np.append(result,v,axis=0)
+        result = np.delete(result,0,0)
+        
+        for i in range(n_people-1):
+            for j in range(len(keypointss[i+1])//3):
+                if keypointss[i+1][j*3+2] != 0:
+                    key_x = keypointss[i+1][j*3]
+                    key_y = keypointss[i+1][j*3+1]
+                    
+                    x_i = np.arange(-key_x,img_width-key_x,1,dtype=float)
+                    y_i = np.arange(-key_y,img_height-key_y,1,dtype=float)
+
+                    x,y = np.meshgrid(x_i,y_i,indexing='xy')
+                    d = np.sqrt(x*x+y*y)/(self.config.SIGMA*self.config.SIGMA*2)
+                    # A = 1/(2*math.pi*self.config.SIGMA*self.config.SIGMA)
+                    v = A * np.exp(-d)
+                    
+                    result[j] += v
+        
+        return result
+        
+        
+    def _transform_(self, input_img, NEW_RES, keypointss):
+        '''
+        input_img : numpy img which is scaled by 255. 
+        -> [width, height, 3]
+        New_res : single integer value (side length)
+        '''
+        if input_img.shape[0] > input_img.shape[1]:
+            D_index = 0
+            D = input_img.shape[0]  
+            ND = input_img.shape[1]
+        else:
+            D_index = 1
+            D = input_img.shape[1]
+            ND = input_img.shape[0]
+        
+        Ratio = NEW_RES/D
+        
+        if D_index == 0:
+            new_width = NEW_RES
+            new_height = math.ceil(Ratio*ND)
+            padding = [(NEW_RES-new_height)//2,
+                       math.ceil((NEW_RES-new_height)/2)]
+            result_img = cv2.resize(input_img,
+                                    dsize = (math.ceil(ND*Ratio),NEW_RES),
+                                    interpolation = cv2.INTER_LINEAR)
+            result_img = cv2.copyMakeBorder(result_img,
+                                            0,
+                                            0,
+                                            padding[0],
+                                            padding[1],
+                                            cv2.BORDER_CONSTANT,
+                                            value=[0,0,0])
+        else:
+            new_width = math.ceil(Ratio*ND)
+            new_height = NEW_RES
+            padding = [(NEW_RES-new_width)//2,
+                       math.ceil((NEW_RES-new_width)/2)]
+            result_img = cv2.resize(input_img,
+                                    dsize = (NEW_RES,math.ceil(ND*Ratio)),
+                                    interpolation = cv2.INTER_LINEAR)
+            result_img = cv2.copyMakeBorder(result_img,
+                                            padding[0],
+                                            padding[1],
+                                            0,
+                                            0,
+                                            cv2.BORDER_CONSTANT,
+                                            value=[0,0,0])
+        
+        '''now, calculate key-points positions'''
+        
+        new_keyss = [] 
+        for j in range(len(self.NUM_RES)):
+            
+            new_keys = []
+            for i, keypoints in enumerate(keypointss):
+                key_x = keypoints[0::3]
+                key_y = keypoints[1::3]    
+                new_key = copy.deepcopy(keypoints)
+                if D_index == 0:
+                    new_key[0::3] = [math.ceil((x*Ratio+padding[0])/\
+                                            self.NUM_RES[j]) for x in key_x]
+                    new_key[1::3] = [math.ceil(y*Ratio/self.NUM_RES[j])\
+                                                             for y in key_y]
+                    
+                else:
+                    new_key[0::3] = [math.ceil(x*Ratio/self.NUM_RES[j])\
+                                                             for x in key_x]
+                    new_key[1::3] = [math.ceil((y*Ratio+padding[0])/\
+                                            self.NUM_RES[j]) for y in key_y]
+                    
+                new_keys.append(new_key)
+            new_keyss.append(new_keys)
+        
+        return result_img, np.array(new_keyss)
+                    
+    def COCO_BU_collate_fn(self, batches):
+        max_humans = 0
+        n_humans = np.zeros(1,dtype=np.int)
+        for _, _, keyss, _, _ in batches:
+            n_humans = np.append(n_humans, len(keyss[0]))
+            if max_humans < len(keyss[0]):
+                max_humans = len(keyss[0])
+        n_humans = np.delete(n_humans,0,axis=0)
+        
+        images = np.empty((1,3,self.NEW_RES,self.NEW_RES))
+        heatmapsss = []
+        for i in range(len(self.NUM_RES)):
+            heat_len = self.NEW_RES//self.NUM_RES[i]
+            heatmapsss.append(np.empty((1,17,heat_len,heat_len)))
+        keysss = np.empty((1,len(self.NUM_RES),max_humans,17*3))
+        num_keyss = np.empty((1,17))
+        img_ids = np.empty(1)
+        
+        cnt = 0
+        for norm_image, heatmaps, keyss, num_keys, img_id in batches:
+            images = np.append(images, 
+                               np.expand_dims(norm_image,axis = 0),
+                               axis=0)
+            for i in range(len(self.NUM_RES)):
+                heatmapsss[i] = np.append(heatmapsss[i],
+                                          np.expand_dims(heatmaps[i],axis = 0),
+                                          axis = 0)
+            
+            pad_len = max_humans -n_humans[cnt]
+            ex_keyss = np.expand_dims(keyss,axis=0)
+            if pad_len!=0:
+                pad_keys = np.zeros((1,len(self.NUM_RES),pad_len,17*3))
+                ex_keyss = np.append(ex_keyss,
+                                     pad_keys,
+                                     axis = 2)
+            keysss = np.append(keysss,
+                               ex_keyss,
+                               axis=0)
+            num_keyss = np.append(num_keyss,
+                                  np.expand_dims(num_keys,axis=0),
+                                  axis = 0)
+            img_ids = np.append(img_ids, 
+                                [img_id],
+                                axis = 0)
+            cnt += 1
+
+        for i in range(len(self.NUM_RES)):
+            temp = np.delete(heatmapsss[i],0,axis = 0)
+            heatmapsss[i] = torch.from_numpy(temp)
+        images = np.delete(images,0,axis=0)
+        keysss = np.delete(keysss,0,axis=0)
+        num_keyss = np.delete(num_keyss,0,axis=0)
+        img_ids = np.delete(img_ids,0,axis=0)
+        
+        
+        return torch.from_numpy(images),\
+                heatmapsss,\
+                torch.from_numpy(keysss),\
+                torch.from_numpy(num_keyss),\
+                torch.from_numpy(img_ids)
+
+                
+    def show_heatmaps(self,id,heatmaps,re_image,test=False,debug=0):
+        annotations = self.data[id]
+        img_id = annotations['image_id']
+
+        if heatmaps.shape[0] != 17:
+            print("wrong heatmap size %d"%heatmaps.shape[0])
+            assert(0)
+    
+        img_id = str(img_id)                               # define file name (12 zeros)
+        img_id = img_id.zfill(12)               
+        if self.train:
+            img_name = "images/train2017/"+img_id+".jpg"
+        else:
+            img_name = "images/val2017/"+img_id+".jpg"
+        img_file_name = os.path.join(self.COCO_PATH,img_name)
+        
+        image = img.imread(img_file_name)
+        
+        plt.figure()
+        plt.clf()
+        plt.subplot(5,4,1)
+        plt.imshow(image)
+
+        plt.subplot(5,4,2)
+        plt.imshow(image)
+        self.coco.showAnns([annotations],True)
+
+        plt.subplot(5,4,3)
+        plot_img = re_image.numpy()
+        plot_img = np.transpose(plot_img,[1,2,0])
+        plt.imshow(plot_img)
+
+        max_val = np.max(heatmaps.numpy())
+        print(max_val)
+        for i in range(17):
+            plt.subplot(5,4,4+i)
+            plt.imshow(heatmaps[i]/(max_val+0.0001))
+        if test:
+            plt.savefig(os.path.join(self.SAMPLE_PATH,
+                                     self.THEME+str(id)+"check_heatmaps_out.jpg"))
+        elif debug!=0:
+            plt.savefig(os.path.join(self.SAMPLE_PATH,
+                                     self.THEME+str(debug)+"_"+\
+                                        str(id)+"check_heatmaps_debug.jpg"))
+        else:
+            plt.savefig(os.path.join(self.SAMPLE_PATH,self.THEME+\
+                                        str(id)+"check_heatmaps.jpg"))
+
+        if self.flag and annotations['num_keypoints']>8 and test:
+            for i in range(17):
+                plt.clf()
+                plt.imshow(heatmaps[i]/max_val)
+                plt.savefig(os.path.join(self.SAMPLE_PATH,str(i)+str(id)+"heats.jpg"))
+            self.flag = False
+
+        
+        
+            
+    
+       
+       
         
 # debug section
 if __name__ == "__main__":

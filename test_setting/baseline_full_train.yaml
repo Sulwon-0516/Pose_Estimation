@@ -1,4 +1,5 @@
-GPU_NUM: 0 
+GPU_NUM: 
+- 0 
 IS_TEST: false
 IS_TRAIN: false
 IS_VALID: true
@@ -27,7 +28,6 @@ LOG:
 PATH:
   BEST_FILE: '%s%d_best_model.pt'
   BEST_MODEL_PATH: best
-  MODEL: baseline
   PRED_NAME: '%s_result_%d.json'
   PRED_PATH: prediction
 TEST:

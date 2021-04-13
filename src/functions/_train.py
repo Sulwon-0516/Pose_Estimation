@@ -1,7 +1,10 @@
 import torch
 import torch.utils.data
 import visdom
+import json
 
+
+from pytictoc import TicToc
 from torch.autograd import Variable
 from ..utils.tools import logger
 #from ..utils.monitor import VisdomLinePlotter
@@ -14,21 +17,22 @@ def _train(
                 dataset,
                 train_dataloader,
                 epoch, 
-                config, 
-                n_steps, 
+                config,  
                 lr_log, 
                 device, 
                 is_first=False, 
                 loss_mask = None, 
                 debug = False):
     
-
+    t = TicToc()
     epoch_loss = 0
     n_data = 0
     n_debug = config.TRAIN.TEST_PER_BATCH
     for i,data in enumerate(train_dataloader):
-        image, heatmaps, _ , ids, keypoints, _ = data
+        t.tic()
+        image, heatmaps, _ , ids, keypoints, _, img_ids = data
         image, heatmaps = image.float().to(device), heatmaps.float().to(device)
+
 
         output = model(image)
         step_loss = criterion(output,heatmaps)
@@ -49,17 +53,17 @@ def _train(
         
         '''debug''' 
         # draw output heatmaps
-        if debug:
+        if debug and config.VIS.IS_USE:
             vis_heat = visdom.Visdom(env="heatmap")
             if epoch==0:
                 for j in range(config.TRAIN.TEST_PER_BATCH):
                     vis_heat.delete_env(env = "heatmap_"+str(j))
-            cpu_output = output[0].detach().cpu()
+            cpu_output = output.detach().cpu()
             cpu_output = torch.abs(cpu_output.unsqueeze(1))
             opts=dict(title="{}_{}_heatmap".format(epoch,step_loss))
             for j in range(ids.shape[0]):
                 if n_debug>0:
-                    vis_heat.images(cpu_output,env = "heatmap_"+str(j),opts=opts)
+                    vis_heat.images(cpu_output[j],env = "heatmap_"+str(j),opts=opts)
                     '''dataset.show_heatmaps(ids[j],
                                           cpu_output[j],
                                           image[j].cpu(),
@@ -83,35 +87,30 @@ def _train(
             log = config.LOG.STEP_FORMAT%(epoch,
                                           config.TRAIN.EPOCH,
                                           i,
-                                          step_loss/image.shape[0])
+                                          step_loss)
             logger(lr_log, config)
             logger(log, config)
+            print(log)
 
         # draw graph loss
-        if i%config.VIS.STEP_FREQ == 0:
-            vis_x = torch.Tensor([epoch*len(train_dataloader)+i])
-            vis_y = step_loss.unsqueeze(0)
-            visualizer.plot("main_loss","mean loss","log10_loss",vis_x,torch.log10(vis_y))
-
-       
-
-
-
-        # get model kernel images
-
-
-        # draw step-wise loss
-
+        if config.VIS.IS_USE:
+            if i%config.VIS.STEP_FREQ == 0:
+                vis_x = torch.Tensor([epoch*len(train_dataloader)+i])
+                vis_y = step_loss.unsqueeze(0)
+                visualizer.plot("main_loss","mean loss","log10_loss",vis_x,torch.log10(vis_y))
 
 
         epoch_loss += step_loss.detach()* image.shape[0]
         n_data += image.shape[0]
+        
+        
+        t.toc()
 
-    epoch_loss /= n_data
+    epoch_loss =  epoch_loss/n_data
         
     log = config.LOG.EPOCH_FORMAT%(epoch,config.TRAIN.EPOCH,epoch_loss)
     logger(log,config)
     ### Logger should be called.
     # log for epoch_loss
 
-    return epoch_loss
+    return epoch_loss.cpu()

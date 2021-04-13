@@ -16,8 +16,13 @@ def main():
 
     args = input_argparser(SETTING_PATH)
 
-    os.environ["CUDA_VISIBLE_DEVICES"] = str(config.GPU_NUM)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    cuda_sets = ""
+    for i in range(len(config.GPU_NUM)-1):
+        cuda_sets = cuda_sets + str(config.GPU_NUM[i]) + ","
+    cuda_sets = cuda_sets + str(config.GPU_NUM[len(config.GPU_NUM)-1])
+    os.environ["CUDA_VISIBLE_DEVICES"] = cuda_sets
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # from config file.
     if config.IS_TRAIN:

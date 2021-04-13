@@ -1,11 +1,16 @@
-GPU_NUM: 1
-IS_TEST: true
+GPU_NUM: 
+- 1
+- 2
+- 3
+IS_PARALLEL: true
 IS_TRAIN: false
+IS_TEST: true
 IS_VALID: false
 MODEL: HRNet
-THEME: HRNet_full
+THEME: full_train_trial6
 TYPE: 2
 DATA:
+  MINIMUM_KEY: 1
   CHECK_HEATMAP: 0
   GAUSSIAN_SCALE: 1
   HEIGHT: 256
@@ -27,43 +32,44 @@ LOG:
 PATH:
   BEST_FILE: '%s%d_best_model.pt'
   BEST_MODEL_PATH: best
-  MODEL: HRNet
   PRED_NAME: '%s_result_%d.json'
   PRED_PATH: prediction
 TEST:
-  NUM_WORKER: 8
-  BATCH_SIZE: 32
+  NUM_WORKER: 32
+  BATCH_SIZE: 256
   FLIP_ENSEMBLE: false
   GET_RESULT: true
   IS_TEST: false
-  MODEL_FILE: HRNet_first_re_HRNet6352_best_model.pt
+  MODEL_FILE: full_train_trial5_HRNet6352_best_model.pt
   MODEL_PATH: result/%s/best/
   SAVE_HEATMAP: 10
   SAVE_IMG_PER_BATCH: 2
   SAVE_PREDICTED: true
 TRAIN:
-  NUM_WORKER: 8
-  BATCH_SIZE: 32
+  NUM_WORKER: 24
+  BATCH_SIZE: 128
   CHECK_FREQ: 30
   DECAY_RATE: 0.1
-  EPOCH: 210
+  EPOCH: 300
   IS_LOSS_MASK: true
   IS_SCHED: true
-  IS_SHUFFLE: false
+  IS_SHUFFLE: true
   LOAD_PREV: false
   LOAD_PREV_OPTIM: true
   LOAD_PREV_SCHED: false
   LOSS: MSE
-  LR: 0.001
-  MILTESTONES:
-  - 170
-  - 200
-  OPTIM: Adam
-  PREV_MODEL: HRNet_first_re_HRNet6352_best_model.pt
+  LR: 0.01
+  SCHED: ReduceLROnPlateau
+  MILTESTONES: 
+  - 90
+  - 150
+  - 180
+  OPTIM: SGD
+  PREV_MODEL: full_train_trial5_HRNet6352_best_model.pt
   PREV_PATH: '%s/best'
   SCHED: MultiStepLR
   TEST_EPOCH: 0
-  TEST_PER_BATCH: 0
+  TEST_PER_BATCH: 5
 VAL:
   IS_TRAIN: false
-  RES_FILE: 5
+  RES_FILE: 28

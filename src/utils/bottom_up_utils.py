@@ -6,6 +6,77 @@ SIGMA = 1
 
 
 
+class AELoss(nn.ModuleList):
+    def __init__(self, B_size, NUM_RES, sigma = SIGMA, N_joints = 17):
+        super(AELoss, self).__init__()
+        self.b_size = B_size
+        self.NUM_RES = NUM_RES
+        self.N_JOITNS = N_joints
+        self.sigma = sigma
+        
+    
+    def SingleOutput_AELoss(self, keypoints, tag_maps):
+        num_humans = 0
+    
+        loss = 0 
+        avg_human = []
+        for i, human in enumerate(keypoints):
+            tags = []
+            for j in range(tag_maps.shape[0]):
+                if human[j*3+2] != 0:
+                    tags.append(tag_maps[j,human[j*3],human[j*3+1]])
+            
+            if len(tags) == 0:
+                avg_human.append(0)
+            else:
+                tags = torch.stack(tags)
+                avg_tag = torch.mean(tags)
+                avg_human.append(avg_tag)
+                num_humans +=1
+
+                '''calculate each human tag loss'''
+                tags = tags - avg_human
+                tags = tags ** 2
+                loss += torch.sum(tags)
+        loss = loss / num_humans
+        
+        avg_human = torch.stack(avg_human)
+        ''' calculate dividing tag loss'''
+        grid_x, grid_y = torch.meshgrid(avg_human,avg_human)
+        diff = grid_x-grid_y
+        loss_map = torch.exp(-diff**2/(2*sigma**2))
+        loss += torch.sum(loss_map)/(num_humans**2)
+
+        return loss
+    
+    def forward(self, keypointss, tag_mapsss):
+        with torch.autograd.detect_anomaly():
+            '''
+            keypoints : single batch keypoints.
+            tag_mapss : single batch list of list of tag maps
+            sigma : sigma of the ae loss
+            IS_SUM : if it's true, sum all loss from all levels and return
+            (when enought GPU Mems)
+            '''
+            
+            losses = torch.zeros(self.b_size)
+            
+
+            for i in range(b_size):
+                tags = [tag_mapsss[0][i], tag_mapsss[1][i]]
+                
+                for j,ratio in enumerate(self.NUM_RES):
+                    losses[i] += self.SingleOutput_AELoss(keypointss[i][j],
+                                                          tag_maps[i][j])
+                if IS_SUM:
+                    losses[i] = temp.sum() 
+                else:
+                    losses[i] = temp
+            return losses
+        
+        
+        
+
 def SingleOutput_AELoss(keypoints, tag_maps, sigma, device):
     '''
     <Input>
@@ -21,33 +92,31 @@ def SingleOutput_AELoss(keypoints, tag_maps, sigma, device):
     num_humans = len(keypoints)
     
     loss = 0 
-    avg_human = torch.empty(num_humans,device = device)
-    sum_tags = torch.zeros(2,device = device)
+    avg_human = []
+    sum_tags = torch.autograd.Variable(torch.zeros(num_humans,2,device = device))
     for i, human in enumerate(keypoints):
         tags = []
-        sum_tags[1] = 0
-        sum_tags[0] = 0
+        sum_tags[i][1] = 0
+        sum_tags[i][0] = 0
         for j in range(tag_maps.shape[0]):
             if human[j*3+2] != 0:
                 tags.append(tag_maps[j,human[j*3],human[j*3+1]])
-                sum_tags[0] += tag_maps[j,human[j*3],human[j*3+1]]
-                sum_tags[1]+=1
-        if sum_tags[1] == 0:
-            print("wrong keypoint input")
-            assert(0)
-        
-        avg_tags = sum_tags[0]/sum_tags[1]
-        avg_human[i] = avg_tags
+                sum_tags[i][0] += tag_maps[j,human[j*3],human[j*3+1]]
+                sum_tags[i][1]+=1
+        if sum_tags[i][1] == 0:
+            avg_human.append(0)
+        else:
+            avg_human.append(sum_tags[i][0]/sum_tags[i][1])
 
         '''calculate each human tag loss'''
         tags = torch.Tensor(tags).to(device)
-        tags = tags - avg_tags
+        tags = tags - avg_human[i]
         tags = tags ** 2
         loss += torch.sum(tags)
     loss = loss / num_humans
     
     ''' calculate dividing tag loss'''
-    grid_x, grid_y = torch.meshgird(avg_human,avg_human,device=device)
+    grid_x, grid_y = torch.meshgrid(avg_human,avg_human)
     diff = grid_x-grid_y
     loss_map = torch.exp(-diff**2/(2*sigma**2))
     loss += torch.sum(loss_map)/(num_humans**2)
@@ -61,40 +130,43 @@ def SingleImage_AELoss(keypoints, tag_mapss, scope, device, sigma):
     scope : change of the size. in Higher HRNet, basic value is [4 2]
     '''
 
-    print(3)
 
     loss = torch.empty(len(scope),device=device)
-    resized_keys = torch.Tensor(keypoints).to(device)
-    keys = torch.clone(resized_keys).detach().to(device)
     for i, ratio in enumerate(scope):
-        keys[0::3] = torch.floor(resized_keys[0::3]/scope[i])
-        keys[1::3] = torch.floor(resized_keys[1::3]/scope[i])
-        keys[2::3] = resized_keys[2::3]
-        loss[i] = SingleOutput_AELoss(keys.int(),tag_mapss[i],sigma,device)
+        loss[i] = SingleOutput_AELoss(keypoints[i],tag_mapss[i],sigma,device)
     
     return loss
 
 
 
-def AELoss(keypointss, tag_mapsss, scope, device, sigma = SIGMA, IS_SUM = True):
-    '''
-    keypoints : single batch keypoints.
-    tag_mapss : single batch list of list of tag maps
-    sigma : sigma of the ae loss
-    IS_SUM : if it's true, sum all loss from all levels and return(when enought GPU Mems)
-    '''
-    b_size = len(tag_mapsss)
-    if IS_SUM:
-        losses = torch.empty((b_size),device=device)
-    else:
-        losses = torch.empty((b_size, len(scope)), device=device)
-    
+def AE_Loss(keypointss, tag_mapsss, scope, device, sigma = SIGMA, IS_SUM = True):
+    with torch.autograd.detect_anomaly():
+        '''
+        keypoints : single batch keypoints.
+        tag_mapss : single batch list of list of tag maps
+        sigma : sigma of the ae loss
+        IS_SUM : if it's true, sum all loss from all levels and return
+        (when enought GPU Mems)
+        '''
+        b_size = tag_mapsss[0].shape[0]
+        if IS_SUM:
+            losses = torch.empty((b_size),device=device)
+        else:
+            losses = torch.empty((b_size, len(scope)), device=device)
+        
 
-    for i in range(b_size):
-        tags = [tag_mapsss[0][i], tag_mapsss[1][i]]
-        losses[i] = SingleImage_AELoss(keypointss[i], tags, scope, device, sigma)
-     
-    return losses
+        for i in range(b_size):
+            tags = [tag_mapsss[0][i], tag_mapsss[1][i]]
+            temp = SingleImage_AELoss(keypointss[i], 
+                                        tags, 
+                                        scope, 
+                                        device, 
+                                        sigma)
+            if IS_SUM:
+                losses[i] = temp.sum() 
+            else:
+                losses[i] = temp
+        return losses
     
 
 

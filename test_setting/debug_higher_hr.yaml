@@ -3,9 +3,11 @@ GPU_NUM:
 IS_TEST: false
 IS_TRAIN: true
 IS_VALID: false
-MODEL: HRNet
-THEME: full_model_17ks_trial1
+MODEL: HigherHRNet
+THEME: debug_trial1
 TYPE: 2
+IS_BU: true
+IS_PARALLEL: false
 DATA:
   MINIMUM_KEY: 17
   CHECK_HEATMAP: 0
@@ -20,12 +22,6 @@ DATA:
   SIGMA: 2
   SAVE_RESIZED: false
   LARGE_HEATMAP: false
-LOG:
-  FILE_NAME: '%s_%s_log.txt'
-  FREQ: 1
-  PATH: result/%s/log
-  SAVE_ACC: true
-  SAVE_LOSS: true
 PATH:
   BEST_FILE: '%s%d_best_model.pt'
   BEST_MODEL_PATH: best
@@ -43,11 +39,11 @@ TEST:
   SAVE_IMG_PER_BATCH: 4
   SAVE_PREDICTED: true
 TRAIN:
-  NUM_WORKER: 4
-  BATCH_SIZE: 16
+  NUM_WORKER: 1
+  BATCH_SIZE: 2
   CHECK_FREQ: 200
   DECAY_RATE: 0.1
-  EPOCH: 700
+  EPOCH: 1
   IS_LOSS_MASK: true
   IS_SCHED: true
   IS_SHUFFLE: false
@@ -55,7 +51,7 @@ TRAIN:
   LOAD_PREV_OPTIM: false
   LOAD_PREV_SCHED: false
   LOSS: MSE
-  LR: 0.01
+  LR: 0.1
   MILTESTONES: 
   - 450
   - 600
@@ -66,6 +62,18 @@ TRAIN:
   SCHED: MultiStepLR
   TEST_EPOCH: 30
   TEST_PER_BATCH: 5
+  PRETRAIN: true
+  PRETRAIN_MODEL: full_train_trial1_HRNet10777_best_model.pt
+  PRETRAIN_MODEL_NAME: HRNet
 VAL:
   IS_TRAIN: false
   RES_FILE: 9
+LOG:
+  FILE_NAME: '%s_%s_log.txt'
+  FREQ: 1
+  PATH: result/%s/log
+  SAVE_ACC: true
+  SAVE_LOSS: true
+VIS:
+  IS_USE: true
+  STEP_FREQ: 10

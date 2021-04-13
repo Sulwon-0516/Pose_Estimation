@@ -6,21 +6,23 @@ from torch.autograd import Variable
 from ..dataloader import coco_data_loader
 from pytictoc import TicToc
 
-def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker,device):
-    dataloader = torch.utils.data.DataLoader(dataset = dataset, batch_size = batch_size, shuffle = False, num_workers = num_worker)
-    # load model
-    print(M_PATH)
+def _test(dataset,
+          batch_size,
+          criterion,
+          model,
+          PATH,
+          TITLE,
+          config,
+          num_worker,
+          device,
+          loss_mask=None):
+    dataloader = torch.utils.data.DataLoader(dataset = dataset, 
+                                             batch_size = batch_size, 
+                                             shuffle = False, 
+                                             num_workers = num_worker)
     
     with torch.no_grad():
-        checkpoint = torch.load(M_PATH)
-        model.load_state_dict(checkpoint['model_state_dict'])
         
-        if False:
-            for m in model.modules():
-                if isinstance(m, torch.nn.BatchNorm2d):
-                    m.reset_running_stats
-        
-        model.eval()
         
         n_keys = dataset.__len__()
         tot_data = []
@@ -30,17 +32,26 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
         save_predict_heatmap = config.SAVE_HEATMAP
         for i, data in enumerate(dataloader):
             t.tic()
-            imgs, heatmaps, old_bboxs, ids , keypoints, n_keys = data
+            imgs, heatmaps, old_bboxs, ids , keypoints, n_keys, img_ids = data
             #print(old_bboxs)
-            old_bboxs, keypoints = old_bboxs.to(device), keypoints.to(device)
+            old_bboxs = old_bboxs.to(device)
+            
 
             
             imgs, heatmaps = imgs.float().to(device), heatmaps.float().to(device)
 
 
             p_heatmaps = model(imgs)
-            loss = criterion(heatmaps,p_heatmaps)
+            loss = criterion(p_heatmaps, heatmaps)
             loss = loss.mean(axis = (2,3))
+            
+            
+            if loss_mask != None:
+                mask = loss_mask(keypoints).to(device)
+                loss = loss * mask.float()
+            keypoints = keypoints.to(device)
+        
+        
             
             cpu_p_heatmaps = p_heatmaps.cpu()
             for j in range(ids.shape[0]):
@@ -53,7 +64,7 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
                     re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu(),True)
                 else:
                     re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu())
-                if save_predict_heatmap > 0 and n_keys[j]>8:
+                if save_predict_heatmap > 0 and n_keys[j]<8:
                     print("called")
                     dataset.show_heatmaps(ids[j],cpu_p_heatmaps[j],imgs[j].cpu(),True)
                     save_predict_heatmap -= 1
@@ -61,12 +72,15 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
                 re_anns['score'] = - loss[j].cpu().sum().item()
                 tot_data.append(re_anns)
             
-            tot_loss += loss.cpu().sum(axis = (0,1))
+            
+            loss = loss.mean(axis=(0,1))
+            tot_loss += loss.cpu()*imgs.shape[0]
 
-            print("step %d, loss : %f" %(i,loss.mean()))
+            print("step %d, loss : %f" %(i,loss))
             t.toc() 
         tot_loss = tot_loss/n_keys
-
+        print(tot_loss.shape)
+        print(tot_loss)
 
         # check the path exists.
         Path(PATH.RESULT_PATH).mkdir(exist_ok=True)
@@ -79,5 +93,6 @@ def _test(dataset,batch_size,criterion,model,M_PATH,PATH,TITLE,config,num_worker
         
         with open(file_path,"w") as res_file:
             json.dump(tot_data,res_file)
+        print("saved result at {}".format(res_file))
 
    

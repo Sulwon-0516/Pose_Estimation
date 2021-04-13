@@ -5,11 +5,13 @@ from torchsummaryX import summary
 import visdom
 import time
 
-MAX_SUBNETS = 2
-NUM_STAGE = [1, 2]
+MAX_SUBNETS = 4
+NUM_STAGE = [1, 1, 4, 2]
 BN_MOMENTUM = 0.1
 STEM_RES_CHANNEL = 64
 STAGE_NUM_BLOCK = 4
+BN_TRACK_OPT = True
+
 
 
 class Bottleneck(nn.Module):
@@ -52,13 +54,16 @@ class Bottleneck(nn.Module):
 
         self.BN1 = nn.BatchNorm2d(
                             num_features = 64,
-                            momentum = BN_MOMENTUM)
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
         self.BN2 = nn.BatchNorm2d(
                             num_features = 64,
-                            momentum = BN_MOMENTUM)
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
         self.BN3 = nn.BatchNorm2d(
                             num_features = 64,
-                            momentum = BN_MOMENTUM)
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
 
     def forward(self,input):
         out = self.conv1(input)
@@ -94,10 +99,12 @@ class Img2channel(nn.Module):
 
         self.BN1 = nn.BatchNorm2d(
                             num_features = 64,
-                            momentum= BN_MOMENTUM)
+                            momentum= BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
         self.BN2 = nn.BatchNorm2d(
                             num_features = 64,
-                            momentum= BN_MOMENTUM)
+                            momentum= BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
 
     def forward(self,input):
         out = F.relu(self.BN1(self.conv1(input)))
@@ -127,10 +134,12 @@ class Base_Block(nn.Module):
         
         self.BN1 = nn.BatchNorm2d(
                             num_features = num_channels,
-                            momentum = BN_MOMENTUM)
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
         self.BN2 = nn.BatchNorm2d(
                             num_features = num_channels,
-                            momentum = BN_MOMENTUM)
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT)
 
     def forward(self,input):
         out = F.relu(self.BN1(self.conv1(input)))
@@ -156,27 +165,27 @@ class HRNet_Stage(nn.Module):
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
             self.subNets.append(nn.Sequential(*Blocks).to(device))
+        self.subNets = nn.ModuleList(self.subNets)
         
         '''exchange stage'''
         self.exchanges = []
         for order in range(num_subNets):
             self.exchanges.append(self._exchange_init_(num_channels,num_subNets,order))
+        self.exchanges = nn.ModuleList(self.exchanges)
+
 
         '''expand stage'''
         if is_expand : 
             expand = []
-            expand.append(nn.Conv2d(
-                                    in_channels = num_channels * (2**(num_subNets-1)),
+            expand.append(nn.Conv2d(in_channels = num_channels * (2**(num_subNets-1)),
                                     out_channels = num_channels * (2**num_subNets),
                                     kernel_size = 3,
                                     stride = 2,
                                     padding = (1,1),
-                                    bias = False
-            ))
-            expand.append(nn.BatchNorm2d(
-                                    num_features = num_channels * (2**num_subNets),
-                                    momentum = BN_MOMENTUM
-            ))
+                                    bias = False))
+            expand.append(nn.BatchNorm2d(num_features = num_channels * (2**num_subNets),
+                                         momentum = BN_MOMENTUM,
+                                         track_running_stats=BN_TRACK_OPT))
             expand.append(nn.ReLU())
             self.expand = nn.Sequential(*expand).to(self.device)
 
@@ -192,22 +201,17 @@ class HRNet_Stage(nn.Module):
         if num_up>0:
             for i in range(num_up):
                 module = []
-                module.append(nn.Conv2d(
-                                    in_channels = channels,
-                                    out_channels = channels//(2**(num_up-i)),
-                                    kernel_size = 1,
-                                    stride = 1,
-                                    padding = (0,0),
-                                    bias = False
-                ))
-                module.append(nn.Upsample(
-                                    scale_factor = 2**(num_up-i),
-                                    mode = 'nearest'
-                ))
-                module.append(nn.BatchNorm2d(
-                                    num_features = channels//(2**(num_up-i)),
-                                    momentum = BN_MOMENTUM
-                ))
+                module.append(nn.Conv2d(in_channels = channels,
+                                        out_channels = channels//(2**(num_up-i)),
+                                        kernel_size = 1,
+                                        stride = 1,
+                                        padding = (0,0),
+                                        bias = False))
+                module.append(nn.Upsample(scale_factor = 2**(num_up-i),
+                                          mode = 'nearest'))
+                module.append(nn.BatchNorm2d(num_features = channels//(2**(num_up-i)),
+                                             momentum = BN_MOMENTUM,
+                                             track_running_stats=BN_TRACK_OPT))
                 module.append(nn.ReLU())
                 result.append(nn.Sequential(*module).to(self.device))
         
@@ -226,14 +230,14 @@ class HRNet_Stage(nn.Module):
                                     padding = (1,1),
                                     bias = False
                     ))
-                    module.append(nn.BatchNorm2d(
-                                    num_features = channel*2,
-                                    momentum = BN_MOMENTUM
-                    ))
+                    module.append(nn.BatchNorm2d(num_features = channel*2,
+                                                 momentum = BN_MOMENTUM,
+                                                 track_running_stats=BN_TRACK_OPT))
                     module.append(nn.ReLU())
                     channel = channel*2
                 result.append(nn.Sequential(*module).to(self.device))
         
+        result = nn.ModuleList(result)
         return result
         
     def forward(self,input):
@@ -280,6 +284,7 @@ class HRNet_Final(nn.Module):
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
             self.subNets.append(nn.Sequential(*Blocks).to(device))
+        self.subNets = nn.ModuleList(self.subNets)
 
         '''connect all blocks into one'''
         self.final = self._fusing_(num_channels,num_subNets)
@@ -302,10 +307,12 @@ class HRNet_Final(nn.Module):
             ))
             module.append(nn.BatchNorm2d(
                                 num_features = num_channels,
-                                momentum = BN_MOMENTUM
+                                momentum = BN_MOMENTUM,
+                                track_running_stats=BN_TRACK_OPT
             ))
             module.append(nn.ReLU())
             fuse.append(nn.Sequential(*module).to(self.device))
+        fuse = nn.ModuleList(fuse)
         return fuse
     
     def forward(self,input):
@@ -370,11 +377,13 @@ class back_HRNet(nn.Module):
             ))
             module.append(nn.BatchNorm2d(
                             num_features = N_CHANNELS*(i+1),
-                            momentum = BN_MOMENTUM
+                            momentum = BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT
             ))
             module.append(nn.ReLU())
             self.first_trans.append(nn.Sequential(*module).to(device))
-
+        self.first_trans = nn.ModuleList(self.first_trans)
+        
         if self.num_stage[0] != 1:
             print("setting first stage longer than one isn't implemented yer")
             assert(0)
@@ -383,17 +392,27 @@ class back_HRNet(nn.Module):
         '''from second to fourth stage'''
         self.stages = []
         for step in range(MAX_SUBNETS-1):
-            self.stages.append(self._make_steps_(N_CHANNELS,step+2,N_STAGE[step+1]))
+            if step == MAX_SUBNETS-2:
+                self.stages.append(self._make_steps_(N_CHANNELS,
+                                                     step+2,
+                                                     N_STAGE[step+1],
+                                                     False))
+            else:
+                self.stages.append(self._make_steps_(N_CHANNELS,
+                                                     step+2,
+                                                     N_STAGE[step+1]))
+            
 
-        
+        self.stages = nn.ModuleList(self.stages)
 
-    def _make_steps_(self,N_CHANNELS,num_subNets,num_stage):
+    def _make_steps_(self,N_CHANNELS,num_subNets,num_stage,is_append = True):
         stage = []
         for step in range(num_stage):
             if step != num_stage-1:
                 stage.append(HRNet_Stage(N_CHANNELS,num_subNets,self.device))
             else:
-                stage.append(HRNet_Stage(N_CHANNELS,num_subNets,self.device,True))
+                stage.append(HRNet_Stage(N_CHANNELS,num_subNets,self.device,is_append))
+        stage = nn.ModuleList(stage)
         return stage
 
     def forward(self,input):
@@ -461,7 +480,6 @@ class back_HRNet(nn.Module):
 
         return output
 
-
 class HRNet(nn.Module):
     def __init__(self, 
                  device, 
@@ -497,6 +515,7 @@ class HRNet(nn.Module):
         init_weights(self)
 
     def forward(self,input):
+        #print(input.shape[0])
         output = self.backbone(input)
         if self.version == 2:
             output = self.final(output)
@@ -508,10 +527,11 @@ class HRNet(nn.Module):
 
 
 class Add_Module(nn.Module):
-    def __init__(self,device, N_Module,N_out,N_CHANNEL,N_JOINTS=17):
+    def __init__(self,device,is_debug,N_Module,N_out,N_CHANNEL,N_JOINTS=17):
         super(Add_Module,self).__init__()
         self.device = device
         self.N_Module = N_Module
+        self.is_debug = is_debug
         self.init_conv = nn.Conv2d(
                             in_channels = N_CHANNEL,
                             out_channels = N_JOINTS*2,
@@ -529,9 +549,18 @@ class Add_Module(nn.Module):
                 deconv,res = self._upscale_(N_out,N_out,N_JOINTS)
                 self.deconv_modules.append(deconv)
                 self.res_modules.append(res)
+        
+        self.deconv_modules = nn.ModuleList(self.deconv_modules)
+        self.res_modules = nn.ModuleList(self.res_modules)
+        
+        if is_debug:
+            self.vis = visdom.Visdom(env="HRNet")
+            self.cnt = 0
+            for i in range(N_Module):
+                self.vis.delete_env(env="{}th res".format(i+1))
 
     def _upscale_(self,N_out,N_CHANNEL,N_JOINTS):
-        input_depth = N_CHANNEL+N_JOINTS
+        input_depth = N_CHANNEL+N_JOINTS*2
         deconv_blocks = []
         deconv_blocks.append(nn.ConvTranspose2d(
                             in_channels = input_depth,
@@ -543,7 +572,8 @@ class Add_Module(nn.Module):
                             bias = False))
         deconv_blocks.append(nn.BatchNorm2d(
                             num_features=N_out,
-                            momentum=BN_MOMENTUM))
+                            momentum=BN_MOMENTUM,
+                            track_running_stats=BN_TRACK_OPT))
         deconv_blocks.append(nn.ReLU())
         deconv_block = nn.Sequential(*deconv_blocks).to(self.device)
 
@@ -561,6 +591,18 @@ class Add_Module(nn.Module):
         return deconv_block, res_block
 
     def forward(self, input):
+        
+        print_img = False
+        if self.is_debug:
+            self.cnt += 1
+            if self.cnt == 20:
+                self.cnt = 0
+                print_img = True
+            else:
+                print_img = False   
+        
+        
+        
         feature_out = []
         pose_out = []
         feature_out.append(input)
@@ -571,12 +613,19 @@ class Add_Module(nn.Module):
             deconv_output = self.deconv_modules[i](deconv_input)
             feature_out.append(deconv_output)
             pose_out.append(self.res_modules[i](deconv_output))
+            
+        if print_img:
+            for i in range(self.N_Module):
+                self.vis.image(pose_out[i][0],
+                               env = "{}th res".format(i+1))
+                
         
         return pose_out
 
 class HigherHRNet(nn.Module):
     def __init__(self, 
                  device, 
+                 is_debug= False,
                  N_Module = 1, 
                  N_out = 48,
                  N_RESIDUAL = STAGE_NUM_BLOCK,
@@ -587,12 +636,28 @@ class HigherHRNet(nn.Module):
         super(HigherHRNet,self).__init__()
         self.NORMALIZE = True
         self.N_Module = N_Module
+        self.id_debug = is_debug
+        
+        
+        self.add_mod = Add_Module(device,is_debug, N_Module, N_out, N_CHANNELS)
+        self.backbone = back_HRNet(device, 
+                                   is_debug,
+                                   N_RESIDUAL, 
+                                   MAX_SUBNETS, 
+                                   N_STAGE, 
+                                   N_CHANNELS)
+        self.to_single = HRNet_Final(N_CHANNELS,
+                                     MAX_SUBNETS,
+                                     device)
+        
         '''Add some code for pre-trained HRNet loader'''
-        self.backbone = back_HRNet(device, N_RESIDUAL, MAX_SUBNETS, N_STAGE, N_CHANNELS)
-        self.add_mod = Add_Module(device,N_Module, N_out, N_CHANNELS)
-
+        
+        init_weights(self)
+        
+        
     def forward(self,input):
         output = self.backbone(input)
+        output = self.to_single(output)
         outputs = self.add_mod(output)
 
         return outputs

@@ -6,6 +6,7 @@ from . import _init_paths
 from baseline import baseline
 from HRNet import HRNet
 from .functions._test import _test
+from .utils.tools import coco_loss_mask
 from .dataloader.coco_data_loader import COCO_DataLoader
 
 def test(config,device):
@@ -33,7 +34,7 @@ def test(config,device):
     else:
         print("wrong model name : {}".format(config.MODEL))
         assert(0)
-    model.to(device)
+    
     
     M_PATH = config.TEST.MODEL_PATH%config.MODEL
     if not os.path.isdir(M_PATH):
@@ -43,14 +44,21 @@ def test(config,device):
     if not os.path.isfile(M_PATH):
         print("Invalid model path {}".format(M_PATH))
         assert(0)
+        
+        
+    checkpoint = torch.load(M_PATH)
+    model.load_state_dict(checkpoint['model_state_dict'], strict = False)
+    model.to(device)
+    model.eval()
+    
     _test(
             dataset = dataset,
             batch_size = batch_size,
             criterion = criterion, 
             model = model, 
-            M_PATH = M_PATH, 
             PATH = config.PATH, 
             TITLE = config.THEME, 
             config = config.TEST, 
             num_worker = config.TEST.NUM_WORKER,
-            device = device)
+            device = device,
+            loss_mask = coco_loss_mask)

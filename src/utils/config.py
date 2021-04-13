@@ -4,7 +4,7 @@ import yaml
 
 config = edict()
 
-config.GPU_NUM = 0                  # use GPU? 
+config.GPU_NUM = [0, 1]                  # use GPU? 
 config.THEME = "trial"              # Name of the training
 config.IS_TRAIN = True              # Ask whether train this time
 config.IS_TEST = True               # Ask whether test
@@ -12,7 +12,8 @@ config.IS_VALID = True              # Aske whether valid
 config.MODEL = "baseline"           # It's model name
 config.TYPE = 2                     # 0 : segm, 1 : bbox, 2 : keypoints
 config.AE = False                   # Use associative Embedding or not
-
+config.IS_BU = False
+config.IS_PARALLEL = False
 
 # Data preprocessing configs
 config.DATA = edict()
@@ -61,6 +62,11 @@ config.TRAIN.IS_SHUFFLE = False
 config.TRAIN.BATCH_SIZE = 8         # from baseline paper, used 128 batch
 config.TRAIN.EPOCH = 140
 config.TRAIN.CHECK_FREQ = 20        # Every (freq) epoch, save the model
+
+config.TRAIN.PRETRAIN = False
+config.TRAIN.PRETRAIN_MODEL = "full_train_trial1_HRNet10777_best_model.pt"
+config.TRAIN.PRETRAIN_PATH = '%s/best'
+config.TRAIN.PRETRAIN_MODEL_NAME = 'HRNet'
 
 
 # Test Hyper params
