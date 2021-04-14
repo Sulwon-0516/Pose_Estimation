@@ -1,0 +1,99 @@
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 37.546661
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 37.546291
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 37.546253
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 240.385178
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 22.365772
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 158.900620
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 49.862717
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 37.546715
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 240.388153
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 22.379953
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 158.893738
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 49.850780
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 88.325516
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 31.064388
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 132.541000
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 129.136429
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 189.549606
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 69.989967
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 92.217697
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 109.135490
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 120.461952
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 85.996407
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 72.213814
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 196.832504
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 139.770218
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 121.769226
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 26.280884
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 84.184105
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 19.007326
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 53.272861
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 149.569260
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 68.259331
+Epoch 0, lr 0.001
+
+(0,600) 1 step loss : 126.856529

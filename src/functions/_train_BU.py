@@ -51,11 +51,12 @@ def _train_BU(
             AE_outputs.append(AE_output)
         
         
+        '''
         # debug -------------------
         for i in range(len(NUM_RES)):
             print(heatmap_output[i].device)
             print(AE_outputs[i].device)
-                
+        '''     
         
         '''Calculate Heatmap Loss First'''
         heat_loss = 0
@@ -64,10 +65,8 @@ def _train_BU(
             temp = criterion(heatmap_outputs[i], heatmaps[i])
             heat_loss += temp.mean(axis=(2,3))
             
-        AE_loss += AELoss(keypointss=keypointss,
-                          tag_mapsss=AE_outputs,
-                          scope = NUM_RES,
-                          device = device)
+        AE_loss += loss_func(keypointss=keypointss,
+                          tag_mapsss=AE_outputs)
         
             
         

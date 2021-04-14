@@ -34,15 +34,15 @@ def train(config,device):
     elif config.MODEL == "HRNet":
         model = HRNet(device,False)
     elif config.MODEL == "HigherHRNet":
-        model = HigherHRNet(device,True)
+        model = HigherHRNet(device,False)
         if config.TRAIN.PRETRAIN:
             path = os.path.join(
                         config.PATH.RESULT_PATH,
                         config.TRAIN.PRETRAIN_PATH%(config.TRAIN.PRETRAIN_MODEL_NAME))
             file_name = config.TRAIN.PRETRAIN_MODEL
-            load_pretrain_model(path=path,
-                                file=file_name,
-                                model=model)
+            model = load_pretrain_model(path=path,
+                                        file=file_name,
+                                        model=model)
         model.train()
             
         
@@ -125,7 +125,8 @@ def train(config,device):
                                 num_workers = config.TRAIN.NUM_WORKER,
                                 collate_fn = train_dataset.COCO_BU_collate_fn)
         loss_func = AELoss(B_size = config.TRAIN.BATCH_SIZE,
-                           NUM_RES = [4,2])
+                           NUM_RES = [4,2],
+                           device = device)
         loss_func.to(device)
         
     else:
@@ -190,22 +191,21 @@ def train(config,device):
 
 
         if config.IS_BU:
-            with torch.autograd.detect_anomaly():
-                avg_loss = _train_BU(
-                                    visualizer = vis_graph,
-                                    model = model,
-                                    criterion = criterion,
-                                    optimizer = optimizer,
-                                    dataset = train_dataset,
-                                    train_dataloader = train_dataloader,
-                                    epoch = epoch,
-                                    config = config,
-                                    lr_log = lr_state_log,
-                                    device = device,
-                                    loss_func = loss_func,
-                                    is_first = is_first,
-                                    loss_mask = coco_loss_mask,
-                                    debug = is_debug)
+            avg_loss = _train_BU(
+                                visualizer = vis_graph,
+                                model = model,
+                                criterion = criterion,
+                                optimizer = optimizer,
+                                dataset = train_dataset,
+                                train_dataloader = train_dataloader,
+                                epoch = epoch,
+                                config = config,
+                                lr_log = lr_state_log,
+                                device = device,
+                                loss_func = loss_func,
+                                is_first = is_first,
+                                loss_mask = coco_loss_mask,
+                                debug = is_debug)
             
         else:
             avg_loss = _train(

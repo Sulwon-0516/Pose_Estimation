@@ -515,7 +515,7 @@ class HRNet(nn.Module):
         init_weights(self)
 
     def forward(self,input):
-        #print(input.shape[0])
+        print(input.shape[0])
         output = self.backbone(input)
         if self.version == 2:
             output = self.final(output)
@@ -616,7 +616,7 @@ class Add_Module(nn.Module):
             
         if print_img:
             for i in range(self.N_Module):
-                self.vis.image(pose_out[i][0],
+                self.vis.images(pose_out[i][0].unsqueeze(1),
                                env = "{}th res".format(i+1))
                 
         

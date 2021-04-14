@@ -553,7 +553,7 @@ class COCO_DataLoader(Dataset):
                                 dtype=float)
 
                 x,y = np.meshgrid(x_i,y_i,indexing='xy')
-                d = np.sqrt(x*x + y*y)/(self.config.SIGMA*self.config.SIGMA*2)
+                d = (x*x + y*y)/(self.config.SIGMA*self.config.SIGMA*2)
                 # A = 1/(2*math.pi*self.config.SIGMA*self.config.SIGMA)
                 A = 1
                 v = A * np.exp(-d)
@@ -891,18 +891,21 @@ class Bottom_Up_COCO_DataLoader(Dataset):
                 key_y = keypoints[1::3]    
                 new_key = copy.deepcopy(keypoints)
                 if D_index == 0:
-                    new_key[0::3] = [math.ceil((x*Ratio+padding[0])/\
+                    new_key[0::3] = [math.floor((x*Ratio+padding[0])/\
                                             self.NUM_RES[j]) for x in key_x]
-                    new_key[1::3] = [math.ceil(y*Ratio/self.NUM_RES[j])\
+                    new_key[1::3] = [math.floor(y*Ratio/self.NUM_RES[j])\
                                                              for y in key_y]
                     
                 else:
-                    new_key[0::3] = [math.ceil(x*Ratio/self.NUM_RES[j])\
+                    new_key[0::3] = [math.floor(x*Ratio/self.NUM_RES[j])\
                                                              for x in key_x]
-                    new_key[1::3] = [math.ceil((y*Ratio+padding[0])/\
+                    new_key[1::3] = [math.floor((y*Ratio+padding[0])/\
                                             self.NUM_RES[j]) for y in key_y]
-                    
+                
                 new_keys.append(new_key)
+                
+                
+                    
             new_keyss.append(new_keys)
         
         return result_img, np.array(new_keyss)

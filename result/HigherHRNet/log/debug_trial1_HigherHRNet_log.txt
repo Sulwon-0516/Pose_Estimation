@@ -88,3 +88,178 @@ Epoch 0, lr 0.1
 Epoch 0, lr 0.1
 
 (0,1) 1 step loss : 357.975006
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 2.020573
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 836.486450
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 144.475525
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 117.797272
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 2.015586
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 837.647705
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 114.400589
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 71.212212
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 2.013344
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 1020.201782
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 135.139359
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 90.619431
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 120.526688
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 491.176056
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 51.559204
+Epoch 0, lr 0.1
+
+(0,1) 1 step loss : 58.985863
+(0,1) epoch loss : 246.277710
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 2.022017
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 1090.838989
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 53.217453
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 92.345505
+(0,5) epoch loss : 309.605957
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 111.054199
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 160.738617
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 49.792263
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 33.458611
+(1,5) epoch loss : 88.760925
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 16.031555
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 31.267138
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 22.861431
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 10.644272
+(2,5) epoch loss : 20.201099
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 14.065989
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 27.407568
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 2356.620850
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 41.656700
+(3,5) epoch loss : 609.937805
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 147.362381
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 82.563263
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 140.167297
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 2.017243
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 2481.159912
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 283.213989
+Epoch 0, lr 0.1
+
+(0,5) 1 step loss : 259.202454
+(0,5) epoch loss : 756.398376
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 368.734100
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 2940.210938
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 197.284393
+Epoch 1, lr 0.1
+
+(1,5) 1 step loss : 104.593773
+(1,5) epoch loss : 902.705811
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 134.793121
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 359.045013
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 182.513840
+Epoch 2, lr 0.1
+
+(2,5) 1 step loss : 164.242462
+(2,5) epoch loss : 210.148621
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 92.103065
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 77.964233
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 45.555786
+Epoch 3, lr 0.1
+
+(3,5) 1 step loss : 42.439510
+(3,5) epoch loss : 64.515648
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 23.545387
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 24.559525
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 31.740776
+Epoch 4, lr 0.1
+
+(4,5) 1 step loss : 13.885192
+(4,5) epoch loss : 23.432720

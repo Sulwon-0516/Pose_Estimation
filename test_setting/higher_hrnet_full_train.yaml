@@ -1,15 +1,18 @@
 GPU_NUM: 
 - 0
+- 1
+- 2
+- 3
+IS_PARALLEL: true
 IS_TEST: false
 IS_TRAIN: true
 IS_VALID: false
 MODEL: HigherHRNet
-THEME: debug_trial1
+THEME: full_train_trial_1
 TYPE: 2
 IS_BU: true
-IS_PARALLEL: false
 DATA:
-  MINIMUM_KEY: 17
+  MINIMUM_KEY: 1
   CHECK_HEATMAP: 0
   GAUSSIAN_SCALE: 1
   HEIGHT: 256
@@ -18,7 +21,7 @@ DATA:
   IS_INCRE: false
   IS_ROTATE: false
   IS_SCALE: false
-  NUM_TOT_DATA: 16
+  NUM_TOT_DATA: 0
   SIGMA: 2
   SAVE_RESIZED: false
   LARGE_HEATMAP: false
@@ -39,11 +42,11 @@ TEST:
   SAVE_IMG_PER_BATCH: 4
   SAVE_PREDICTED: true
 TRAIN:
-  NUM_WORKER: 1
-  BATCH_SIZE: 4
-  CHECK_FREQ: 200
+  NUM_WORKER: 12
+  BATCH_SIZE: 16
+  CHECK_FREQ: 30
   DECAY_RATE: 0.1
-  EPOCH: 5
+  EPOCH: 600
   IS_LOSS_MASK: true
   IS_SCHED: true
   IS_SHUFFLE: false
@@ -51,11 +54,10 @@ TRAIN:
   LOAD_PREV_OPTIM: false
   LOAD_PREV_SCHED: false
   LOSS: MSE
-  LR: 0.1
+  LR: 0.001
   MILTESTONES: 
-  - 450
-  - 600
-  - 680
+  - 400
+  - 520
   OPTIM: Adam
   PREV_MODEL: HRNet_2_16_wo_sum_trial3_HRNet16_best_model.pt
   PREV_PATH: '%s/best'
@@ -63,7 +65,7 @@ TRAIN:
   TEST_EPOCH: 30
   TEST_PER_BATCH: 5
   PRETRAIN: true
-  PRETRAIN_MODEL: full_train_trial1_HRNet10777_best_model.pt
+  PRETRAIN_MODEL: full_train_trial5_HRNet6352_best_model.pt
   PRETRAIN_MODEL_NAME: HRNet
 VAL:
   IS_TRAIN: false
