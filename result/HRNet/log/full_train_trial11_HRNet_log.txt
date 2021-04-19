@@ -1,0 +1,7486 @@
+Epoch 0, lr 0.001
+
+(0,210) 0 step loss : 0.002205
+Epoch 0, lr 0.001
+
+(0,210) 1 step loss : 0.018311
+Epoch 0, lr 0.001
+
+(0,210) 2 step loss : 0.002407
+Epoch 0, lr 0.001
+
+(0,210) 3 step loss : 0.001618
+Epoch 0, lr 0.001
+
+(0,210) 4 step loss : 0.002235
+Epoch 0, lr 0.001
+
+(0,210) 5 step loss : 0.003462
+Epoch 0, lr 0.001
+
+(0,210) 6 step loss : 0.002942
+Epoch 0, lr 0.001
+
+(0,210) 7 step loss : 0.002808
+Epoch 0, lr 0.001
+
+(0,210) 8 step loss : 0.002412
+Epoch 0, lr 0.001
+
+(0,210) 9 step loss : 0.002097
+Epoch 0, lr 0.001
+
+(0,210) 10 step loss : 0.001839
+Epoch 0, lr 0.001
+
+(0,210) 11 step loss : 0.001429
+Epoch 0, lr 0.001
+
+(0,210) 12 step loss : 0.001344
+Epoch 0, lr 0.001
+
+(0,210) 13 step loss : 0.001383
+Epoch 0, lr 0.001
+
+(0,210) 14 step loss : 0.001343
+Epoch 0, lr 0.001
+
+(0,210) 15 step loss : 0.001353
+Epoch 0, lr 0.001
+
+(0,210) 16 step loss : 0.001291
+Epoch 0, lr 0.001
+
+(0,210) 17 step loss : 0.001454
+Epoch 0, lr 0.001
+
+(0,210) 18 step loss : 0.001410
+Epoch 0, lr 0.001
+
+(0,210) 19 step loss : 0.001360
+Epoch 0, lr 0.001
+
+(0,210) 20 step loss : 0.001279
+Epoch 0, lr 0.001
+
+(0,210) 21 step loss : 0.001368
+Epoch 0, lr 0.001
+
+(0,210) 22 step loss : 0.001236
+Epoch 0, lr 0.001
+
+(0,210) 23 step loss : 0.001325
+Epoch 0, lr 0.001
+
+(0,210) 24 step loss : 0.001353
+Epoch 0, lr 0.001
+
+(0,210) 25 step loss : 0.001189
+Epoch 0, lr 0.001
+
+(0,210) 26 step loss : 0.001216
+Epoch 0, lr 0.001
+
+(0,210) 27 step loss : 0.001293
+Epoch 0, lr 0.001
+
+(0,210) 28 step loss : 0.001279
+Epoch 0, lr 0.001
+
+(0,210) 29 step loss : 0.001160
+Epoch 0, lr 0.001
+
+(0,210) 30 step loss : 0.001264
+Epoch 0, lr 0.001
+
+(0,210) 31 step loss : 0.001161
+Epoch 0, lr 0.001
+
+(0,210) 32 step loss : 0.001195
+Epoch 0, lr 0.001
+
+(0,210) 33 step loss : 0.001254
+Epoch 0, lr 0.001
+
+(0,210) 34 step loss : 0.001220
+Epoch 0, lr 0.001
+
+(0,210) 35 step loss : 0.001320
+Epoch 0, lr 0.001
+
+(0,210) 36 step loss : 0.001247
+Epoch 0, lr 0.001
+
+(0,210) 37 step loss : 0.001281
+Epoch 0, lr 0.001
+
+(0,210) 38 step loss : 0.001171
+Epoch 0, lr 0.001
+
+(0,210) 39 step loss : 0.001290
+Epoch 0, lr 0.001
+
+(0,210) 40 step loss : 0.001199
+Epoch 0, lr 0.001
+
+(0,210) 41 step loss : 0.001210
+Epoch 0, lr 0.001
+
+(0,210) 42 step loss : 0.001281
+Epoch 0, lr 0.001
+
+(0,210) 43 step loss : 0.001259
+Epoch 0, lr 0.001
+
+(0,210) 44 step loss : 0.001282
+Epoch 0, lr 0.001
+
+(0,210) 45 step loss : 0.001270
+Epoch 0, lr 0.001
+
+(0,210) 46 step loss : 0.001220
+Epoch 0, lr 0.001
+
+(0,210) 47 step loss : 0.001196
+Epoch 0, lr 0.001
+
+(0,210) 48 step loss : 0.001240
+Epoch 0, lr 0.001
+
+(0,210) 49 step loss : 0.001305
+(0,210) epoch loss : 0.001849
+Epoch 1, lr 0.001
+
+(1,210) 0 step loss : 0.001230
+Epoch 1, lr 0.001
+
+(1,210) 1 step loss : 0.001289
+Epoch 1, lr 0.001
+
+(1,210) 2 step loss : 0.001241
+Epoch 1, lr 0.001
+
+(1,210) 3 step loss : 0.001287
+Epoch 1, lr 0.001
+
+(1,210) 4 step loss : 0.001145
+Epoch 1, lr 0.001
+
+(1,210) 5 step loss : 0.001227
+Epoch 1, lr 0.001
+
+(1,210) 6 step loss : 0.001253
+Epoch 1, lr 0.001
+
+(1,210) 7 step loss : 0.001180
+Epoch 1, lr 0.001
+
+(1,210) 8 step loss : 0.001218
+Epoch 1, lr 0.001
+
+(1,210) 9 step loss : 0.001197
+Epoch 1, lr 0.001
+
+(1,210) 10 step loss : 0.001281
+Epoch 1, lr 0.001
+
+(1,210) 11 step loss : 0.001229
+Epoch 1, lr 0.001
+
+(1,210) 12 step loss : 0.001245
+Epoch 1, lr 0.001
+
+(1,210) 13 step loss : 0.001289
+Epoch 1, lr 0.001
+
+(1,210) 14 step loss : 0.001190
+Epoch 1, lr 0.001
+
+(1,210) 15 step loss : 0.001287
+Epoch 1, lr 0.001
+
+(1,210) 16 step loss : 0.001183
+Epoch 1, lr 0.001
+
+(1,210) 17 step loss : 0.001261
+Epoch 1, lr 0.001
+
+(1,210) 18 step loss : 0.001258
+Epoch 1, lr 0.001
+
+(1,210) 19 step loss : 0.001195
+Epoch 1, lr 0.001
+
+(1,210) 20 step loss : 0.001150
+Epoch 1, lr 0.001
+
+(1,210) 21 step loss : 0.001240
+Epoch 1, lr 0.001
+
+(1,210) 22 step loss : 0.001262
+Epoch 1, lr 0.001
+
+(1,210) 23 step loss : 0.001238
+Epoch 1, lr 0.001
+
+(1,210) 24 step loss : 0.001185
+Epoch 1, lr 0.001
+
+(1,210) 25 step loss : 0.001174
+Epoch 1, lr 0.001
+
+(1,210) 26 step loss : 0.001236
+Epoch 1, lr 0.001
+
+(1,210) 27 step loss : 0.001227
+Epoch 1, lr 0.001
+
+(1,210) 28 step loss : 0.001186
+Epoch 1, lr 0.001
+
+(1,210) 29 step loss : 0.001272
+Epoch 1, lr 0.001
+
+(1,210) 30 step loss : 0.001219
+Epoch 1, lr 0.001
+
+(1,210) 31 step loss : 0.001242
+Epoch 1, lr 0.001
+
+(1,210) 32 step loss : 0.001224
+Epoch 1, lr 0.001
+
+(1,210) 33 step loss : 0.001228
+Epoch 1, lr 0.001
+
+(1,210) 34 step loss : 0.001197
+Epoch 1, lr 0.001
+
+(1,210) 35 step loss : 0.001184
+Epoch 1, lr 0.001
+
+(1,210) 36 step loss : 0.001175
+Epoch 1, lr 0.001
+
+(1,210) 37 step loss : 0.001161
+Epoch 1, lr 0.001
+
+(1,210) 38 step loss : 0.001292
+Epoch 1, lr 0.001
+
+(1,210) 39 step loss : 0.001204
+Epoch 1, lr 0.001
+
+(1,210) 40 step loss : 0.001210
+Epoch 1, lr 0.001
+
+(1,210) 41 step loss : 0.001171
+Epoch 1, lr 0.001
+
+(1,210) 42 step loss : 0.001284
+Epoch 1, lr 0.001
+
+(1,210) 43 step loss : 0.001237
+Epoch 1, lr 0.001
+
+(1,210) 44 step loss : 0.001179
+Epoch 1, lr 0.001
+
+(1,210) 45 step loss : 0.001193
+Epoch 1, lr 0.001
+
+(1,210) 46 step loss : 0.001164
+Epoch 1, lr 0.001
+
+(1,210) 47 step loss : 0.001280
+Epoch 1, lr 0.001
+
+(1,210) 48 step loss : 0.001207
+Epoch 1, lr 0.001
+
+(1,210) 49 step loss : 0.001230
+(1,210) epoch loss : 0.001223
+Epoch 2, lr 0.001
+
+(2,210) 0 step loss : 0.001230
+Epoch 2, lr 0.001
+
+(2,210) 1 step loss : 0.001130
+Epoch 2, lr 0.001
+
+(2,210) 2 step loss : 0.001223
+Epoch 2, lr 0.001
+
+(2,210) 3 step loss : 0.001169
+Epoch 2, lr 0.001
+
+(2,210) 4 step loss : 0.001180
+Epoch 2, lr 0.001
+
+(2,210) 5 step loss : 0.001205
+Epoch 2, lr 0.001
+
+(2,210) 6 step loss : 0.001244
+Epoch 2, lr 0.001
+
+(2,210) 7 step loss : 0.001252
+Epoch 2, lr 0.001
+
+(2,210) 8 step loss : 0.001185
+Epoch 2, lr 0.001
+
+(2,210) 9 step loss : 0.001250
+Epoch 2, lr 0.001
+
+(2,210) 10 step loss : 0.001157
+Epoch 2, lr 0.001
+
+(2,210) 11 step loss : 0.001216
+Epoch 2, lr 0.001
+
+(2,210) 12 step loss : 0.001184
+Epoch 2, lr 0.001
+
+(2,210) 13 step loss : 0.001244
+Epoch 2, lr 0.001
+
+(2,210) 14 step loss : 0.001205
+Epoch 2, lr 0.001
+
+(2,210) 15 step loss : 0.001191
+Epoch 2, lr 0.001
+
+(2,210) 16 step loss : 0.001193
+Epoch 2, lr 0.001
+
+(2,210) 17 step loss : 0.001144
+Epoch 2, lr 0.001
+
+(2,210) 18 step loss : 0.001208
+Epoch 2, lr 0.001
+
+(2,210) 19 step loss : 0.001135
+Epoch 2, lr 0.001
+
+(2,210) 20 step loss : 0.001185
+Epoch 2, lr 0.001
+
+(2,210) 21 step loss : 0.001231
+Epoch 2, lr 0.001
+
+(2,210) 22 step loss : 0.001249
+Epoch 2, lr 0.001
+
+(2,210) 23 step loss : 0.001173
+Epoch 2, lr 0.001
+
+(2,210) 24 step loss : 0.001165
+Epoch 2, lr 0.001
+
+(2,210) 25 step loss : 0.001218
+Epoch 2, lr 0.001
+
+(2,210) 26 step loss : 0.001189
+Epoch 2, lr 0.001
+
+(2,210) 27 step loss : 0.001185
+Epoch 2, lr 0.001
+
+(2,210) 28 step loss : 0.001153
+Epoch 2, lr 0.001
+
+(2,210) 29 step loss : 0.001191
+Epoch 2, lr 0.001
+
+(2,210) 30 step loss : 0.001271
+Epoch 2, lr 0.001
+
+(2,210) 31 step loss : 0.001192
+Epoch 2, lr 0.001
+
+(2,210) 32 step loss : 0.001146
+Epoch 2, lr 0.001
+
+(2,210) 33 step loss : 0.001225
+Epoch 2, lr 0.001
+
+(2,210) 34 step loss : 0.001206
+Epoch 2, lr 0.001
+
+(2,210) 35 step loss : 0.001184
+Epoch 2, lr 0.001
+
+(2,210) 36 step loss : 0.001169
+Epoch 2, lr 0.001
+
+(2,210) 37 step loss : 0.001142
+Epoch 2, lr 0.001
+
+(2,210) 38 step loss : 0.001148
+Epoch 2, lr 0.001
+
+(2,210) 39 step loss : 0.001147
+Epoch 2, lr 0.001
+
+(2,210) 40 step loss : 0.001170
+Epoch 2, lr 0.001
+
+(2,210) 41 step loss : 0.001154
+Epoch 2, lr 0.001
+
+(2,210) 42 step loss : 0.001222
+Epoch 2, lr 0.001
+
+(2,210) 43 step loss : 0.001224
+Epoch 2, lr 0.001
+
+(2,210) 44 step loss : 0.001182
+Epoch 2, lr 0.001
+
+(2,210) 45 step loss : 0.001162
+Epoch 2, lr 0.001
+
+(2,210) 46 step loss : 0.001157
+Epoch 2, lr 0.001
+
+(2,210) 47 step loss : 0.001199
+Epoch 2, lr 0.001
+
+(2,210) 48 step loss : 0.001238
+Epoch 2, lr 0.001
+
+(2,210) 49 step loss : 0.001219
+(2,210) epoch loss : 0.001193
+Epoch 3, lr 0.001
+
+(3,210) 0 step loss : 0.001180
+Epoch 3, lr 0.001
+
+(3,210) 1 step loss : 0.001226
+Epoch 3, lr 0.001
+
+(3,210) 2 step loss : 0.001186
+Epoch 3, lr 0.001
+
+(3,210) 3 step loss : 0.001191
+Epoch 3, lr 0.001
+
+(3,210) 4 step loss : 0.001087
+Epoch 3, lr 0.001
+
+(3,210) 5 step loss : 0.001208
+Epoch 3, lr 0.001
+
+(3,210) 6 step loss : 0.001164
+Epoch 3, lr 0.001
+
+(3,210) 7 step loss : 0.001099
+Epoch 3, lr 0.001
+
+(3,210) 8 step loss : 0.001170
+Epoch 3, lr 0.001
+
+(3,210) 9 step loss : 0.001172
+Epoch 3, lr 0.001
+
+(3,210) 10 step loss : 0.001257
+Epoch 3, lr 0.001
+
+(3,210) 11 step loss : 0.001191
+Epoch 3, lr 0.001
+
+(3,210) 12 step loss : 0.001072
+Epoch 3, lr 0.001
+
+(3,210) 13 step loss : 0.001165
+Epoch 3, lr 0.001
+
+(3,210) 14 step loss : 0.001185
+Epoch 3, lr 0.001
+
+(3,210) 15 step loss : 0.001193
+Epoch 3, lr 0.001
+
+(3,210) 16 step loss : 0.001128
+Epoch 3, lr 0.001
+
+(3,210) 17 step loss : 0.001141
+Epoch 3, lr 0.001
+
+(3,210) 18 step loss : 0.001166
+Epoch 3, lr 0.001
+
+(3,210) 19 step loss : 0.001146
+Epoch 3, lr 0.001
+
+(3,210) 20 step loss : 0.001188
+Epoch 3, lr 0.001
+
+(3,210) 21 step loss : 0.001192
+Epoch 3, lr 0.001
+
+(3,210) 22 step loss : 0.001178
+Epoch 3, lr 0.001
+
+(3,210) 23 step loss : 0.001172
+Epoch 3, lr 0.001
+
+(3,210) 24 step loss : 0.001198
+Epoch 3, lr 0.001
+
+(3,210) 25 step loss : 0.001135
+Epoch 3, lr 0.001
+
+(3,210) 26 step loss : 0.001143
+Epoch 3, lr 0.001
+
+(3,210) 27 step loss : 0.001171
+Epoch 3, lr 0.001
+
+(3,210) 28 step loss : 0.001197
+Epoch 3, lr 0.001
+
+(3,210) 29 step loss : 0.001229
+Epoch 3, lr 0.001
+
+(3,210) 30 step loss : 0.001176
+Epoch 3, lr 0.001
+
+(3,210) 31 step loss : 0.001104
+Epoch 3, lr 0.001
+
+(3,210) 32 step loss : 0.001119
+Epoch 3, lr 0.001
+
+(3,210) 33 step loss : 0.001147
+Epoch 3, lr 0.001
+
+(3,210) 34 step loss : 0.001234
+Epoch 3, lr 0.001
+
+(3,210) 35 step loss : 0.001156
+Epoch 3, lr 0.001
+
+(3,210) 36 step loss : 0.001183
+Epoch 3, lr 0.001
+
+(3,210) 37 step loss : 0.001172
+Epoch 3, lr 0.001
+
+(3,210) 38 step loss : 0.001123
+Epoch 3, lr 0.001
+
+(3,210) 39 step loss : 0.001201
+Epoch 3, lr 0.001
+
+(3,210) 40 step loss : 0.001162
+Epoch 3, lr 0.001
+
+(3,210) 41 step loss : 0.001117
+Epoch 3, lr 0.001
+
+(3,210) 42 step loss : 0.001171
+Epoch 3, lr 0.001
+
+(3,210) 43 step loss : 0.001136
+Epoch 3, lr 0.001
+
+(3,210) 44 step loss : 0.001123
+Epoch 3, lr 0.001
+
+(3,210) 45 step loss : 0.001165
+Epoch 3, lr 0.001
+
+(3,210) 46 step loss : 0.001228
+Epoch 3, lr 0.001
+
+(3,210) 47 step loss : 0.001052
+Epoch 3, lr 0.001
+
+(3,210) 48 step loss : 0.001106
+Epoch 3, lr 0.001
+
+(3,210) 49 step loss : 0.001094
+(3,210) epoch loss : 0.001163
+Epoch 4, lr 0.001
+
+(4,210) 0 step loss : 0.001087
+Epoch 4, lr 0.001
+
+(4,210) 1 step loss : 0.001145
+Epoch 4, lr 0.001
+
+(4,210) 2 step loss : 0.001177
+Epoch 4, lr 0.001
+
+(4,210) 3 step loss : 0.001109
+Epoch 4, lr 0.001
+
+(4,210) 4 step loss : 0.001215
+Epoch 4, lr 0.001
+
+(4,210) 5 step loss : 0.001097
+Epoch 4, lr 0.001
+
+(4,210) 6 step loss : 0.001095
+Epoch 4, lr 0.001
+
+(4,210) 7 step loss : 0.001215
+Epoch 4, lr 0.001
+
+(4,210) 8 step loss : 0.001229
+Epoch 4, lr 0.001
+
+(4,210) 9 step loss : 0.001116
+Epoch 4, lr 0.001
+
+(4,210) 10 step loss : 0.001169
+Epoch 4, lr 0.001
+
+(4,210) 11 step loss : 0.001152
+Epoch 4, lr 0.001
+
+(4,210) 12 step loss : 0.001167
+Epoch 4, lr 0.001
+
+(4,210) 13 step loss : 0.001141
+Epoch 4, lr 0.001
+
+(4,210) 14 step loss : 0.001145
+Epoch 4, lr 0.001
+
+(4,210) 15 step loss : 0.001124
+Epoch 4, lr 0.001
+
+(4,210) 16 step loss : 0.001124
+Epoch 4, lr 0.001
+
+(4,210) 17 step loss : 0.001153
+Epoch 4, lr 0.001
+
+(4,210) 18 step loss : 0.001127
+Epoch 4, lr 0.001
+
+(4,210) 19 step loss : 0.001186
+Epoch 4, lr 0.001
+
+(4,210) 20 step loss : 0.001144
+Epoch 4, lr 0.001
+
+(4,210) 21 step loss : 0.001049
+Epoch 4, lr 0.001
+
+(4,210) 22 step loss : 0.001058
+Epoch 4, lr 0.001
+
+(4,210) 23 step loss : 0.001094
+Epoch 4, lr 0.001
+
+(4,210) 24 step loss : 0.001135
+Epoch 4, lr 0.001
+
+(4,210) 25 step loss : 0.001160
+Epoch 4, lr 0.001
+
+(4,210) 26 step loss : 0.001139
+Epoch 4, lr 0.001
+
+(4,210) 27 step loss : 0.001114
+Epoch 4, lr 0.001
+
+(4,210) 28 step loss : 0.001179
+Epoch 4, lr 0.001
+
+(4,210) 29 step loss : 0.001138
+Epoch 4, lr 0.001
+
+(4,210) 30 step loss : 0.001097
+Epoch 4, lr 0.001
+
+(4,210) 31 step loss : 0.001138
+Epoch 4, lr 0.001
+
+(4,210) 32 step loss : 0.001153
+Epoch 4, lr 0.001
+
+(4,210) 33 step loss : 0.001163
+Epoch 4, lr 0.001
+
+(4,210) 34 step loss : 0.001140
+Epoch 4, lr 0.001
+
+(4,210) 35 step loss : 0.001108
+Epoch 4, lr 0.001
+
+(4,210) 36 step loss : 0.001113
+Epoch 4, lr 0.001
+
+(4,210) 37 step loss : 0.001181
+Epoch 4, lr 0.001
+
+(4,210) 38 step loss : 0.001164
+Epoch 4, lr 0.001
+
+(4,210) 39 step loss : 0.001129
+Epoch 4, lr 0.001
+
+(4,210) 40 step loss : 0.001094
+Epoch 4, lr 0.001
+
+(4,210) 41 step loss : 0.001183
+Epoch 4, lr 0.001
+
+(4,210) 42 step loss : 0.001142
+Epoch 4, lr 0.001
+
+(4,210) 43 step loss : 0.001074
+Epoch 4, lr 0.001
+
+(4,210) 44 step loss : 0.001175
+Epoch 4, lr 0.001
+
+(4,210) 45 step loss : 0.001125
+Epoch 4, lr 0.001
+
+(4,210) 46 step loss : 0.001187
+Epoch 4, lr 0.001
+
+(4,210) 47 step loss : 0.001075
+Epoch 4, lr 0.001
+
+(4,210) 48 step loss : 0.001100
+Epoch 4, lr 0.001
+
+(4,210) 49 step loss : 0.001088
+(4,210) epoch loss : 0.001137
+Epoch 5, lr 0.001
+
+(5,210) 0 step loss : 0.001133
+Epoch 5, lr 0.001
+
+(5,210) 1 step loss : 0.001141
+Epoch 5, lr 0.001
+
+(5,210) 2 step loss : 0.001142
+Epoch 5, lr 0.001
+
+(5,210) 3 step loss : 0.001067
+Epoch 5, lr 0.001
+
+(5,210) 4 step loss : 0.001190
+Epoch 5, lr 0.001
+
+(5,210) 5 step loss : 0.001134
+Epoch 5, lr 0.001
+
+(5,210) 6 step loss : 0.001089
+Epoch 5, lr 0.001
+
+(5,210) 7 step loss : 0.001192
+Epoch 5, lr 0.001
+
+(5,210) 8 step loss : 0.001172
+Epoch 5, lr 0.001
+
+(5,210) 9 step loss : 0.001168
+Epoch 5, lr 0.001
+
+(5,210) 10 step loss : 0.001102
+Epoch 5, lr 0.001
+
+(5,210) 11 step loss : 0.001118
+Epoch 5, lr 0.001
+
+(5,210) 12 step loss : 0.001175
+Epoch 5, lr 0.001
+
+(5,210) 13 step loss : 0.001111
+Epoch 5, lr 0.001
+
+(5,210) 14 step loss : 0.001167
+Epoch 5, lr 0.001
+
+(5,210) 15 step loss : 0.001127
+Epoch 5, lr 0.001
+
+(5,210) 16 step loss : 0.001065
+Epoch 5, lr 0.001
+
+(5,210) 17 step loss : 0.001096
+Epoch 5, lr 0.001
+
+(5,210) 18 step loss : 0.001131
+Epoch 5, lr 0.001
+
+(5,210) 19 step loss : 0.001121
+Epoch 5, lr 0.001
+
+(5,210) 20 step loss : 0.001058
+Epoch 5, lr 0.001
+
+(5,210) 21 step loss : 0.001098
+Epoch 5, lr 0.001
+
+(5,210) 22 step loss : 0.001061
+Epoch 5, lr 0.001
+
+(5,210) 23 step loss : 0.001094
+Epoch 5, lr 0.001
+
+(5,210) 24 step loss : 0.001114
+Epoch 5, lr 0.001
+
+(5,210) 25 step loss : 0.001125
+Epoch 5, lr 0.001
+
+(5,210) 26 step loss : 0.001092
+Epoch 5, lr 0.001
+
+(5,210) 27 step loss : 0.001198
+Epoch 5, lr 0.001
+
+(5,210) 28 step loss : 0.001115
+Epoch 5, lr 0.001
+
+(5,210) 29 step loss : 0.001100
+Epoch 5, lr 0.001
+
+(5,210) 30 step loss : 0.001107
+Epoch 5, lr 0.001
+
+(5,210) 31 step loss : 0.001125
+Epoch 5, lr 0.001
+
+(5,210) 32 step loss : 0.001038
+Epoch 5, lr 0.001
+
+(5,210) 33 step loss : 0.001105
+Epoch 5, lr 0.001
+
+(5,210) 34 step loss : 0.001130
+Epoch 5, lr 0.001
+
+(5,210) 35 step loss : 0.001090
+Epoch 5, lr 0.001
+
+(5,210) 36 step loss : 0.001093
+Epoch 5, lr 0.001
+
+(5,210) 37 step loss : 0.001089
+Epoch 5, lr 0.001
+
+(5,210) 38 step loss : 0.001149
+Epoch 5, lr 0.001
+
+(5,210) 39 step loss : 0.001125
+Epoch 5, lr 0.001
+
+(5,210) 40 step loss : 0.001086
+Epoch 5, lr 0.001
+
+(5,210) 41 step loss : 0.001115
+Epoch 5, lr 0.001
+
+(5,210) 42 step loss : 0.001099
+Epoch 5, lr 0.001
+
+(5,210) 43 step loss : 0.001156
+Epoch 5, lr 0.001
+
+(5,210) 44 step loss : 0.001109
+Epoch 5, lr 0.001
+
+(5,210) 45 step loss : 0.001074
+Epoch 5, lr 0.001
+
+(5,210) 46 step loss : 0.001143
+Epoch 5, lr 0.001
+
+(5,210) 47 step loss : 0.001099
+Epoch 5, lr 0.001
+
+(5,210) 48 step loss : 0.001094
+Epoch 5, lr 0.001
+
+(5,210) 49 step loss : 0.001136
+(5,210) epoch loss : 0.001117
+Epoch 6, lr 0.001
+
+(6,210) 0 step loss : 0.001096
+Epoch 6, lr 0.001
+
+(6,210) 1 step loss : 0.001067
+Epoch 6, lr 0.001
+
+(6,210) 2 step loss : 0.001042
+Epoch 6, lr 0.001
+
+(6,210) 3 step loss : 0.001105
+Epoch 6, lr 0.001
+
+(6,210) 4 step loss : 0.001048
+Epoch 6, lr 0.001
+
+(6,210) 5 step loss : 0.001075
+Epoch 6, lr 0.001
+
+(6,210) 6 step loss : 0.001085
+Epoch 6, lr 0.001
+
+(6,210) 7 step loss : 0.001078
+Epoch 6, lr 0.001
+
+(6,210) 8 step loss : 0.001107
+Epoch 6, lr 0.001
+
+(6,210) 9 step loss : 0.001166
+Epoch 6, lr 0.001
+
+(6,210) 10 step loss : 0.001187
+Epoch 6, lr 0.001
+
+(6,210) 11 step loss : 0.001157
+Epoch 6, lr 0.001
+
+(6,210) 12 step loss : 0.001085
+Epoch 6, lr 0.001
+
+(6,210) 13 step loss : 0.001100
+Epoch 6, lr 0.001
+
+(6,210) 14 step loss : 0.001045
+Epoch 6, lr 0.001
+
+(6,210) 15 step loss : 0.001198
+Epoch 6, lr 0.001
+
+(6,210) 16 step loss : 0.001134
+Epoch 6, lr 0.001
+
+(6,210) 17 step loss : 0.001081
+Epoch 6, lr 0.001
+
+(6,210) 18 step loss : 0.001096
+Epoch 6, lr 0.001
+
+(6,210) 19 step loss : 0.001065
+Epoch 6, lr 0.001
+
+(6,210) 20 step loss : 0.001121
+Epoch 6, lr 0.001
+
+(6,210) 21 step loss : 0.001127
+Epoch 6, lr 0.001
+
+(6,210) 22 step loss : 0.001101
+Epoch 6, lr 0.001
+
+(6,210) 23 step loss : 0.001087
+Epoch 6, lr 0.001
+
+(6,210) 24 step loss : 0.001143
+Epoch 6, lr 0.001
+
+(6,210) 25 step loss : 0.001105
+Epoch 6, lr 0.001
+
+(6,210) 26 step loss : 0.001043
+Epoch 6, lr 0.001
+
+(6,210) 27 step loss : 0.001076
+Epoch 6, lr 0.001
+
+(6,210) 28 step loss : 0.001085
+Epoch 6, lr 0.001
+
+(6,210) 29 step loss : 0.001022
+Epoch 6, lr 0.001
+
+(6,210) 30 step loss : 0.001121
+Epoch 6, lr 0.001
+
+(6,210) 31 step loss : 0.001133
+Epoch 6, lr 0.001
+
+(6,210) 32 step loss : 0.001129
+Epoch 6, lr 0.001
+
+(6,210) 33 step loss : 0.001079
+Epoch 6, lr 0.001
+
+(6,210) 34 step loss : 0.001056
+Epoch 6, lr 0.001
+
+(6,210) 35 step loss : 0.001170
+Epoch 6, lr 0.001
+
+(6,210) 36 step loss : 0.001127
+Epoch 6, lr 0.001
+
+(6,210) 37 step loss : 0.001134
+Epoch 6, lr 0.001
+
+(6,210) 38 step loss : 0.001144
+Epoch 6, lr 0.001
+
+(6,210) 39 step loss : 0.001086
+Epoch 6, lr 0.001
+
+(6,210) 40 step loss : 0.001125
+Epoch 6, lr 0.001
+
+(6,210) 41 step loss : 0.001117
+Epoch 6, lr 0.001
+
+(6,210) 42 step loss : 0.001114
+Epoch 6, lr 0.001
+
+(6,210) 43 step loss : 0.001096
+Epoch 6, lr 0.001
+
+(6,210) 44 step loss : 0.001010
+Epoch 6, lr 0.001
+
+(6,210) 45 step loss : 0.001120
+Epoch 6, lr 0.001
+
+(6,210) 46 step loss : 0.001078
+Epoch 6, lr 0.001
+
+(6,210) 47 step loss : 0.001046
+Epoch 6, lr 0.001
+
+(6,210) 48 step loss : 0.001091
+Epoch 6, lr 0.001
+
+(6,210) 49 step loss : 0.001050
+(6,210) epoch loss : 0.001099
+Epoch 7, lr 0.001
+
+(7,210) 0 step loss : 0.001073
+Epoch 7, lr 0.001
+
+(7,210) 1 step loss : 0.001094
+Epoch 7, lr 0.001
+
+(7,210) 2 step loss : 0.001079
+Epoch 7, lr 0.001
+
+(7,210) 3 step loss : 0.001050
+Epoch 7, lr 0.001
+
+(7,210) 4 step loss : 0.001076
+Epoch 7, lr 0.001
+
+(7,210) 5 step loss : 0.001125
+Epoch 7, lr 0.001
+
+(7,210) 6 step loss : 0.001169
+Epoch 7, lr 0.001
+
+(7,210) 7 step loss : 0.001102
+Epoch 7, lr 0.001
+
+(7,210) 8 step loss : 0.001071
+Epoch 7, lr 0.001
+
+(7,210) 9 step loss : 0.001138
+Epoch 7, lr 0.001
+
+(7,210) 10 step loss : 0.001176
+Epoch 7, lr 0.001
+
+(7,210) 11 step loss : 0.001027
+Epoch 7, lr 0.001
+
+(7,210) 12 step loss : 0.001133
+Epoch 7, lr 0.001
+
+(7,210) 13 step loss : 0.001048
+Epoch 7, lr 0.001
+
+(7,210) 14 step loss : 0.001172
+Epoch 7, lr 0.001
+
+(7,210) 15 step loss : 0.001032
+Epoch 7, lr 0.001
+
+(7,210) 16 step loss : 0.001097
+Epoch 7, lr 0.001
+
+(7,210) 17 step loss : 0.001032
+Epoch 7, lr 0.001
+
+(7,210) 18 step loss : 0.001081
+Epoch 7, lr 0.001
+
+(7,210) 19 step loss : 0.001124
+Epoch 7, lr 0.001
+
+(7,210) 20 step loss : 0.001082
+Epoch 7, lr 0.001
+
+(7,210) 21 step loss : 0.001120
+Epoch 7, lr 0.001
+
+(7,210) 22 step loss : 0.001076
+Epoch 7, lr 0.001
+
+(7,210) 23 step loss : 0.001127
+Epoch 7, lr 0.001
+
+(7,210) 24 step loss : 0.001011
+Epoch 7, lr 0.001
+
+(7,210) 25 step loss : 0.001118
+Epoch 7, lr 0.001
+
+(7,210) 26 step loss : 0.001026
+Epoch 7, lr 0.001
+
+(7,210) 27 step loss : 0.001043
+Epoch 7, lr 0.001
+
+(7,210) 28 step loss : 0.001112
+Epoch 7, lr 0.001
+
+(7,210) 29 step loss : 0.001062
+Epoch 7, lr 0.001
+
+(7,210) 30 step loss : 0.001076
+Epoch 7, lr 0.001
+
+(7,210) 31 step loss : 0.001043
+Epoch 7, lr 0.001
+
+(7,210) 32 step loss : 0.001054
+Epoch 7, lr 0.001
+
+(7,210) 33 step loss : 0.001041
+Epoch 7, lr 0.001
+
+(7,210) 34 step loss : 0.001046
+Epoch 7, lr 0.001
+
+(7,210) 35 step loss : 0.001175
+Epoch 7, lr 0.001
+
+(7,210) 36 step loss : 0.001082
+Epoch 7, lr 0.001
+
+(7,210) 37 step loss : 0.001069
+Epoch 7, lr 0.001
+
+(7,210) 38 step loss : 0.001068
+Epoch 7, lr 0.001
+
+(7,210) 39 step loss : 0.001060
+Epoch 7, lr 0.001
+
+(7,210) 40 step loss : 0.001114
+Epoch 7, lr 0.001
+
+(7,210) 41 step loss : 0.001140
+Epoch 7, lr 0.001
+
+(7,210) 42 step loss : 0.001071
+Epoch 7, lr 0.001
+
+(7,210) 43 step loss : 0.001054
+Epoch 7, lr 0.001
+
+(7,210) 44 step loss : 0.001162
+Epoch 7, lr 0.001
+
+(7,210) 45 step loss : 0.001103
+Epoch 7, lr 0.001
+
+(7,210) 46 step loss : 0.001015
+Epoch 7, lr 0.001
+
+(7,210) 47 step loss : 0.001115
+Epoch 7, lr 0.001
+
+(7,210) 48 step loss : 0.001080
+Epoch 7, lr 0.001
+
+(7,210) 49 step loss : 0.001021
+(7,210) epoch loss : 0.001086
+Epoch 8, lr 0.001
+
+(8,210) 0 step loss : 0.001050
+Epoch 8, lr 0.001
+
+(8,210) 1 step loss : 0.001159
+Epoch 8, lr 0.001
+
+(8,210) 2 step loss : 0.001052
+Epoch 8, lr 0.001
+
+(8,210) 3 step loss : 0.001090
+Epoch 8, lr 0.001
+
+(8,210) 4 step loss : 0.001031
+Epoch 8, lr 0.001
+
+(8,210) 5 step loss : 0.001028
+Epoch 8, lr 0.001
+
+(8,210) 6 step loss : 0.001039
+Epoch 8, lr 0.001
+
+(8,210) 7 step loss : 0.001080
+Epoch 8, lr 0.001
+
+(8,210) 8 step loss : 0.001058
+Epoch 8, lr 0.001
+
+(8,210) 9 step loss : 0.001073
+Epoch 8, lr 0.001
+
+(8,210) 10 step loss : 0.001025
+Epoch 8, lr 0.001
+
+(8,210) 11 step loss : 0.001065
+Epoch 8, lr 0.001
+
+(8,210) 12 step loss : 0.001022
+Epoch 8, lr 0.001
+
+(8,210) 13 step loss : 0.001094
+Epoch 8, lr 0.001
+
+(8,210) 14 step loss : 0.001100
+Epoch 8, lr 0.001
+
+(8,210) 15 step loss : 0.001021
+Epoch 8, lr 0.001
+
+(8,210) 16 step loss : 0.000991
+Epoch 8, lr 0.001
+
+(8,210) 17 step loss : 0.001116
+Epoch 8, lr 0.001
+
+(8,210) 18 step loss : 0.001085
+Epoch 8, lr 0.001
+
+(8,210) 19 step loss : 0.001021
+Epoch 8, lr 0.001
+
+(8,210) 20 step loss : 0.001036
+Epoch 8, lr 0.001
+
+(8,210) 21 step loss : 0.001085
+Epoch 8, lr 0.001
+
+(8,210) 22 step loss : 0.001100
+Epoch 8, lr 0.001
+
+(8,210) 23 step loss : 0.001037
+Epoch 8, lr 0.001
+
+(8,210) 24 step loss : 0.001085
+Epoch 8, lr 0.001
+
+(8,210) 25 step loss : 0.001045
+Epoch 8, lr 0.001
+
+(8,210) 26 step loss : 0.001134
+Epoch 8, lr 0.001
+
+(8,210) 27 step loss : 0.001077
+Epoch 8, lr 0.001
+
+(8,210) 28 step loss : 0.001099
+Epoch 8, lr 0.001
+
+(8,210) 29 step loss : 0.001094
+Epoch 8, lr 0.001
+
+(8,210) 30 step loss : 0.001010
+Epoch 8, lr 0.001
+
+(8,210) 31 step loss : 0.001034
+Epoch 8, lr 0.001
+
+(8,210) 32 step loss : 0.001109
+Epoch 8, lr 0.001
+
+(8,210) 33 step loss : 0.001066
+Epoch 8, lr 0.001
+
+(8,210) 34 step loss : 0.001044
+Epoch 8, lr 0.001
+
+(8,210) 35 step loss : 0.001095
+Epoch 8, lr 0.001
+
+(8,210) 36 step loss : 0.001131
+Epoch 8, lr 0.001
+
+(8,210) 37 step loss : 0.001074
+Epoch 8, lr 0.001
+
+(8,210) 38 step loss : 0.001141
+Epoch 8, lr 0.001
+
+(8,210) 39 step loss : 0.001087
+Epoch 8, lr 0.001
+
+(8,210) 40 step loss : 0.001108
+Epoch 8, lr 0.001
+
+(8,210) 41 step loss : 0.001056
+Epoch 8, lr 0.001
+
+(8,210) 42 step loss : 0.001075
+Epoch 8, lr 0.001
+
+(8,210) 43 step loss : 0.001110
+Epoch 8, lr 0.001
+
+(8,210) 44 step loss : 0.001109
+Epoch 8, lr 0.001
+
+(8,210) 45 step loss : 0.001135
+Epoch 8, lr 0.001
+
+(8,210) 46 step loss : 0.001064
+Epoch 8, lr 0.001
+
+(8,210) 47 step loss : 0.001078
+Epoch 8, lr 0.001
+
+(8,210) 48 step loss : 0.001068
+Epoch 8, lr 0.001
+
+(8,210) 49 step loss : 0.001072
+(8,210) epoch loss : 0.001073
+Epoch 9, lr 0.001
+
+(9,210) 0 step loss : 0.001083
+Epoch 9, lr 0.001
+
+(9,210) 1 step loss : 0.001033
+Epoch 9, lr 0.001
+
+(9,210) 2 step loss : 0.001071
+Epoch 9, lr 0.001
+
+(9,210) 3 step loss : 0.001008
+Epoch 9, lr 0.001
+
+(9,210) 4 step loss : 0.001051
+Epoch 9, lr 0.001
+
+(9,210) 5 step loss : 0.001010
+Epoch 9, lr 0.001
+
+(9,210) 6 step loss : 0.001093
+Epoch 9, lr 0.001
+
+(9,210) 7 step loss : 0.001045
+Epoch 9, lr 0.001
+
+(9,210) 8 step loss : 0.001024
+Epoch 9, lr 0.001
+
+(9,210) 9 step loss : 0.001069
+Epoch 9, lr 0.001
+
+(9,210) 10 step loss : 0.001097
+Epoch 9, lr 0.001
+
+(9,210) 11 step loss : 0.001047
+Epoch 9, lr 0.001
+
+(9,210) 12 step loss : 0.001080
+Epoch 9, lr 0.001
+
+(9,210) 13 step loss : 0.000999
+Epoch 9, lr 0.001
+
+(9,210) 14 step loss : 0.001106
+Epoch 9, lr 0.001
+
+(9,210) 15 step loss : 0.001111
+Epoch 9, lr 0.001
+
+(9,210) 16 step loss : 0.001071
+Epoch 9, lr 0.001
+
+(9,210) 17 step loss : 0.001013
+Epoch 9, lr 0.001
+
+(9,210) 18 step loss : 0.001034
+Epoch 9, lr 0.001
+
+(9,210) 19 step loss : 0.001058
+Epoch 9, lr 0.001
+
+(9,210) 20 step loss : 0.001029
+Epoch 9, lr 0.001
+
+(9,210) 21 step loss : 0.001032
+Epoch 9, lr 0.001
+
+(9,210) 22 step loss : 0.001137
+Epoch 9, lr 0.001
+
+(9,210) 23 step loss : 0.001099
+Epoch 9, lr 0.001
+
+(9,210) 24 step loss : 0.001034
+Epoch 9, lr 0.001
+
+(9,210) 25 step loss : 0.001047
+Epoch 9, lr 0.001
+
+(9,210) 26 step loss : 0.001051
+Epoch 9, lr 0.001
+
+(9,210) 27 step loss : 0.001052
+Epoch 9, lr 0.001
+
+(9,210) 28 step loss : 0.001144
+Epoch 9, lr 0.001
+
+(9,210) 29 step loss : 0.001085
+Epoch 9, lr 0.001
+
+(9,210) 30 step loss : 0.001088
+Epoch 9, lr 0.001
+
+(9,210) 31 step loss : 0.001011
+Epoch 9, lr 0.001
+
+(9,210) 32 step loss : 0.001117
+Epoch 9, lr 0.001
+
+(9,210) 33 step loss : 0.001041
+Epoch 9, lr 0.001
+
+(9,210) 34 step loss : 0.001020
+Epoch 9, lr 0.001
+
+(9,210) 35 step loss : 0.001076
+Epoch 9, lr 0.001
+
+(9,210) 36 step loss : 0.001064
+Epoch 9, lr 0.001
+
+(9,210) 37 step loss : 0.001041
+Epoch 9, lr 0.001
+
+(9,210) 38 step loss : 0.001137
+Epoch 9, lr 0.001
+
+(9,210) 39 step loss : 0.001109
+Epoch 9, lr 0.001
+
+(9,210) 40 step loss : 0.000982
+Epoch 9, lr 0.001
+
+(9,210) 41 step loss : 0.001052
+Epoch 9, lr 0.001
+
+(9,210) 42 step loss : 0.001061
+Epoch 9, lr 0.001
+
+(9,210) 43 step loss : 0.001073
+Epoch 9, lr 0.001
+
+(9,210) 44 step loss : 0.001099
+Epoch 9, lr 0.001
+
+(9,210) 45 step loss : 0.001134
+Epoch 9, lr 0.001
+
+(9,210) 46 step loss : 0.001027
+Epoch 9, lr 0.001
+
+(9,210) 47 step loss : 0.001040
+Epoch 9, lr 0.001
+
+(9,210) 48 step loss : 0.001074
+Epoch 9, lr 0.001
+
+(9,210) 49 step loss : 0.001048
+(9,210) epoch loss : 0.001062
+Epoch 10, lr 0.001
+
+(10,210) 0 step loss : 0.001057
+Epoch 10, lr 0.001
+
+(10,210) 1 step loss : 0.001079
+Epoch 10, lr 0.001
+
+(10,210) 2 step loss : 0.001037
+Epoch 10, lr 0.001
+
+(10,210) 3 step loss : 0.001091
+Epoch 10, lr 0.001
+
+(10,210) 4 step loss : 0.001063
+Epoch 10, lr 0.001
+
+(10,210) 5 step loss : 0.001039
+Epoch 10, lr 0.001
+
+(10,210) 6 step loss : 0.001011
+Epoch 10, lr 0.001
+
+(10,210) 7 step loss : 0.001118
+Epoch 10, lr 0.001
+
+(10,210) 8 step loss : 0.001033
+Epoch 10, lr 0.001
+
+(10,210) 9 step loss : 0.001085
+Epoch 10, lr 0.001
+
+(10,210) 10 step loss : 0.001023
+Epoch 10, lr 0.001
+
+(10,210) 11 step loss : 0.001018
+Epoch 10, lr 0.001
+
+(10,210) 12 step loss : 0.000991
+Epoch 10, lr 0.001
+
+(10,210) 13 step loss : 0.001054
+Epoch 10, lr 0.001
+
+(10,210) 14 step loss : 0.001050
+Epoch 10, lr 0.001
+
+(10,210) 15 step loss : 0.001098
+Epoch 10, lr 0.001
+
+(10,210) 16 step loss : 0.000986
+Epoch 10, lr 0.001
+
+(10,210) 17 step loss : 0.001048
+Epoch 10, lr 0.001
+
+(10,210) 18 step loss : 0.001033
+Epoch 10, lr 0.001
+
+(10,210) 19 step loss : 0.001028
+Epoch 10, lr 0.001
+
+(10,210) 20 step loss : 0.001033
+Epoch 10, lr 0.001
+
+(10,210) 21 step loss : 0.001016
+Epoch 10, lr 0.001
+
+(10,210) 22 step loss : 0.001082
+Epoch 10, lr 0.001
+
+(10,210) 23 step loss : 0.001083
+Epoch 10, lr 0.001
+
+(10,210) 24 step loss : 0.001060
+Epoch 10, lr 0.001
+
+(10,210) 25 step loss : 0.001007
+Epoch 10, lr 0.001
+
+(10,210) 26 step loss : 0.001069
+Epoch 10, lr 0.001
+
+(10,210) 27 step loss : 0.001076
+Epoch 10, lr 0.001
+
+(10,210) 28 step loss : 0.001052
+Epoch 10, lr 0.001
+
+(10,210) 29 step loss : 0.001131
+Epoch 10, lr 0.001
+
+(10,210) 30 step loss : 0.001032
+Epoch 10, lr 0.001
+
+(10,210) 31 step loss : 0.001065
+Epoch 10, lr 0.001
+
+(10,210) 32 step loss : 0.001060
+Epoch 10, lr 0.001
+
+(10,210) 33 step loss : 0.001059
+Epoch 10, lr 0.001
+
+(10,210) 34 step loss : 0.000988
+Epoch 10, lr 0.001
+
+(10,210) 35 step loss : 0.001041
+Epoch 10, lr 0.001
+
+(10,210) 36 step loss : 0.001004
+Epoch 10, lr 0.001
+
+(10,210) 37 step loss : 0.001080
+Epoch 10, lr 0.001
+
+(10,210) 38 step loss : 0.001054
+Epoch 10, lr 0.001
+
+(10,210) 39 step loss : 0.001026
+Epoch 10, lr 0.001
+
+(10,210) 40 step loss : 0.001044
+Epoch 10, lr 0.001
+
+(10,210) 41 step loss : 0.000998
+Epoch 10, lr 0.001
+
+(10,210) 42 step loss : 0.000973
+Epoch 10, lr 0.001
+
+(10,210) 43 step loss : 0.001009
+Epoch 10, lr 0.001
+
+(10,210) 44 step loss : 0.001069
+Epoch 10, lr 0.001
+
+(10,210) 45 step loss : 0.001073
+Epoch 10, lr 0.001
+
+(10,210) 46 step loss : 0.001027
+Epoch 10, lr 0.001
+
+(10,210) 47 step loss : 0.001031
+Epoch 10, lr 0.001
+
+(10,210) 48 step loss : 0.001081
+Epoch 10, lr 0.001
+
+(10,210) 49 step loss : 0.001051
+(10,210) epoch loss : 0.001046
+Epoch 11, lr 0.001
+
+(11,210) 0 step loss : 0.001011
+Epoch 11, lr 0.001
+
+(11,210) 1 step loss : 0.000995
+Epoch 11, lr 0.001
+
+(11,210) 2 step loss : 0.001056
+Epoch 11, lr 0.001
+
+(11,210) 3 step loss : 0.001096
+Epoch 11, lr 0.001
+
+(11,210) 4 step loss : 0.000990
+Epoch 11, lr 0.001
+
+(11,210) 5 step loss : 0.001068
+Epoch 11, lr 0.001
+
+(11,210) 6 step loss : 0.001054
+Epoch 11, lr 0.001
+
+(11,210) 7 step loss : 0.000973
+Epoch 11, lr 0.001
+
+(11,210) 8 step loss : 0.001002
+Epoch 11, lr 0.001
+
+(11,210) 9 step loss : 0.001066
+Epoch 11, lr 0.001
+
+(11,210) 10 step loss : 0.001047
+Epoch 11, lr 0.001
+
+(11,210) 11 step loss : 0.001021
+Epoch 11, lr 0.001
+
+(11,210) 12 step loss : 0.001091
+Epoch 11, lr 0.001
+
+(11,210) 13 step loss : 0.001105
+Epoch 11, lr 0.001
+
+(11,210) 14 step loss : 0.001076
+Epoch 11, lr 0.001
+
+(11,210) 15 step loss : 0.001046
+Epoch 11, lr 0.001
+
+(11,210) 16 step loss : 0.001007
+Epoch 11, lr 0.001
+
+(11,210) 17 step loss : 0.001001
+Epoch 11, lr 0.001
+
+(11,210) 18 step loss : 0.001083
+Epoch 11, lr 0.001
+
+(11,210) 19 step loss : 0.001003
+Epoch 11, lr 0.001
+
+(11,210) 20 step loss : 0.001016
+Epoch 11, lr 0.001
+
+(11,210) 21 step loss : 0.001026
+Epoch 11, lr 0.001
+
+(11,210) 22 step loss : 0.001015
+Epoch 11, lr 0.001
+
+(11,210) 23 step loss : 0.001082
+Epoch 11, lr 0.001
+
+(11,210) 24 step loss : 0.001052
+Epoch 11, lr 0.001
+
+(11,210) 25 step loss : 0.001042
+Epoch 11, lr 0.001
+
+(11,210) 26 step loss : 0.001018
+Epoch 11, lr 0.001
+
+(11,210) 27 step loss : 0.001007
+Epoch 11, lr 0.001
+
+(11,210) 28 step loss : 0.000982
+Epoch 11, lr 0.001
+
+(11,210) 29 step loss : 0.001043
+Epoch 11, lr 0.001
+
+(11,210) 30 step loss : 0.001052
+Epoch 11, lr 0.001
+
+(11,210) 31 step loss : 0.000995
+Epoch 11, lr 0.001
+
+(11,210) 32 step loss : 0.001034
+Epoch 11, lr 0.001
+
+(11,210) 33 step loss : 0.001050
+Epoch 11, lr 0.001
+
+(11,210) 34 step loss : 0.001058
+Epoch 11, lr 0.001
+
+(11,210) 35 step loss : 0.001005
+Epoch 11, lr 0.001
+
+(11,210) 36 step loss : 0.001050
+Epoch 11, lr 0.001
+
+(11,210) 37 step loss : 0.001031
+Epoch 11, lr 0.001
+
+(11,210) 38 step loss : 0.001035
+Epoch 11, lr 0.001
+
+(11,210) 39 step loss : 0.001083
+Epoch 11, lr 0.001
+
+(11,210) 40 step loss : 0.001015
+Epoch 11, lr 0.001
+
+(11,210) 41 step loss : 0.000997
+Epoch 11, lr 0.001
+
+(11,210) 42 step loss : 0.001059
+Epoch 11, lr 0.001
+
+(11,210) 43 step loss : 0.000983
+Epoch 11, lr 0.001
+
+(11,210) 44 step loss : 0.001093
+Epoch 11, lr 0.001
+
+(11,210) 45 step loss : 0.001057
+Epoch 11, lr 0.001
+
+(11,210) 46 step loss : 0.001065
+Epoch 11, lr 0.001
+
+(11,210) 47 step loss : 0.001024
+Epoch 11, lr 0.001
+
+(11,210) 48 step loss : 0.000970
+Epoch 11, lr 0.001
+
+(11,210) 49 step loss : 0.001047
+(11,210) epoch loss : 0.001035
+Epoch 12, lr 0.001
+
+(12,210) 0 step loss : 0.001001
+Epoch 12, lr 0.001
+
+(12,210) 1 step loss : 0.000986
+Epoch 12, lr 0.001
+
+(12,210) 2 step loss : 0.000999
+Epoch 12, lr 0.001
+
+(12,210) 3 step loss : 0.001026
+Epoch 12, lr 0.001
+
+(12,210) 4 step loss : 0.001039
+Epoch 12, lr 0.001
+
+(12,210) 5 step loss : 0.001030
+Epoch 12, lr 0.001
+
+(12,210) 6 step loss : 0.001036
+Epoch 12, lr 0.001
+
+(12,210) 7 step loss : 0.000991
+Epoch 12, lr 0.001
+
+(12,210) 8 step loss : 0.000996
+Epoch 12, lr 0.001
+
+(12,210) 9 step loss : 0.001088
+Epoch 12, lr 0.001
+
+(12,210) 10 step loss : 0.001030
+Epoch 12, lr 0.001
+
+(12,210) 11 step loss : 0.001058
+Epoch 12, lr 0.001
+
+(12,210) 12 step loss : 0.001058
+Epoch 12, lr 0.001
+
+(12,210) 13 step loss : 0.000988
+Epoch 12, lr 0.001
+
+(12,210) 14 step loss : 0.001077
+Epoch 12, lr 0.001
+
+(12,210) 15 step loss : 0.001006
+Epoch 12, lr 0.001
+
+(12,210) 16 step loss : 0.001056
+Epoch 12, lr 0.001
+
+(12,210) 17 step loss : 0.001054
+Epoch 12, lr 0.001
+
+(12,210) 18 step loss : 0.001034
+Epoch 12, lr 0.001
+
+(12,210) 19 step loss : 0.001065
+Epoch 12, lr 0.001
+
+(12,210) 20 step loss : 0.001016
+Epoch 12, lr 0.001
+
+(12,210) 21 step loss : 0.000989
+Epoch 12, lr 0.001
+
+(12,210) 22 step loss : 0.001080
+Epoch 12, lr 0.001
+
+(12,210) 23 step loss : 0.001009
+Epoch 12, lr 0.001
+
+(12,210) 24 step loss : 0.001071
+Epoch 12, lr 0.001
+
+(12,210) 25 step loss : 0.001067
+Epoch 12, lr 0.001
+
+(12,210) 26 step loss : 0.000943
+Epoch 12, lr 0.001
+
+(12,210) 27 step loss : 0.001035
+Epoch 12, lr 0.001
+
+(12,210) 28 step loss : 0.001024
+Epoch 12, lr 0.001
+
+(12,210) 29 step loss : 0.000995
+Epoch 12, lr 0.001
+
+(12,210) 30 step loss : 0.001019
+Epoch 12, lr 0.001
+
+(12,210) 31 step loss : 0.001009
+Epoch 12, lr 0.001
+
+(12,210) 32 step loss : 0.001021
+Epoch 12, lr 0.001
+
+(12,210) 33 step loss : 0.000995
+Epoch 12, lr 0.001
+
+(12,210) 34 step loss : 0.001016
+Epoch 12, lr 0.001
+
+(12,210) 35 step loss : 0.000989
+Epoch 12, lr 0.001
+
+(12,210) 36 step loss : 0.000959
+Epoch 12, lr 0.001
+
+(12,210) 37 step loss : 0.001025
+Epoch 12, lr 0.001
+
+(12,210) 38 step loss : 0.001044
+Epoch 12, lr 0.001
+
+(12,210) 39 step loss : 0.001026
+Epoch 12, lr 0.001
+
+(12,210) 40 step loss : 0.001055
+Epoch 12, lr 0.001
+
+(12,210) 41 step loss : 0.001020
+Epoch 12, lr 0.001
+
+(12,210) 42 step loss : 0.000973
+Epoch 12, lr 0.001
+
+(12,210) 43 step loss : 0.001016
+Epoch 12, lr 0.001
+
+(12,210) 44 step loss : 0.001032
+Epoch 12, lr 0.001
+
+(12,210) 45 step loss : 0.001007
+Epoch 12, lr 0.001
+
+(12,210) 46 step loss : 0.001050
+Epoch 12, lr 0.001
+
+(12,210) 47 step loss : 0.001035
+Epoch 12, lr 0.001
+
+(12,210) 48 step loss : 0.000983
+Epoch 12, lr 0.001
+
+(12,210) 49 step loss : 0.001044
+(12,210) epoch loss : 0.001023
+Epoch 13, lr 0.001
+
+(13,210) 0 step loss : 0.001032
+Epoch 13, lr 0.001
+
+(13,210) 1 step loss : 0.000990
+Epoch 13, lr 0.001
+
+(13,210) 2 step loss : 0.001016
+Epoch 13, lr 0.001
+
+(13,210) 3 step loss : 0.001013
+Epoch 13, lr 0.001
+
+(13,210) 4 step loss : 0.000940
+Epoch 13, lr 0.001
+
+(13,210) 5 step loss : 0.001053
+Epoch 13, lr 0.001
+
+(13,210) 6 step loss : 0.001011
+Epoch 13, lr 0.001
+
+(13,210) 7 step loss : 0.001021
+Epoch 13, lr 0.001
+
+(13,210) 8 step loss : 0.001033
+Epoch 13, lr 0.001
+
+(13,210) 9 step loss : 0.001037
+Epoch 13, lr 0.001
+
+(13,210) 10 step loss : 0.001019
+Epoch 13, lr 0.001
+
+(13,210) 11 step loss : 0.001012
+Epoch 13, lr 0.001
+
+(13,210) 12 step loss : 0.001016
+Epoch 13, lr 0.001
+
+(13,210) 13 step loss : 0.000905
+Epoch 13, lr 0.001
+
+(13,210) 14 step loss : 0.000984
+Epoch 13, lr 0.001
+
+(13,210) 15 step loss : 0.001046
+Epoch 13, lr 0.001
+
+(13,210) 16 step loss : 0.000970
+Epoch 13, lr 0.001
+
+(13,210) 17 step loss : 0.001002
+Epoch 13, lr 0.001
+
+(13,210) 18 step loss : 0.001003
+Epoch 13, lr 0.001
+
+(13,210) 19 step loss : 0.001002
+Epoch 13, lr 0.001
+
+(13,210) 20 step loss : 0.001005
+Epoch 13, lr 0.001
+
+(13,210) 21 step loss : 0.001003
+Epoch 13, lr 0.001
+
+(13,210) 22 step loss : 0.001010
+Epoch 13, lr 0.001
+
+(13,210) 23 step loss : 0.000998
+Epoch 13, lr 0.001
+
+(13,210) 24 step loss : 0.000967
+Epoch 13, lr 0.001
+
+(13,210) 25 step loss : 0.001021
+Epoch 13, lr 0.001
+
+(13,210) 26 step loss : 0.001006
+Epoch 13, lr 0.001
+
+(13,210) 27 step loss : 0.001041
+Epoch 13, lr 0.001
+
+(13,210) 28 step loss : 0.001016
+Epoch 13, lr 0.001
+
+(13,210) 29 step loss : 0.001002
+Epoch 13, lr 0.001
+
+(13,210) 30 step loss : 0.000984
+Epoch 13, lr 0.001
+
+(13,210) 31 step loss : 0.000979
+Epoch 13, lr 0.001
+
+(13,210) 32 step loss : 0.000992
+Epoch 13, lr 0.001
+
+(13,210) 33 step loss : 0.001028
+Epoch 13, lr 0.001
+
+(13,210) 34 step loss : 0.001049
+Epoch 13, lr 0.001
+
+(13,210) 35 step loss : 0.001052
+Epoch 13, lr 0.001
+
+(13,210) 36 step loss : 0.000946
+Epoch 13, lr 0.001
+
+(13,210) 37 step loss : 0.001006
+Epoch 13, lr 0.001
+
+(13,210) 38 step loss : 0.001067
+Epoch 13, lr 0.001
+
+(13,210) 39 step loss : 0.000965
+Epoch 13, lr 0.001
+
+(13,210) 40 step loss : 0.000988
+Epoch 13, lr 0.001
+
+(13,210) 41 step loss : 0.001001
+Epoch 13, lr 0.001
+
+(13,210) 42 step loss : 0.001080
+Epoch 13, lr 0.001
+
+(13,210) 43 step loss : 0.001015
+Epoch 13, lr 0.001
+
+(13,210) 44 step loss : 0.001051
+Epoch 13, lr 0.001
+
+(13,210) 45 step loss : 0.001081
+Epoch 13, lr 0.001
+
+(13,210) 46 step loss : 0.001043
+Epoch 13, lr 0.001
+
+(13,210) 47 step loss : 0.001032
+Epoch 13, lr 0.001
+
+(13,210) 48 step loss : 0.001004
+Epoch 13, lr 0.001
+
+(13,210) 49 step loss : 0.000957
+(13,210) epoch loss : 0.001010
+Epoch 14, lr 0.001
+
+(14,210) 0 step loss : 0.000931
+Epoch 14, lr 0.001
+
+(14,210) 1 step loss : 0.001018
+Epoch 14, lr 0.001
+
+(14,210) 2 step loss : 0.000974
+Epoch 14, lr 0.001
+
+(14,210) 3 step loss : 0.001030
+Epoch 14, lr 0.001
+
+(14,210) 4 step loss : 0.001034
+Epoch 14, lr 0.001
+
+(14,210) 5 step loss : 0.000967
+Epoch 14, lr 0.001
+
+(14,210) 6 step loss : 0.001003
+Epoch 14, lr 0.001
+
+(14,210) 7 step loss : 0.001053
+Epoch 14, lr 0.001
+
+(14,210) 8 step loss : 0.000988
+Epoch 14, lr 0.001
+
+(14,210) 9 step loss : 0.001054
+Epoch 14, lr 0.001
+
+(14,210) 10 step loss : 0.000946
+Epoch 14, lr 0.001
+
+(14,210) 11 step loss : 0.000981
+Epoch 14, lr 0.001
+
+(14,210) 12 step loss : 0.001017
+Epoch 14, lr 0.001
+
+(14,210) 13 step loss : 0.001000
+Epoch 14, lr 0.001
+
+(14,210) 14 step loss : 0.001031
+Epoch 14, lr 0.001
+
+(14,210) 15 step loss : 0.000962
+Epoch 14, lr 0.001
+
+(14,210) 16 step loss : 0.000964
+Epoch 14, lr 0.001
+
+(14,210) 17 step loss : 0.001009
+Epoch 14, lr 0.001
+
+(14,210) 18 step loss : 0.001011
+Epoch 14, lr 0.001
+
+(14,210) 19 step loss : 0.001035
+Epoch 14, lr 0.001
+
+(14,210) 20 step loss : 0.000977
+Epoch 14, lr 0.001
+
+(14,210) 21 step loss : 0.001055
+Epoch 14, lr 0.001
+
+(14,210) 22 step loss : 0.000943
+Epoch 14, lr 0.001
+
+(14,210) 23 step loss : 0.000955
+Epoch 14, lr 0.001
+
+(14,210) 24 step loss : 0.000974
+Epoch 14, lr 0.001
+
+(14,210) 25 step loss : 0.000954
+Epoch 14, lr 0.001
+
+(14,210) 26 step loss : 0.000962
+Epoch 14, lr 0.001
+
+(14,210) 27 step loss : 0.001036
+Epoch 14, lr 0.001
+
+(14,210) 28 step loss : 0.000962
+Epoch 14, lr 0.001
+
+(14,210) 29 step loss : 0.000962
+Epoch 14, lr 0.001
+
+(14,210) 30 step loss : 0.000974
+Epoch 14, lr 0.001
+
+(14,210) 31 step loss : 0.001026
+Epoch 14, lr 0.001
+
+(14,210) 32 step loss : 0.001002
+Epoch 14, lr 0.001
+
+(14,210) 33 step loss : 0.000999
+Epoch 14, lr 0.001
+
+(14,210) 34 step loss : 0.001002
+Epoch 14, lr 0.001
+
+(14,210) 35 step loss : 0.000953
+Epoch 14, lr 0.001
+
+(14,210) 36 step loss : 0.000968
+Epoch 14, lr 0.001
+
+(14,210) 37 step loss : 0.001017
+Epoch 14, lr 0.001
+
+(14,210) 38 step loss : 0.000969
+Epoch 14, lr 0.001
+
+(14,210) 39 step loss : 0.000990
+Epoch 14, lr 0.001
+
+(14,210) 40 step loss : 0.000975
+Epoch 14, lr 0.001
+
+(14,210) 41 step loss : 0.000996
+Epoch 14, lr 0.001
+
+(14,210) 42 step loss : 0.001039
+Epoch 14, lr 0.001
+
+(14,210) 43 step loss : 0.000965
+Epoch 14, lr 0.001
+
+(14,210) 44 step loss : 0.000944
+Epoch 14, lr 0.001
+
+(14,210) 45 step loss : 0.001025
+Epoch 14, lr 0.001
+
+(14,210) 46 step loss : 0.001032
+Epoch 14, lr 0.001
+
+(14,210) 47 step loss : 0.001032
+Epoch 14, lr 0.001
+
+(14,210) 48 step loss : 0.000988
+Epoch 14, lr 0.001
+
+(14,210) 49 step loss : 0.000899
+(14,210) epoch loss : 0.000992
+Epoch 15, lr 0.001
+
+(15,210) 0 step loss : 0.000980
+Epoch 15, lr 0.001
+
+(15,210) 1 step loss : 0.000876
+Epoch 15, lr 0.001
+
+(15,210) 2 step loss : 0.001026
+Epoch 15, lr 0.001
+
+(15,210) 3 step loss : 0.001007
+Epoch 15, lr 0.001
+
+(15,210) 4 step loss : 0.001031
+Epoch 15, lr 0.001
+
+(15,210) 5 step loss : 0.000977
+Epoch 15, lr 0.001
+
+(15,210) 6 step loss : 0.000978
+Epoch 15, lr 0.001
+
+(15,210) 7 step loss : 0.000943
+Epoch 15, lr 0.001
+
+(15,210) 8 step loss : 0.000964
+Epoch 15, lr 0.001
+
+(15,210) 9 step loss : 0.001026
+Epoch 15, lr 0.001
+
+(15,210) 10 step loss : 0.000921
+Epoch 15, lr 0.001
+
+(15,210) 11 step loss : 0.000961
+Epoch 15, lr 0.001
+
+(15,210) 12 step loss : 0.001033
+Epoch 15, lr 0.001
+
+(15,210) 13 step loss : 0.000946
+Epoch 15, lr 0.001
+
+(15,210) 14 step loss : 0.000997
+Epoch 15, lr 0.001
+
+(15,210) 15 step loss : 0.000969
+Epoch 15, lr 0.001
+
+(15,210) 16 step loss : 0.000977
+Epoch 15, lr 0.001
+
+(15,210) 17 step loss : 0.000966
+Epoch 15, lr 0.001
+
+(15,210) 18 step loss : 0.000970
+Epoch 15, lr 0.001
+
+(15,210) 19 step loss : 0.000980
+Epoch 15, lr 0.001
+
+(15,210) 20 step loss : 0.000977
+Epoch 15, lr 0.001
+
+(15,210) 21 step loss : 0.000916
+Epoch 15, lr 0.001
+
+(15,210) 22 step loss : 0.000974
+Epoch 15, lr 0.001
+
+(15,210) 23 step loss : 0.001048
+Epoch 15, lr 0.001
+
+(15,210) 24 step loss : 0.000919
+Epoch 15, lr 0.001
+
+(15,210) 25 step loss : 0.000988
+Epoch 15, lr 0.001
+
+(15,210) 26 step loss : 0.000963
+Epoch 15, lr 0.001
+
+(15,210) 27 step loss : 0.001001
+Epoch 15, lr 0.001
+
+(15,210) 28 step loss : 0.001003
+Epoch 15, lr 0.001
+
+(15,210) 29 step loss : 0.001046
+Epoch 15, lr 0.001
+
+(15,210) 30 step loss : 0.000963
+Epoch 15, lr 0.001
+
+(15,210) 31 step loss : 0.000983
+Epoch 15, lr 0.001
+
+(15,210) 32 step loss : 0.000941
+Epoch 15, lr 0.001
+
+(15,210) 33 step loss : 0.000970
+Epoch 15, lr 0.001
+
+(15,210) 34 step loss : 0.000975
+Epoch 15, lr 0.001
+
+(15,210) 35 step loss : 0.000935
+Epoch 15, lr 0.001
+
+(15,210) 36 step loss : 0.001006
+Epoch 15, lr 0.001
+
+(15,210) 37 step loss : 0.001008
+Epoch 15, lr 0.001
+
+(15,210) 38 step loss : 0.000927
+Epoch 15, lr 0.001
+
+(15,210) 39 step loss : 0.001000
+Epoch 15, lr 0.001
+
+(15,210) 40 step loss : 0.000981
+Epoch 15, lr 0.001
+
+(15,210) 41 step loss : 0.001013
+Epoch 15, lr 0.001
+
+(15,210) 42 step loss : 0.000893
+Epoch 15, lr 0.001
+
+(15,210) 43 step loss : 0.000964
+Epoch 15, lr 0.001
+
+(15,210) 44 step loss : 0.000979
+Epoch 15, lr 0.001
+
+(15,210) 45 step loss : 0.000889
+Epoch 15, lr 0.001
+
+(15,210) 46 step loss : 0.000994
+Epoch 15, lr 0.001
+
+(15,210) 47 step loss : 0.000997
+Epoch 15, lr 0.001
+
+(15,210) 48 step loss : 0.000992
+Epoch 15, lr 0.001
+
+(15,210) 49 step loss : 0.000946
+(15,210) epoch loss : 0.000975
+Epoch 16, lr 0.001
+
+(16,210) 0 step loss : 0.000995
+Epoch 16, lr 0.001
+
+(16,210) 1 step loss : 0.000949
+Epoch 16, lr 0.001
+
+(16,210) 2 step loss : 0.000992
+Epoch 16, lr 0.001
+
+(16,210) 3 step loss : 0.000960
+Epoch 16, lr 0.001
+
+(16,210) 4 step loss : 0.000962
+Epoch 16, lr 0.001
+
+(16,210) 5 step loss : 0.000877
+Epoch 16, lr 0.001
+
+(16,210) 6 step loss : 0.000973
+Epoch 16, lr 0.001
+
+(16,210) 7 step loss : 0.000913
+Epoch 16, lr 0.001
+
+(16,210) 8 step loss : 0.001009
+Epoch 16, lr 0.001
+
+(16,210) 9 step loss : 0.000957
+Epoch 16, lr 0.001
+
+(16,210) 10 step loss : 0.000998
+Epoch 16, lr 0.001
+
+(16,210) 11 step loss : 0.000904
+Epoch 16, lr 0.001
+
+(16,210) 12 step loss : 0.000955
+Epoch 16, lr 0.001
+
+(16,210) 13 step loss : 0.000947
+Epoch 16, lr 0.001
+
+(16,210) 14 step loss : 0.000942
+Epoch 16, lr 0.001
+
+(16,210) 15 step loss : 0.001004
+Epoch 16, lr 0.001
+
+(16,210) 16 step loss : 0.000987
+Epoch 16, lr 0.001
+
+(16,210) 17 step loss : 0.000932
+Epoch 16, lr 0.001
+
+(16,210) 18 step loss : 0.000953
+Epoch 16, lr 0.001
+
+(16,210) 19 step loss : 0.000946
+Epoch 16, lr 0.001
+
+(16,210) 20 step loss : 0.001024
+Epoch 16, lr 0.001
+
+(16,210) 21 step loss : 0.000980
+Epoch 16, lr 0.001
+
+(16,210) 22 step loss : 0.000914
+Epoch 16, lr 0.001
+
+(16,210) 23 step loss : 0.001005
+Epoch 16, lr 0.001
+
+(16,210) 24 step loss : 0.000975
+Epoch 16, lr 0.001
+
+(16,210) 25 step loss : 0.001001
+Epoch 16, lr 0.001
+
+(16,210) 26 step loss : 0.000926
+Epoch 16, lr 0.001
+
+(16,210) 27 step loss : 0.000944
+Epoch 16, lr 0.001
+
+(16,210) 28 step loss : 0.000961
+Epoch 16, lr 0.001
+
+(16,210) 29 step loss : 0.000962
+Epoch 16, lr 0.001
+
+(16,210) 30 step loss : 0.000914
+Epoch 16, lr 0.001
+
+(16,210) 31 step loss : 0.000896
+Epoch 16, lr 0.001
+
+(16,210) 32 step loss : 0.000945
+Epoch 16, lr 0.001
+
+(16,210) 33 step loss : 0.000941
+Epoch 16, lr 0.001
+
+(16,210) 34 step loss : 0.000924
+Epoch 16, lr 0.001
+
+(16,210) 35 step loss : 0.000992
+Epoch 16, lr 0.001
+
+(16,210) 36 step loss : 0.000963
+Epoch 16, lr 0.001
+
+(16,210) 37 step loss : 0.001054
+Epoch 16, lr 0.001
+
+(16,210) 38 step loss : 0.000901
+Epoch 16, lr 0.001
+
+(16,210) 39 step loss : 0.000945
+Epoch 16, lr 0.001
+
+(16,210) 40 step loss : 0.000914
+Epoch 16, lr 0.001
+
+(16,210) 41 step loss : 0.000998
+Epoch 16, lr 0.001
+
+(16,210) 42 step loss : 0.000874
+Epoch 16, lr 0.001
+
+(16,210) 43 step loss : 0.000978
+Epoch 16, lr 0.001
+
+(16,210) 44 step loss : 0.000947
+Epoch 16, lr 0.001
+
+(16,210) 45 step loss : 0.000933
+Epoch 16, lr 0.001
+
+(16,210) 46 step loss : 0.000919
+Epoch 16, lr 0.001
+
+(16,210) 47 step loss : 0.000981
+Epoch 16, lr 0.001
+
+(16,210) 48 step loss : 0.000980
+Epoch 16, lr 0.001
+
+(16,210) 49 step loss : 0.000968
+(16,210) epoch loss : 0.000956
+Epoch 17, lr 0.001
+
+(17,210) 0 step loss : 0.000944
+Epoch 17, lr 0.001
+
+(17,210) 1 step loss : 0.000916
+Epoch 17, lr 0.001
+
+(17,210) 2 step loss : 0.000924
+Epoch 17, lr 0.001
+
+(17,210) 3 step loss : 0.000936
+Epoch 17, lr 0.001
+
+(17,210) 4 step loss : 0.000955
+Epoch 17, lr 0.001
+
+(17,210) 5 step loss : 0.001037
+Epoch 17, lr 0.001
+
+(17,210) 6 step loss : 0.000919
+Epoch 17, lr 0.001
+
+(17,210) 7 step loss : 0.000907
+Epoch 17, lr 0.001
+
+(17,210) 8 step loss : 0.000928
+Epoch 17, lr 0.001
+
+(17,210) 9 step loss : 0.001005
+Epoch 17, lr 0.001
+
+(17,210) 10 step loss : 0.000898
+Epoch 17, lr 0.001
+
+(17,210) 11 step loss : 0.000939
+Epoch 17, lr 0.001
+
+(17,210) 12 step loss : 0.000978
+Epoch 17, lr 0.001
+
+(17,210) 13 step loss : 0.000979
+Epoch 17, lr 0.001
+
+(17,210) 14 step loss : 0.000895
+Epoch 17, lr 0.001
+
+(17,210) 15 step loss : 0.000910
+Epoch 17, lr 0.001
+
+(17,210) 16 step loss : 0.000933
+Epoch 17, lr 0.001
+
+(17,210) 17 step loss : 0.000956
+Epoch 17, lr 0.001
+
+(17,210) 18 step loss : 0.000904
+Epoch 17, lr 0.001
+
+(17,210) 19 step loss : 0.000871
+Epoch 17, lr 0.001
+
+(17,210) 20 step loss : 0.000936
+Epoch 17, lr 0.001
+
+(17,210) 21 step loss : 0.000958
+Epoch 17, lr 0.001
+
+(17,210) 22 step loss : 0.000899
+Epoch 17, lr 0.001
+
+(17,210) 23 step loss : 0.000864
+Epoch 17, lr 0.001
+
+(17,210) 24 step loss : 0.000931
+Epoch 17, lr 0.001
+
+(17,210) 25 step loss : 0.000926
+Epoch 17, lr 0.001
+
+(17,210) 26 step loss : 0.000961
+Epoch 17, lr 0.001
+
+(17,210) 27 step loss : 0.000995
+Epoch 17, lr 0.001
+
+(17,210) 28 step loss : 0.000955
+Epoch 17, lr 0.001
+
+(17,210) 29 step loss : 0.000958
+Epoch 17, lr 0.001
+
+(17,210) 30 step loss : 0.000965
+Epoch 17, lr 0.001
+
+(17,210) 31 step loss : 0.000978
+Epoch 17, lr 0.001
+
+(17,210) 32 step loss : 0.000972
+Epoch 17, lr 0.001
+
+(17,210) 33 step loss : 0.000943
+Epoch 17, lr 0.001
+
+(17,210) 34 step loss : 0.000915
+Epoch 17, lr 0.001
+
+(17,210) 35 step loss : 0.000929
+Epoch 17, lr 0.001
+
+(17,210) 36 step loss : 0.000951
+Epoch 17, lr 0.001
+
+(17,210) 37 step loss : 0.000911
+Epoch 17, lr 0.001
+
+(17,210) 38 step loss : 0.000895
+Epoch 17, lr 0.001
+
+(17,210) 39 step loss : 0.000866
+Epoch 17, lr 0.001
+
+(17,210) 40 step loss : 0.000961
+Epoch 17, lr 0.001
+
+(17,210) 41 step loss : 0.000991
+Epoch 17, lr 0.001
+
+(17,210) 42 step loss : 0.000944
+Epoch 17, lr 0.001
+
+(17,210) 43 step loss : 0.000889
+Epoch 17, lr 0.001
+
+(17,210) 44 step loss : 0.000927
+Epoch 17, lr 0.001
+
+(17,210) 45 step loss : 0.000956
+Epoch 17, lr 0.001
+
+(17,210) 46 step loss : 0.000916
+Epoch 17, lr 0.001
+
+(17,210) 47 step loss : 0.000981
+Epoch 17, lr 0.001
+
+(17,210) 48 step loss : 0.000941
+Epoch 17, lr 0.001
+
+(17,210) 49 step loss : 0.000872
+(17,210) epoch loss : 0.000937
+Epoch 18, lr 0.001
+
+(18,210) 0 step loss : 0.000984
+Epoch 18, lr 0.001
+
+(18,210) 1 step loss : 0.000882
+Epoch 18, lr 0.001
+
+(18,210) 2 step loss : 0.000874
+Epoch 18, lr 0.001
+
+(18,210) 3 step loss : 0.000937
+Epoch 18, lr 0.001
+
+(18,210) 4 step loss : 0.000921
+Epoch 18, lr 0.001
+
+(18,210) 5 step loss : 0.000863
+Epoch 18, lr 0.001
+
+(18,210) 6 step loss : 0.000930
+Epoch 18, lr 0.001
+
+(18,210) 7 step loss : 0.000968
+Epoch 18, lr 0.001
+
+(18,210) 8 step loss : 0.000877
+Epoch 18, lr 0.001
+
+(18,210) 9 step loss : 0.000917
+Epoch 18, lr 0.001
+
+(18,210) 10 step loss : 0.000917
+Epoch 18, lr 0.001
+
+(18,210) 11 step loss : 0.000917
+Epoch 18, lr 0.001
+
+(18,210) 12 step loss : 0.000884
+Epoch 18, lr 0.001
+
+(18,210) 13 step loss : 0.000942
+Epoch 18, lr 0.001
+
+(18,210) 14 step loss : 0.000911
+Epoch 18, lr 0.001
+
+(18,210) 15 step loss : 0.000957
+Epoch 18, lr 0.001
+
+(18,210) 16 step loss : 0.000898
+Epoch 18, lr 0.001
+
+(18,210) 17 step loss : 0.000930
+Epoch 18, lr 0.001
+
+(18,210) 18 step loss : 0.000933
+Epoch 18, lr 0.001
+
+(18,210) 19 step loss : 0.000925
+Epoch 18, lr 0.001
+
+(18,210) 20 step loss : 0.000889
+Epoch 18, lr 0.001
+
+(18,210) 21 step loss : 0.000912
+Epoch 18, lr 0.001
+
+(18,210) 22 step loss : 0.000926
+Epoch 18, lr 0.001
+
+(18,210) 23 step loss : 0.000886
+Epoch 18, lr 0.001
+
+(18,210) 24 step loss : 0.000890
+Epoch 18, lr 0.001
+
+(18,210) 25 step loss : 0.000915
+Epoch 18, lr 0.001
+
+(18,210) 26 step loss : 0.000900
+Epoch 18, lr 0.001
+
+(18,210) 27 step loss : 0.000915
+Epoch 18, lr 0.001
+
+(18,210) 28 step loss : 0.000895
+Epoch 18, lr 0.001
+
+(18,210) 29 step loss : 0.000920
+Epoch 18, lr 0.001
+
+(18,210) 30 step loss : 0.000833
+Epoch 18, lr 0.001
+
+(18,210) 31 step loss : 0.000909
+Epoch 18, lr 0.001
+
+(18,210) 32 step loss : 0.000917
+Epoch 18, lr 0.001
+
+(18,210) 33 step loss : 0.000916
+Epoch 18, lr 0.001
+
+(18,210) 34 step loss : 0.000901
+Epoch 18, lr 0.001
+
+(18,210) 35 step loss : 0.000918
+Epoch 18, lr 0.001
+
+(18,210) 36 step loss : 0.000938
+Epoch 18, lr 0.001
+
+(18,210) 37 step loss : 0.000879
+Epoch 18, lr 0.001
+
+(18,210) 38 step loss : 0.000935
+Epoch 18, lr 0.001
+
+(18,210) 39 step loss : 0.000965
+Epoch 18, lr 0.001
+
+(18,210) 40 step loss : 0.000924
+Epoch 18, lr 0.001
+
+(18,210) 41 step loss : 0.000892
+Epoch 18, lr 0.001
+
+(18,210) 42 step loss : 0.000937
+Epoch 18, lr 0.001
+
+(18,210) 43 step loss : 0.000924
+Epoch 18, lr 0.001
+
+(18,210) 44 step loss : 0.000936
+Epoch 18, lr 0.001
+
+(18,210) 45 step loss : 0.000917
+Epoch 18, lr 0.001
+
+(18,210) 46 step loss : 0.000884
+Epoch 18, lr 0.001
+
+(18,210) 47 step loss : 0.000987
+Epoch 18, lr 0.001
+
+(18,210) 48 step loss : 0.000971
+Epoch 18, lr 0.001
+
+(18,210) 49 step loss : 0.000922
+(18,210) epoch loss : 0.000916
+Epoch 19, lr 0.001
+
+(19,210) 0 step loss : 0.000875
+Epoch 19, lr 0.001
+
+(19,210) 1 step loss : 0.000903
+Epoch 19, lr 0.001
+
+(19,210) 2 step loss : 0.000909
+Epoch 19, lr 0.001
+
+(19,210) 3 step loss : 0.000921
+Epoch 19, lr 0.001
+
+(19,210) 4 step loss : 0.000907
+Epoch 19, lr 0.001
+
+(19,210) 5 step loss : 0.000883
+Epoch 19, lr 0.001
+
+(19,210) 6 step loss : 0.000853
+Epoch 19, lr 0.001
+
+(19,210) 7 step loss : 0.000840
+Epoch 19, lr 0.001
+
+(19,210) 8 step loss : 0.000832
+Epoch 19, lr 0.001
+
+(19,210) 9 step loss : 0.000886
+Epoch 19, lr 0.001
+
+(19,210) 10 step loss : 0.000863
+Epoch 19, lr 0.001
+
+(19,210) 11 step loss : 0.000940
+Epoch 19, lr 0.001
+
+(19,210) 12 step loss : 0.000879
+Epoch 19, lr 0.001
+
+(19,210) 13 step loss : 0.000871
+Epoch 19, lr 0.001
+
+(19,210) 14 step loss : 0.000900
+Epoch 19, lr 0.001
+
+(19,210) 15 step loss : 0.000930
+Epoch 19, lr 0.001
+
+(19,210) 16 step loss : 0.000912
+Epoch 19, lr 0.001
+
+(19,210) 17 step loss : 0.000897
+Epoch 19, lr 0.001
+
+(19,210) 18 step loss : 0.000915
+Epoch 19, lr 0.001
+
+(19,210) 19 step loss : 0.000904
+Epoch 19, lr 0.001
+
+(19,210) 20 step loss : 0.000936
+Epoch 19, lr 0.001
+
+(19,210) 21 step loss : 0.000922
+Epoch 19, lr 0.001
+
+(19,210) 22 step loss : 0.000862
+Epoch 19, lr 0.001
+
+(19,210) 23 step loss : 0.000939
+Epoch 19, lr 0.001
+
+(19,210) 24 step loss : 0.000949
+Epoch 19, lr 0.001
+
+(19,210) 25 step loss : 0.000912
+Epoch 19, lr 0.001
+
+(19,210) 26 step loss : 0.000876
+Epoch 19, lr 0.001
+
+(19,210) 27 step loss : 0.000880
+Epoch 19, lr 0.001
+
+(19,210) 28 step loss : 0.000892
+Epoch 19, lr 0.001
+
+(19,210) 29 step loss : 0.000870
+Epoch 19, lr 0.001
+
+(19,210) 30 step loss : 0.000957
+Epoch 19, lr 0.001
+
+(19,210) 31 step loss : 0.000877
+Epoch 19, lr 0.001
+
+(19,210) 32 step loss : 0.000892
+Epoch 19, lr 0.001
+
+(19,210) 33 step loss : 0.000863
+Epoch 19, lr 0.001
+
+(19,210) 34 step loss : 0.000927
+Epoch 19, lr 0.001
+
+(19,210) 35 step loss : 0.000922
+Epoch 19, lr 0.001
+
+(19,210) 36 step loss : 0.000879
+Epoch 19, lr 0.001
+
+(19,210) 37 step loss : 0.000876
+Epoch 19, lr 0.001
+
+(19,210) 38 step loss : 0.000925
+Epoch 19, lr 0.001
+
+(19,210) 39 step loss : 0.000927
+Epoch 19, lr 0.001
+
+(19,210) 40 step loss : 0.000910
+Epoch 19, lr 0.001
+
+(19,210) 41 step loss : 0.000938
+Epoch 19, lr 0.001
+
+(19,210) 42 step loss : 0.000884
+Epoch 19, lr 0.001
+
+(19,210) 43 step loss : 0.000933
+Epoch 19, lr 0.001
+
+(19,210) 44 step loss : 0.000904
+Epoch 19, lr 0.001
+
+(19,210) 45 step loss : 0.000865
+Epoch 19, lr 0.001
+
+(19,210) 46 step loss : 0.000931
+Epoch 19, lr 0.001
+
+(19,210) 47 step loss : 0.000914
+Epoch 19, lr 0.001
+
+(19,210) 48 step loss : 0.000936
+Epoch 19, lr 0.001
+
+(19,210) 49 step loss : 0.000860
+(19,210) epoch loss : 0.000900
+Epoch 20, lr 0.001
+
+(20,210) 0 step loss : 0.000902
+Epoch 20, lr 0.001
+
+(20,210) 1 step loss : 0.000873
+Epoch 20, lr 0.001
+
+(20,210) 2 step loss : 0.000891
+Epoch 20, lr 0.001
+
+(20,210) 3 step loss : 0.000888
+Epoch 20, lr 0.001
+
+(20,210) 4 step loss : 0.000837
+Epoch 20, lr 0.001
+
+(20,210) 5 step loss : 0.000867
+Epoch 20, lr 0.001
+
+(20,210) 6 step loss : 0.000863
+Epoch 20, lr 0.001
+
+(20,210) 7 step loss : 0.000840
+Epoch 20, lr 0.001
+
+(20,210) 8 step loss : 0.000858
+Epoch 20, lr 0.001
+
+(20,210) 9 step loss : 0.000903
+Epoch 20, lr 0.001
+
+(20,210) 10 step loss : 0.000879
+Epoch 20, lr 0.001
+
+(20,210) 11 step loss : 0.000898
+Epoch 20, lr 0.001
+
+(20,210) 12 step loss : 0.000810
+Epoch 20, lr 0.001
+
+(20,210) 13 step loss : 0.000856
+Epoch 20, lr 0.001
+
+(20,210) 14 step loss : 0.000895
+Epoch 20, lr 0.001
+
+(20,210) 15 step loss : 0.000949
+Epoch 20, lr 0.001
+
+(20,210) 16 step loss : 0.000918
+Epoch 20, lr 0.001
+
+(20,210) 17 step loss : 0.000848
+Epoch 20, lr 0.001
+
+(20,210) 18 step loss : 0.000938
+Epoch 20, lr 0.001
+
+(20,210) 19 step loss : 0.000874
+Epoch 20, lr 0.001
+
+(20,210) 20 step loss : 0.000970
+Epoch 20, lr 0.001
+
+(20,210) 21 step loss : 0.000866
+Epoch 20, lr 0.001
+
+(20,210) 22 step loss : 0.000853
+Epoch 20, lr 0.001
+
+(20,210) 23 step loss : 0.000860
+Epoch 20, lr 0.001
+
+(20,210) 24 step loss : 0.000845
+Epoch 20, lr 0.001
+
+(20,210) 25 step loss : 0.000879
+Epoch 20, lr 0.001
+
+(20,210) 26 step loss : 0.000830
+Epoch 20, lr 0.001
+
+(20,210) 27 step loss : 0.000834
+Epoch 20, lr 0.001
+
+(20,210) 28 step loss : 0.000877
+Epoch 20, lr 0.001
+
+(20,210) 29 step loss : 0.000906
+Epoch 20, lr 0.001
+
+(20,210) 30 step loss : 0.000893
+Epoch 20, lr 0.001
+
+(20,210) 31 step loss : 0.000893
+Epoch 20, lr 0.001
+
+(20,210) 32 step loss : 0.000884
+Epoch 20, lr 0.001
+
+(20,210) 33 step loss : 0.000918
+Epoch 20, lr 0.001
+
+(20,210) 34 step loss : 0.000861
+Epoch 20, lr 0.001
+
+(20,210) 35 step loss : 0.000874
+Epoch 20, lr 0.001
+
+(20,210) 36 step loss : 0.000929
+Epoch 20, lr 0.001
+
+(20,210) 37 step loss : 0.000904
+Epoch 20, lr 0.001
+
+(20,210) 38 step loss : 0.000866
+Epoch 20, lr 0.001
+
+(20,210) 39 step loss : 0.000880
+Epoch 20, lr 0.001
+
+(20,210) 40 step loss : 0.000923
+Epoch 20, lr 0.001
+
+(20,210) 41 step loss : 0.000896
+Epoch 20, lr 0.001
+
+(20,210) 42 step loss : 0.000936
+Epoch 20, lr 0.001
+
+(20,210) 43 step loss : 0.000852
+Epoch 20, lr 0.001
+
+(20,210) 44 step loss : 0.000833
+Epoch 20, lr 0.001
+
+(20,210) 45 step loss : 0.000842
+Epoch 20, lr 0.001
+
+(20,210) 46 step loss : 0.000847
+Epoch 20, lr 0.001
+
+(20,210) 47 step loss : 0.000886
+Epoch 20, lr 0.001
+
+(20,210) 48 step loss : 0.000825
+Epoch 20, lr 0.001
+
+(20,210) 49 step loss : 0.000893
+(20,210) epoch loss : 0.000879
+Epoch 21, lr 0.001
+
+(21,210) 0 step loss : 0.000809
+Epoch 21, lr 0.001
+
+(21,210) 1 step loss : 0.000822
+Epoch 21, lr 0.001
+
+(21,210) 2 step loss : 0.000877
+Epoch 21, lr 0.001
+
+(21,210) 3 step loss : 0.000828
+Epoch 21, lr 0.001
+
+(21,210) 4 step loss : 0.000853
+Epoch 21, lr 0.001
+
+(21,210) 5 step loss : 0.000831
+Epoch 21, lr 0.001
+
+(21,210) 6 step loss : 0.000888
+Epoch 21, lr 0.001
+
+(21,210) 7 step loss : 0.000842
+Epoch 21, lr 0.001
+
+(21,210) 8 step loss : 0.000871
+Epoch 21, lr 0.001
+
+(21,210) 9 step loss : 0.000848
+Epoch 21, lr 0.001
+
+(21,210) 10 step loss : 0.000824
+Epoch 21, lr 0.001
+
+(21,210) 11 step loss : 0.000845
+Epoch 21, lr 0.001
+
+(21,210) 12 step loss : 0.000940
+Epoch 21, lr 0.001
+
+(21,210) 13 step loss : 0.000820
+Epoch 21, lr 0.001
+
+(21,210) 14 step loss : 0.000791
+Epoch 21, lr 0.001
+
+(21,210) 15 step loss : 0.000882
+Epoch 21, lr 0.001
+
+(21,210) 16 step loss : 0.000810
+Epoch 21, lr 0.001
+
+(21,210) 17 step loss : 0.000837
+Epoch 21, lr 0.001
+
+(21,210) 18 step loss : 0.000877
+Epoch 21, lr 0.001
+
+(21,210) 19 step loss : 0.000867
+Epoch 21, lr 0.001
+
+(21,210) 20 step loss : 0.000840
+Epoch 21, lr 0.001
+
+(21,210) 21 step loss : 0.000829
+Epoch 21, lr 0.001
+
+(21,210) 22 step loss : 0.000750
+Epoch 21, lr 0.001
+
+(21,210) 23 step loss : 0.000884
+Epoch 21, lr 0.001
+
+(21,210) 24 step loss : 0.000825
+Epoch 21, lr 0.001
+
+(21,210) 25 step loss : 0.000798
+Epoch 21, lr 0.001
+
+(21,210) 26 step loss : 0.000845
+Epoch 21, lr 0.001
+
+(21,210) 27 step loss : 0.000842
+Epoch 21, lr 0.001
+
+(21,210) 28 step loss : 0.000909
+Epoch 21, lr 0.001
+
+(21,210) 29 step loss : 0.000812
+Epoch 21, lr 0.001
+
+(21,210) 30 step loss : 0.000873
+Epoch 21, lr 0.001
+
+(21,210) 31 step loss : 0.000870
+Epoch 21, lr 0.001
+
+(21,210) 32 step loss : 0.000858
+Epoch 21, lr 0.001
+
+(21,210) 33 step loss : 0.000917
+Epoch 21, lr 0.001
+
+(21,210) 34 step loss : 0.000812
+Epoch 21, lr 0.001
+
+(21,210) 35 step loss : 0.000857
+Epoch 21, lr 0.001
+
+(21,210) 36 step loss : 0.000907
+Epoch 21, lr 0.001
+
+(21,210) 37 step loss : 0.000860
+Epoch 21, lr 0.001
+
+(21,210) 38 step loss : 0.000870
+Epoch 21, lr 0.001
+
+(21,210) 39 step loss : 0.000883
+Epoch 21, lr 0.001
+
+(21,210) 40 step loss : 0.000854
+Epoch 21, lr 0.001
+
+(21,210) 41 step loss : 0.000823
+Epoch 21, lr 0.001
+
+(21,210) 42 step loss : 0.000878
+Epoch 21, lr 0.001
+
+(21,210) 43 step loss : 0.000828
+Epoch 21, lr 0.001
+
+(21,210) 44 step loss : 0.000864
+Epoch 21, lr 0.001
+
+(21,210) 45 step loss : 0.000940
+Epoch 21, lr 0.001
+
+(21,210) 46 step loss : 0.000861
+Epoch 21, lr 0.001
+
+(21,210) 47 step loss : 0.000891
+Epoch 21, lr 0.001
+
+(21,210) 48 step loss : 0.000844
+Epoch 21, lr 0.001
+
+(21,210) 49 step loss : 0.000883
+(21,210) epoch loss : 0.000853
+Epoch 22, lr 0.001
+
+(22,210) 0 step loss : 0.000829
+Epoch 22, lr 0.001
+
+(22,210) 1 step loss : 0.000863
+Epoch 22, lr 0.001
+
+(22,210) 2 step loss : 0.000856
+Epoch 22, lr 0.001
+
+(22,210) 3 step loss : 0.000841
+Epoch 22, lr 0.001
+
+(22,210) 4 step loss : 0.000818
+Epoch 22, lr 0.001
+
+(22,210) 5 step loss : 0.000823
+Epoch 22, lr 0.001
+
+(22,210) 6 step loss : 0.000816
+Epoch 22, lr 0.001
+
+(22,210) 7 step loss : 0.000854
+Epoch 22, lr 0.001
+
+(22,210) 8 step loss : 0.000829
+Epoch 22, lr 0.001
+
+(22,210) 9 step loss : 0.000801
+Epoch 22, lr 0.001
+
+(22,210) 10 step loss : 0.000827
+Epoch 22, lr 0.001
+
+(22,210) 11 step loss : 0.000864
+Epoch 22, lr 0.001
+
+(22,210) 12 step loss : 0.000840
+Epoch 22, lr 0.001
+
+(22,210) 13 step loss : 0.000868
+Epoch 22, lr 0.001
+
+(22,210) 14 step loss : 0.000877
+Epoch 22, lr 0.001
+
+(22,210) 15 step loss : 0.000797
+Epoch 22, lr 0.001
+
+(22,210) 16 step loss : 0.000834
+Epoch 22, lr 0.001
+
+(22,210) 17 step loss : 0.000777
+Epoch 22, lr 0.001
+
+(22,210) 18 step loss : 0.000860
+Epoch 22, lr 0.001
+
+(22,210) 19 step loss : 0.000817
+Epoch 22, lr 0.001
+
+(22,210) 20 step loss : 0.000823
+Epoch 22, lr 0.001
+
+(22,210) 21 step loss : 0.000832
+Epoch 22, lr 0.001
+
+(22,210) 22 step loss : 0.000816
+Epoch 22, lr 0.001
+
+(22,210) 23 step loss : 0.000877
+Epoch 22, lr 0.001
+
+(22,210) 24 step loss : 0.000882
+Epoch 22, lr 0.001
+
+(22,210) 25 step loss : 0.000828
+Epoch 22, lr 0.001
+
+(22,210) 26 step loss : 0.000843
+Epoch 22, lr 0.001
+
+(22,210) 27 step loss : 0.000827
+Epoch 22, lr 0.001
+
+(22,210) 28 step loss : 0.000841
+Epoch 22, lr 0.001
+
+(22,210) 29 step loss : 0.000816
+Epoch 22, lr 0.001
+
+(22,210) 30 step loss : 0.000869
+Epoch 22, lr 0.001
+
+(22,210) 31 step loss : 0.000828
+Epoch 22, lr 0.001
+
+(22,210) 32 step loss : 0.000856
+Epoch 22, lr 0.001
+
+(22,210) 33 step loss : 0.000910
+Epoch 22, lr 0.001
+
+(22,210) 34 step loss : 0.000804
+Epoch 22, lr 0.001
+
+(22,210) 35 step loss : 0.000822
+Epoch 22, lr 0.001
+
+(22,210) 36 step loss : 0.000831
+Epoch 22, lr 0.001
+
+(22,210) 37 step loss : 0.000845
+Epoch 22, lr 0.001
+
+(22,210) 38 step loss : 0.000878
+Epoch 22, lr 0.001
+
+(22,210) 39 step loss : 0.000804
+Epoch 22, lr 0.001
+
+(22,210) 40 step loss : 0.000840
+Epoch 22, lr 0.001
+
+(22,210) 41 step loss : 0.000796
+Epoch 22, lr 0.001
+
+(22,210) 42 step loss : 0.000836
+Epoch 22, lr 0.001
+
+(22,210) 43 step loss : 0.000829
+Epoch 22, lr 0.001
+
+(22,210) 44 step loss : 0.000822
+Epoch 22, lr 0.001
+
+(22,210) 45 step loss : 0.000839
+Epoch 22, lr 0.001
+
+(22,210) 46 step loss : 0.000846
+Epoch 22, lr 0.001
+
+(22,210) 47 step loss : 0.000839
+Epoch 22, lr 0.001
+
+(22,210) 48 step loss : 0.000860
+Epoch 22, lr 0.001
+
+(22,210) 49 step loss : 0.000834
+(22,210) epoch loss : 0.000837
+Epoch 23, lr 0.001
+
+(23,210) 0 step loss : 0.000777
+Epoch 23, lr 0.001
+
+(23,210) 1 step loss : 0.000829
+Epoch 23, lr 0.001
+
+(23,210) 2 step loss : 0.000758
+Epoch 23, lr 0.001
+
+(23,210) 3 step loss : 0.000821
+Epoch 23, lr 0.001
+
+(23,210) 4 step loss : 0.000805
+Epoch 23, lr 0.001
+
+(23,210) 5 step loss : 0.000775
+Epoch 23, lr 0.001
+
+(23,210) 6 step loss : 0.000777
+Epoch 23, lr 0.001
+
+(23,210) 7 step loss : 0.000798
+Epoch 23, lr 0.001
+
+(23,210) 8 step loss : 0.000763
+Epoch 23, lr 0.001
+
+(23,210) 9 step loss : 0.000759
+Epoch 23, lr 0.001
+
+(23,210) 10 step loss : 0.000801
+Epoch 23, lr 0.001
+
+(23,210) 11 step loss : 0.000774
+Epoch 23, lr 0.001
+
+(23,210) 12 step loss : 0.000808
+Epoch 23, lr 0.001
+
+(23,210) 13 step loss : 0.000822
+Epoch 23, lr 0.001
+
+(23,210) 14 step loss : 0.000790
+Epoch 23, lr 0.001
+
+(23,210) 15 step loss : 0.000800
+Epoch 23, lr 0.001
+
+(23,210) 16 step loss : 0.000891
+Epoch 23, lr 0.001
+
+(23,210) 17 step loss : 0.000781
+Epoch 23, lr 0.001
+
+(23,210) 18 step loss : 0.000775
+Epoch 23, lr 0.001
+
+(23,210) 19 step loss : 0.000751
+Epoch 23, lr 0.001
+
+(23,210) 20 step loss : 0.000790
+Epoch 23, lr 0.001
+
+(23,210) 21 step loss : 0.000775
+Epoch 23, lr 0.001
+
+(23,210) 22 step loss : 0.000853
+Epoch 23, lr 0.001
+
+(23,210) 23 step loss : 0.000833
+Epoch 23, lr 0.001
+
+(23,210) 24 step loss : 0.000828
+Epoch 23, lr 0.001
+
+(23,210) 25 step loss : 0.000790
+Epoch 23, lr 0.001
+
+(23,210) 26 step loss : 0.000837
+Epoch 23, lr 0.001
+
+(23,210) 27 step loss : 0.000822
+Epoch 23, lr 0.001
+
+(23,210) 28 step loss : 0.000835
+Epoch 23, lr 0.001
+
+(23,210) 29 step loss : 0.000824
+Epoch 23, lr 0.001
+
+(23,210) 30 step loss : 0.000867
+Epoch 23, lr 0.001
+
+(23,210) 31 step loss : 0.000787
+Epoch 23, lr 0.001
+
+(23,210) 32 step loss : 0.000776
+Epoch 23, lr 0.001
+
+(23,210) 33 step loss : 0.000839
+Epoch 23, lr 0.001
+
+(23,210) 34 step loss : 0.000804
+Epoch 23, lr 0.001
+
+(23,210) 35 step loss : 0.000831
+Epoch 23, lr 0.001
+
+(23,210) 36 step loss : 0.000838
+Epoch 23, lr 0.001
+
+(23,210) 37 step loss : 0.000810
+Epoch 23, lr 0.001
+
+(23,210) 38 step loss : 0.000810
+Epoch 23, lr 0.001
+
+(23,210) 39 step loss : 0.000790
+Epoch 23, lr 0.001
+
+(23,210) 40 step loss : 0.000809
+Epoch 23, lr 0.001
+
+(23,210) 41 step loss : 0.000822
+Epoch 23, lr 0.001
+
+(23,210) 42 step loss : 0.000838
+Epoch 23, lr 0.001
+
+(23,210) 43 step loss : 0.000765
+Epoch 23, lr 0.001
+
+(23,210) 44 step loss : 0.000836
+Epoch 23, lr 0.001
+
+(23,210) 45 step loss : 0.000877
+Epoch 23, lr 0.001
+
+(23,210) 46 step loss : 0.000856
+Epoch 23, lr 0.001
+
+(23,210) 47 step loss : 0.000886
+Epoch 23, lr 0.001
+
+(23,210) 48 step loss : 0.000818
+Epoch 23, lr 0.001
+
+(23,210) 49 step loss : 0.000889
+(23,210) epoch loss : 0.000811
+Epoch 24, lr 0.001
+
+(24,210) 0 step loss : 0.000755
+Epoch 24, lr 0.001
+
+(24,210) 1 step loss : 0.000797
+Epoch 24, lr 0.001
+
+(24,210) 2 step loss : 0.000757
+Epoch 24, lr 0.001
+
+(24,210) 3 step loss : 0.000822
+Epoch 24, lr 0.001
+
+(24,210) 4 step loss : 0.000812
+Epoch 24, lr 0.001
+
+(24,210) 5 step loss : 0.000800
+Epoch 24, lr 0.001
+
+(24,210) 6 step loss : 0.000784
+Epoch 24, lr 0.001
+
+(24,210) 7 step loss : 0.000789
+Epoch 24, lr 0.001
+
+(24,210) 8 step loss : 0.000759
+Epoch 24, lr 0.001
+
+(24,210) 9 step loss : 0.000803
+Epoch 24, lr 0.001
+
+(24,210) 10 step loss : 0.000814
+Epoch 24, lr 0.001
+
+(24,210) 11 step loss : 0.000760
+Epoch 24, lr 0.001
+
+(24,210) 12 step loss : 0.000784
+Epoch 24, lr 0.001
+
+(24,210) 13 step loss : 0.000781
+Epoch 24, lr 0.001
+
+(24,210) 14 step loss : 0.000773
+Epoch 24, lr 0.001
+
+(24,210) 15 step loss : 0.000768
+Epoch 24, lr 0.001
+
+(24,210) 16 step loss : 0.000769
+Epoch 24, lr 0.001
+
+(24,210) 17 step loss : 0.000786
+Epoch 24, lr 0.001
+
+(24,210) 18 step loss : 0.000760
+Epoch 24, lr 0.001
+
+(24,210) 19 step loss : 0.000812
+Epoch 24, lr 0.001
+
+(24,210) 20 step loss : 0.000752
+Epoch 24, lr 0.001
+
+(24,210) 21 step loss : 0.000757
+Epoch 24, lr 0.001
+
+(24,210) 22 step loss : 0.000778
+Epoch 24, lr 0.001
+
+(24,210) 23 step loss : 0.000802
+Epoch 24, lr 0.001
+
+(24,210) 24 step loss : 0.000761
+Epoch 24, lr 0.001
+
+(24,210) 25 step loss : 0.000803
+Epoch 24, lr 0.001
+
+(24,210) 26 step loss : 0.000797
+Epoch 24, lr 0.001
+
+(24,210) 27 step loss : 0.000778
+Epoch 24, lr 0.001
+
+(24,210) 28 step loss : 0.000770
+Epoch 24, lr 0.001
+
+(24,210) 29 step loss : 0.000778
+Epoch 24, lr 0.001
+
+(24,210) 30 step loss : 0.000826
+Epoch 24, lr 0.001
+
+(24,210) 31 step loss : 0.000810
+Epoch 24, lr 0.001
+
+(24,210) 32 step loss : 0.000805
+Epoch 24, lr 0.001
+
+(24,210) 33 step loss : 0.000718
+Epoch 24, lr 0.001
+
+(24,210) 34 step loss : 0.000803
+Epoch 24, lr 0.001
+
+(24,210) 35 step loss : 0.000815
+Epoch 24, lr 0.001
+
+(24,210) 36 step loss : 0.000775
+Epoch 24, lr 0.001
+
+(24,210) 37 step loss : 0.000725
+Epoch 24, lr 0.001
+
+(24,210) 38 step loss : 0.000758
+Epoch 24, lr 0.001
+
+(24,210) 39 step loss : 0.000795
+Epoch 24, lr 0.001
+
+(24,210) 40 step loss : 0.000773
+Epoch 24, lr 0.001
+
+(24,210) 41 step loss : 0.000822
+Epoch 24, lr 0.001
+
+(24,210) 42 step loss : 0.000760
+Epoch 24, lr 0.001
+
+(24,210) 43 step loss : 0.000831
+Epoch 24, lr 0.001
+
+(24,210) 44 step loss : 0.000871
+Epoch 24, lr 0.001
+
+(24,210) 45 step loss : 0.000766
+Epoch 24, lr 0.001
+
+(24,210) 46 step loss : 0.000784
+Epoch 24, lr 0.001
+
+(24,210) 47 step loss : 0.000753
+Epoch 24, lr 0.001
+
+(24,210) 48 step loss : 0.000839
+Epoch 24, lr 0.001
+
+(24,210) 49 step loss : 0.000874
+(24,210) epoch loss : 0.000787
+Epoch 25, lr 0.001
+
+(25,210) 0 step loss : 0.000749
+Epoch 25, lr 0.001
+
+(25,210) 1 step loss : 0.000751
+Epoch 25, lr 0.001
+
+(25,210) 2 step loss : 0.000783
+Epoch 25, lr 0.001
+
+(25,210) 3 step loss : 0.000774
+Epoch 25, lr 0.001
+
+(25,210) 4 step loss : 0.000767
+Epoch 25, lr 0.001
+
+(25,210) 5 step loss : 0.000787
+Epoch 25, lr 0.001
+
+(25,210) 6 step loss : 0.000765
+Epoch 25, lr 0.001
+
+(25,210) 7 step loss : 0.000734
+Epoch 25, lr 0.001
+
+(25,210) 8 step loss : 0.000715
+Epoch 25, lr 0.001
+
+(25,210) 9 step loss : 0.000771
+Epoch 25, lr 0.001
+
+(25,210) 10 step loss : 0.000714
+Epoch 25, lr 0.001
+
+(25,210) 11 step loss : 0.000771
+Epoch 25, lr 0.001
+
+(25,210) 12 step loss : 0.000732
+Epoch 25, lr 0.001
+
+(25,210) 13 step loss : 0.000769
+Epoch 25, lr 0.001
+
+(25,210) 14 step loss : 0.000802
+Epoch 25, lr 0.001
+
+(25,210) 15 step loss : 0.000756
+Epoch 25, lr 0.001
+
+(25,210) 16 step loss : 0.000757
+Epoch 25, lr 0.001
+
+(25,210) 17 step loss : 0.000772
+Epoch 25, lr 0.001
+
+(25,210) 18 step loss : 0.000758
+Epoch 25, lr 0.001
+
+(25,210) 19 step loss : 0.000766
+Epoch 25, lr 0.001
+
+(25,210) 20 step loss : 0.000689
+Epoch 25, lr 0.001
+
+(25,210) 21 step loss : 0.000748
+Epoch 25, lr 0.001
+
+(25,210) 22 step loss : 0.000768
+Epoch 25, lr 0.001
+
+(25,210) 23 step loss : 0.000749
+Epoch 25, lr 0.001
+
+(25,210) 24 step loss : 0.000817
+Epoch 25, lr 0.001
+
+(25,210) 25 step loss : 0.000787
+Epoch 25, lr 0.001
+
+(25,210) 26 step loss : 0.000739
+Epoch 25, lr 0.001
+
+(25,210) 27 step loss : 0.000806
+Epoch 25, lr 0.001
+
+(25,210) 28 step loss : 0.000750
+Epoch 25, lr 0.001
+
+(25,210) 29 step loss : 0.000733
+Epoch 25, lr 0.001
+
+(25,210) 30 step loss : 0.000786
+Epoch 25, lr 0.001
+
+(25,210) 31 step loss : 0.000771
+Epoch 25, lr 0.001
+
+(25,210) 32 step loss : 0.000735
+Epoch 25, lr 0.001
+
+(25,210) 33 step loss : 0.000793
+Epoch 25, lr 0.001
+
+(25,210) 34 step loss : 0.000726
+Epoch 25, lr 0.001
+
+(25,210) 35 step loss : 0.000747
+Epoch 25, lr 0.001
+
+(25,210) 36 step loss : 0.000759
+Epoch 25, lr 0.001
+
+(25,210) 37 step loss : 0.000787
+Epoch 25, lr 0.001
+
+(25,210) 38 step loss : 0.000751
+Epoch 25, lr 0.001
+
+(25,210) 39 step loss : 0.000758
+Epoch 25, lr 0.001
+
+(25,210) 40 step loss : 0.000759
+Epoch 25, lr 0.001
+
+(25,210) 41 step loss : 0.000783
+Epoch 25, lr 0.001
+
+(25,210) 42 step loss : 0.000762
+Epoch 25, lr 0.001
+
+(25,210) 43 step loss : 0.000771
+Epoch 25, lr 0.001
+
+(25,210) 44 step loss : 0.000735
+Epoch 25, lr 0.001
+
+(25,210) 45 step loss : 0.000776
+Epoch 25, lr 0.001
+
+(25,210) 46 step loss : 0.000803
+Epoch 25, lr 0.001
+
+(25,210) 47 step loss : 0.000797
+Epoch 25, lr 0.001
+
+(25,210) 48 step loss : 0.000814
+Epoch 25, lr 0.001
+
+(25,210) 49 step loss : 0.000711
+(25,210) epoch loss : 0.000762
+Epoch 26, lr 0.001
+
+(26,210) 0 step loss : 0.000716
+Epoch 26, lr 0.001
+
+(26,210) 1 step loss : 0.000704
+Epoch 26, lr 0.001
+
+(26,210) 2 step loss : 0.000719
+Epoch 26, lr 0.001
+
+(26,210) 3 step loss : 0.000724
+Epoch 26, lr 0.001
+
+(26,210) 4 step loss : 0.000752
+Epoch 26, lr 0.001
+
+(26,210) 5 step loss : 0.000695
+Epoch 26, lr 0.001
+
+(26,210) 6 step loss : 0.000749
+Epoch 26, lr 0.001
+
+(26,210) 7 step loss : 0.000739
+Epoch 26, lr 0.001
+
+(26,210) 8 step loss : 0.000712
+Epoch 26, lr 0.001
+
+(26,210) 9 step loss : 0.000713
+Epoch 26, lr 0.001
+
+(26,210) 10 step loss : 0.000721
+Epoch 26, lr 0.001
+
+(26,210) 11 step loss : 0.000719
+Epoch 26, lr 0.001
+
+(26,210) 12 step loss : 0.000734
+Epoch 26, lr 0.001
+
+(26,210) 13 step loss : 0.000694
+Epoch 26, lr 0.001
+
+(26,210) 14 step loss : 0.000773
+Epoch 26, lr 0.001
+
+(26,210) 15 step loss : 0.000729
+Epoch 26, lr 0.001
+
+(26,210) 16 step loss : 0.000720
+Epoch 26, lr 0.001
+
+(26,210) 17 step loss : 0.000723
+Epoch 26, lr 0.001
+
+(26,210) 18 step loss : 0.000708
+Epoch 26, lr 0.001
+
+(26,210) 19 step loss : 0.000715
+Epoch 26, lr 0.001
+
+(26,210) 20 step loss : 0.000674
+Epoch 26, lr 0.001
+
+(26,210) 21 step loss : 0.000751
+Epoch 26, lr 0.001
+
+(26,210) 22 step loss : 0.000717
+Epoch 26, lr 0.001
+
+(26,210) 23 step loss : 0.000742
+Epoch 26, lr 0.001
+
+(26,210) 24 step loss : 0.000758
+Epoch 26, lr 0.001
+
+(26,210) 25 step loss : 0.000781
+Epoch 26, lr 0.001
+
+(26,210) 26 step loss : 0.000824
+Epoch 26, lr 0.001
+
+(26,210) 27 step loss : 0.000705
+Epoch 26, lr 0.001
+
+(26,210) 28 step loss : 0.000787
+Epoch 26, lr 0.001
+
+(26,210) 29 step loss : 0.000771
+Epoch 26, lr 0.001
+
+(26,210) 30 step loss : 0.000710
+Epoch 26, lr 0.001
+
+(26,210) 31 step loss : 0.000764
+Epoch 26, lr 0.001
+
+(26,210) 32 step loss : 0.000770
+Epoch 26, lr 0.001
+
+(26,210) 33 step loss : 0.000768
+Epoch 26, lr 0.001
+
+(26,210) 34 step loss : 0.000746
+Epoch 26, lr 0.001
+
+(26,210) 35 step loss : 0.000786
+Epoch 26, lr 0.001
+
+(26,210) 36 step loss : 0.000785
+Epoch 26, lr 0.001
+
+(26,210) 37 step loss : 0.000809
+Epoch 26, lr 0.001
+
+(26,210) 38 step loss : 0.000798
+Epoch 26, lr 0.001
+
+(26,210) 39 step loss : 0.000724
+Epoch 26, lr 0.001
+
+(26,210) 40 step loss : 0.000735
+Epoch 26, lr 0.001
+
+(26,210) 41 step loss : 0.000761
+Epoch 26, lr 0.001
+
+(26,210) 42 step loss : 0.000843
+Epoch 26, lr 0.001
+
+(26,210) 43 step loss : 0.000748
+Epoch 26, lr 0.001
+
+(26,210) 44 step loss : 0.000788
+Epoch 26, lr 0.001
+
+(26,210) 45 step loss : 0.000738
+Epoch 26, lr 0.001
+
+(26,210) 46 step loss : 0.000733
+Epoch 26, lr 0.001
+
+(26,210) 47 step loss : 0.000753
+Epoch 26, lr 0.001
+
+(26,210) 48 step loss : 0.000781
+Epoch 26, lr 0.001
+
+(26,210) 49 step loss : 0.000813
+(26,210) epoch loss : 0.000746
+Epoch 27, lr 0.001
+
+(27,210) 0 step loss : 0.000735
+Epoch 27, lr 0.001
+
+(27,210) 1 step loss : 0.000720
+Epoch 27, lr 0.001
+
+(27,210) 2 step loss : 0.000773
+Epoch 27, lr 0.001
+
+(27,210) 3 step loss : 0.000719
+Epoch 27, lr 0.001
+
+(27,210) 4 step loss : 0.000743
+Epoch 27, lr 0.001
+
+(27,210) 5 step loss : 0.000753
+Epoch 27, lr 0.001
+
+(27,210) 6 step loss : 0.000711
+Epoch 27, lr 0.001
+
+(27,210) 7 step loss : 0.000715
+Epoch 27, lr 0.001
+
+(27,210) 8 step loss : 0.000746
+Epoch 27, lr 0.001
+
+(27,210) 9 step loss : 0.000719
+Epoch 27, lr 0.001
+
+(27,210) 10 step loss : 0.000746
+Epoch 27, lr 0.001
+
+(27,210) 11 step loss : 0.000730
+Epoch 27, lr 0.001
+
+(27,210) 12 step loss : 0.000722
+Epoch 27, lr 0.001
+
+(27,210) 13 step loss : 0.000725
+Epoch 27, lr 0.001
+
+(27,210) 14 step loss : 0.000736
+Epoch 27, lr 0.001
+
+(27,210) 15 step loss : 0.000727
+Epoch 27, lr 0.001
+
+(27,210) 16 step loss : 0.000704
+Epoch 27, lr 0.001
+
+(27,210) 17 step loss : 0.000726
+Epoch 27, lr 0.001
+
+(27,210) 18 step loss : 0.000710
+Epoch 27, lr 0.001
+
+(27,210) 19 step loss : 0.000752
+Epoch 27, lr 0.001
+
+(27,210) 20 step loss : 0.000745
+Epoch 27, lr 0.001
+
+(27,210) 21 step loss : 0.000733
+Epoch 27, lr 0.001
+
+(27,210) 22 step loss : 0.000720
+Epoch 27, lr 0.001
+
+(27,210) 23 step loss : 0.000660
+Epoch 27, lr 0.001
+
+(27,210) 24 step loss : 0.000723
+Epoch 27, lr 0.001
+
+(27,210) 25 step loss : 0.000724
+Epoch 27, lr 0.001
+
+(27,210) 26 step loss : 0.000734
+Epoch 27, lr 0.001
+
+(27,210) 27 step loss : 0.000684
+Epoch 27, lr 0.001
+
+(27,210) 28 step loss : 0.000717
+Epoch 27, lr 0.001
+
+(27,210) 29 step loss : 0.000763
+Epoch 27, lr 0.001
+
+(27,210) 30 step loss : 0.000706
+Epoch 27, lr 0.001
+
+(27,210) 31 step loss : 0.000728
+Epoch 27, lr 0.001
+
+(27,210) 32 step loss : 0.000775
+Epoch 27, lr 0.001
+
+(27,210) 33 step loss : 0.000716
+Epoch 27, lr 0.001
+
+(27,210) 34 step loss : 0.000734
+Epoch 27, lr 0.001
+
+(27,210) 35 step loss : 0.000732
+Epoch 27, lr 0.001
+
+(27,210) 36 step loss : 0.000715
+Epoch 27, lr 0.001
+
+(27,210) 37 step loss : 0.000764
+Epoch 27, lr 0.001
+
+(27,210) 38 step loss : 0.000723
+Epoch 27, lr 0.001
+
+(27,210) 39 step loss : 0.000716
+Epoch 27, lr 0.001
+
+(27,210) 40 step loss : 0.000728
+Epoch 27, lr 0.001
+
+(27,210) 41 step loss : 0.000745
+Epoch 27, lr 0.001
+
+(27,210) 42 step loss : 0.000681
+Epoch 27, lr 0.001
+
+(27,210) 43 step loss : 0.000650
+Epoch 27, lr 0.001
+
+(27,210) 44 step loss : 0.000733
+Epoch 27, lr 0.001
+
+(27,210) 45 step loss : 0.000672
+Epoch 27, lr 0.001
+
+(27,210) 46 step loss : 0.000726
+Epoch 27, lr 0.001
+
+(27,210) 47 step loss : 0.000741
+Epoch 27, lr 0.001
+
+(27,210) 48 step loss : 0.000720
+Epoch 27, lr 0.001
+
+(27,210) 49 step loss : 0.000687
+(27,210) epoch loss : 0.000724
+Epoch 28, lr 0.001
+
+(28,210) 0 step loss : 0.000670
+Epoch 28, lr 0.001
+
+(28,210) 1 step loss : 0.000678
+Epoch 28, lr 0.001
+
+(28,210) 2 step loss : 0.000718
+Epoch 28, lr 0.001
+
+(28,210) 3 step loss : 0.000720
+Epoch 28, lr 0.001
+
+(28,210) 4 step loss : 0.000668
+Epoch 28, lr 0.001
+
+(28,210) 5 step loss : 0.000687
+Epoch 28, lr 0.001
+
+(28,210) 6 step loss : 0.000682
+Epoch 28, lr 0.001
+
+(28,210) 7 step loss : 0.000627
+Epoch 28, lr 0.001
+
+(28,210) 8 step loss : 0.000669
+Epoch 28, lr 0.001
+
+(28,210) 9 step loss : 0.000653
+Epoch 28, lr 0.001
+
+(28,210) 10 step loss : 0.000763
+Epoch 28, lr 0.001
+
+(28,210) 11 step loss : 0.000692
+Epoch 28, lr 0.001
+
+(28,210) 12 step loss : 0.000711
+Epoch 28, lr 0.001
+
+(28,210) 13 step loss : 0.000695
+Epoch 28, lr 0.001
+
+(28,210) 14 step loss : 0.000698
+Epoch 28, lr 0.001
+
+(28,210) 15 step loss : 0.000653
+Epoch 28, lr 0.001
+
+(28,210) 16 step loss : 0.000708
+Epoch 28, lr 0.001
+
+(28,210) 17 step loss : 0.000716
+Epoch 28, lr 0.001
+
+(28,210) 18 step loss : 0.000717
+Epoch 28, lr 0.001
+
+(28,210) 19 step loss : 0.000669
+Epoch 28, lr 0.001
+
+(28,210) 20 step loss : 0.000674
+Epoch 28, lr 0.001
+
+(28,210) 21 step loss : 0.000694
+Epoch 28, lr 0.001
+
+(28,210) 22 step loss : 0.000681
+Epoch 28, lr 0.001
+
+(28,210) 23 step loss : 0.000672
+Epoch 28, lr 0.001
+
+(28,210) 24 step loss : 0.000688
+Epoch 28, lr 0.001
+
+(28,210) 25 step loss : 0.000682
+Epoch 28, lr 0.001
+
+(28,210) 26 step loss : 0.000698
+Epoch 28, lr 0.001
+
+(28,210) 27 step loss : 0.000668
+Epoch 28, lr 0.001
+
+(28,210) 28 step loss : 0.000688
+Epoch 28, lr 0.001
+
+(28,210) 29 step loss : 0.000700
+Epoch 28, lr 0.001
+
+(28,210) 30 step loss : 0.000668
+Epoch 28, lr 0.001
+
+(28,210) 31 step loss : 0.000657
+Epoch 28, lr 0.001
+
+(28,210) 32 step loss : 0.000706
+Epoch 28, lr 0.001
+
+(28,210) 33 step loss : 0.000654
+Epoch 28, lr 0.001
+
+(28,210) 34 step loss : 0.000669
+Epoch 28, lr 0.001
+
+(28,210) 35 step loss : 0.000682
+Epoch 28, lr 0.001
+
+(28,210) 36 step loss : 0.000708
+Epoch 28, lr 0.001
+
+(28,210) 37 step loss : 0.000700
+Epoch 28, lr 0.001
+
+(28,210) 38 step loss : 0.000700
+Epoch 28, lr 0.001
+
+(28,210) 39 step loss : 0.000677
+Epoch 28, lr 0.001
+
+(28,210) 40 step loss : 0.000694
+Epoch 28, lr 0.001
+
+(28,210) 41 step loss : 0.000697
+Epoch 28, lr 0.001
+
+(28,210) 42 step loss : 0.000715
+Epoch 28, lr 0.001
+
+(28,210) 43 step loss : 0.000685
+Epoch 28, lr 0.001
+
+(28,210) 44 step loss : 0.000654
+Epoch 28, lr 0.001
+
+(28,210) 45 step loss : 0.000637
+Epoch 28, lr 0.001
+
+(28,210) 46 step loss : 0.000722
+Epoch 28, lr 0.001
+
+(28,210) 47 step loss : 0.000633
+Epoch 28, lr 0.001
+
+(28,210) 48 step loss : 0.000701
+Epoch 28, lr 0.001
+
+(28,210) 49 step loss : 0.000694
+(28,210) epoch loss : 0.000686
+Epoch 29, lr 0.001
+
+(29,210) 0 step loss : 0.000623
+Epoch 29, lr 0.001
+
+(29,210) 1 step loss : 0.000622
+Epoch 29, lr 0.001
+
+(29,210) 2 step loss : 0.000635
+Epoch 29, lr 0.001
+
+(29,210) 3 step loss : 0.000643
+Epoch 29, lr 0.001
+
+(29,210) 4 step loss : 0.000706
+Epoch 29, lr 0.001
+
+(29,210) 5 step loss : 0.000641
+Epoch 29, lr 0.001
+
+(29,210) 6 step loss : 0.000631
+Epoch 29, lr 0.001
+
+(29,210) 7 step loss : 0.000639
+Epoch 29, lr 0.001
+
+(29,210) 8 step loss : 0.000628
+Epoch 29, lr 0.001
+
+(29,210) 9 step loss : 0.000625
+Epoch 29, lr 0.001
+
+(29,210) 10 step loss : 0.000671
+Epoch 29, lr 0.001
+
+(29,210) 11 step loss : 0.000657
+Epoch 29, lr 0.001
+
+(29,210) 12 step loss : 0.000653
+Epoch 29, lr 0.001
+
+(29,210) 13 step loss : 0.000689
+Epoch 29, lr 0.001
+
+(29,210) 14 step loss : 0.000724
+Epoch 29, lr 0.001
+
+(29,210) 15 step loss : 0.000638
+Epoch 29, lr 0.001
+
+(29,210) 16 step loss : 0.000680
+Epoch 29, lr 0.001
+
+(29,210) 17 step loss : 0.000637
+Epoch 29, lr 0.001
+
+(29,210) 18 step loss : 0.000626
+Epoch 29, lr 0.001
+
+(29,210) 19 step loss : 0.000622
+Epoch 29, lr 0.001
+
+(29,210) 20 step loss : 0.000628
+Epoch 29, lr 0.001
+
+(29,210) 21 step loss : 0.000656
+Epoch 29, lr 0.001
+
+(29,210) 22 step loss : 0.000639
+Epoch 29, lr 0.001
+
+(29,210) 23 step loss : 0.000645
+Epoch 29, lr 0.001
+
+(29,210) 24 step loss : 0.000668
+Epoch 29, lr 0.001
+
+(29,210) 25 step loss : 0.000643
+Epoch 29, lr 0.001
+
+(29,210) 26 step loss : 0.000664
+Epoch 29, lr 0.001
+
+(29,210) 27 step loss : 0.000683
+Epoch 29, lr 0.001
+
+(29,210) 28 step loss : 0.000686
+Epoch 29, lr 0.001
+
+(29,210) 29 step loss : 0.000682
+Epoch 29, lr 0.001
+
+(29,210) 30 step loss : 0.000643
+Epoch 29, lr 0.001
+
+(29,210) 31 step loss : 0.000679
+Epoch 29, lr 0.001
+
+(29,210) 32 step loss : 0.000673
+Epoch 29, lr 0.001
+
+(29,210) 33 step loss : 0.000664
+Epoch 29, lr 0.001
+
+(29,210) 34 step loss : 0.000608
+Epoch 29, lr 0.001
+
+(29,210) 35 step loss : 0.000620
+Epoch 29, lr 0.001
+
+(29,210) 36 step loss : 0.000694
+Epoch 29, lr 0.001
+
+(29,210) 37 step loss : 0.000674
+Epoch 29, lr 0.001
+
+(29,210) 38 step loss : 0.000647
+Epoch 29, lr 0.001
+
+(29,210) 39 step loss : 0.000715
+Epoch 29, lr 0.001
+
+(29,210) 40 step loss : 0.000642
+Epoch 29, lr 0.001
+
+(29,210) 41 step loss : 0.000639
+Epoch 29, lr 0.001
+
+(29,210) 42 step loss : 0.000639
+Epoch 29, lr 0.001
+
+(29,210) 43 step loss : 0.000653
+Epoch 29, lr 0.001
+
+(29,210) 44 step loss : 0.000667
+Epoch 29, lr 0.001
+
+(29,210) 45 step loss : 0.000674
+Epoch 29, lr 0.001
+
+(29,210) 46 step loss : 0.000632
+Epoch 29, lr 0.001
+
+(29,210) 47 step loss : 0.000620
+Epoch 29, lr 0.001
+
+(29,210) 48 step loss : 0.000691
+Epoch 29, lr 0.001
+
+(29,210) 49 step loss : 0.000643
+(29,210) epoch loss : 0.000654
+Epoch 30, lr 0.001
+
+(30,210) 0 step loss : 0.000640
+Epoch 30, lr 0.001
+
+(30,210) 1 step loss : 0.000632
+Epoch 30, lr 0.001
+
+(30,210) 2 step loss : 0.000628
+Epoch 30, lr 0.001
+
+(30,210) 3 step loss : 0.000594
+Epoch 30, lr 0.001
+
+(30,210) 4 step loss : 0.000631
+Epoch 30, lr 0.001
+
+(30,210) 5 step loss : 0.000587
+Epoch 30, lr 0.001
+
+(30,210) 6 step loss : 0.000656
+Epoch 30, lr 0.001
+
+(30,210) 7 step loss : 0.000617
+Epoch 30, lr 0.001
+
+(30,210) 8 step loss : 0.000596
+Epoch 30, lr 0.001
+
+(30,210) 9 step loss : 0.000649
+Epoch 30, lr 0.001
+
+(30,210) 10 step loss : 0.000625
+Epoch 30, lr 0.001
+
+(30,210) 11 step loss : 0.000619
+Epoch 30, lr 0.001
+
+(30,210) 12 step loss : 0.000628
+Epoch 30, lr 0.001
+
+(30,210) 13 step loss : 0.000576
+Epoch 30, lr 0.001
+
+(30,210) 14 step loss : 0.000640
+Epoch 30, lr 0.001
+
+(30,210) 15 step loss : 0.000612
+Epoch 30, lr 0.001
+
+(30,210) 16 step loss : 0.000589
+Epoch 30, lr 0.001
+
+(30,210) 17 step loss : 0.000595
+Epoch 30, lr 0.001
+
+(30,210) 18 step loss : 0.000594
+Epoch 30, lr 0.001
+
+(30,210) 19 step loss : 0.000589
+Epoch 30, lr 0.001
+
+(30,210) 20 step loss : 0.000627
+Epoch 30, lr 0.001
+
+(30,210) 21 step loss : 0.000599
+Epoch 30, lr 0.001
+
+(30,210) 22 step loss : 0.000648
+Epoch 30, lr 0.001
+
+(30,210) 23 step loss : 0.000600
+Epoch 30, lr 0.001
+
+(30,210) 24 step loss : 0.000649
+Epoch 30, lr 0.001
+
+(30,210) 25 step loss : 0.000619
+Epoch 30, lr 0.001
+
+(30,210) 26 step loss : 0.000638
+Epoch 30, lr 0.001
+
+(30,210) 27 step loss : 0.000612
+Epoch 30, lr 0.001
+
+(30,210) 28 step loss : 0.000681
+Epoch 30, lr 0.001
+
+(30,210) 29 step loss : 0.000616
+Epoch 30, lr 0.001
+
+(30,210) 30 step loss : 0.000591
+Epoch 30, lr 0.001
+
+(30,210) 31 step loss : 0.000632
+Epoch 30, lr 0.001
+
+(30,210) 32 step loss : 0.000592
+Epoch 30, lr 0.001
+
+(30,210) 33 step loss : 0.000602
+Epoch 30, lr 0.001
+
+(30,210) 34 step loss : 0.000633
+Epoch 30, lr 0.001
+
+(30,210) 35 step loss : 0.000600
+Epoch 30, lr 0.001
+
+(30,210) 36 step loss : 0.000635
+Epoch 30, lr 0.001
+
+(30,210) 37 step loss : 0.000631
+Epoch 30, lr 0.001
+
+(30,210) 38 step loss : 0.000624
+Epoch 30, lr 0.001
+
+(30,210) 39 step loss : 0.000634
+Epoch 30, lr 0.001
+
+(30,210) 40 step loss : 0.000636
+Epoch 30, lr 0.001
+
+(30,210) 41 step loss : 0.000615
+Epoch 30, lr 0.001
+
+(30,210) 42 step loss : 0.000615
+Epoch 30, lr 0.001
+
+(30,210) 43 step loss : 0.000600
+Epoch 30, lr 0.001
+
+(30,210) 44 step loss : 0.000632
+Epoch 30, lr 0.001
+
+(30,210) 45 step loss : 0.000643
+Epoch 30, lr 0.001
+
+(30,210) 46 step loss : 0.000600
+Epoch 30, lr 0.001
+
+(30,210) 47 step loss : 0.000613
+Epoch 30, lr 0.001
+
+(30,210) 48 step loss : 0.000620
+Epoch 30, lr 0.001
+
+(30,210) 49 step loss : 0.000673
+(30,210) epoch loss : 0.000620
+Epoch 31, lr 0.001
+
+(31,210) 0 step loss : 0.000578
+Epoch 31, lr 0.001
+
+(31,210) 1 step loss : 0.000585
+Epoch 31, lr 0.001
+
+(31,210) 2 step loss : 0.000592
+Epoch 31, lr 0.001
+
+(31,210) 3 step loss : 0.000607
+Epoch 31, lr 0.001
+
+(31,210) 4 step loss : 0.000572
+Epoch 31, lr 0.001
+
+(31,210) 5 step loss : 0.000590
+Epoch 31, lr 0.001
+
+(31,210) 6 step loss : 0.000563
+Epoch 31, lr 0.001
+
+(31,210) 7 step loss : 0.000625
+Epoch 31, lr 0.001
+
+(31,210) 8 step loss : 0.000569
+Epoch 31, lr 0.001
+
+(31,210) 9 step loss : 0.000575
+Epoch 31, lr 0.001
+
+(31,210) 10 step loss : 0.000610
+Epoch 31, lr 0.001
+
+(31,210) 11 step loss : 0.000615
+Epoch 31, lr 0.001
+
+(31,210) 12 step loss : 0.000587
+Epoch 31, lr 0.001
+
+(31,210) 13 step loss : 0.000557
+Epoch 31, lr 0.001
+
+(31,210) 14 step loss : 0.000565
+Epoch 31, lr 0.001
+
+(31,210) 15 step loss : 0.000565
+Epoch 31, lr 0.001
+
+(31,210) 16 step loss : 0.000573
+Epoch 31, lr 0.001
+
+(31,210) 17 step loss : 0.000582
+Epoch 31, lr 0.001
+
+(31,210) 18 step loss : 0.000598
+Epoch 31, lr 0.001
+
+(31,210) 19 step loss : 0.000572
+Epoch 31, lr 0.001
+
+(31,210) 20 step loss : 0.000569
+Epoch 31, lr 0.001
+
+(31,210) 21 step loss : 0.000598
+Epoch 31, lr 0.001
+
+(31,210) 22 step loss : 0.000631
+Epoch 31, lr 0.001
+
+(31,210) 23 step loss : 0.000568
+Epoch 31, lr 0.001
+
+(31,210) 24 step loss : 0.000556
+Epoch 31, lr 0.001
+
+(31,210) 25 step loss : 0.000576
+Epoch 31, lr 0.001
+
+(31,210) 26 step loss : 0.000609
+Epoch 31, lr 0.001
+
+(31,210) 27 step loss : 0.000591
+Epoch 31, lr 0.001
+
+(31,210) 28 step loss : 0.000545
+Epoch 31, lr 0.001
+
+(31,210) 29 step loss : 0.000574
+Epoch 31, lr 0.001
+
+(31,210) 30 step loss : 0.000605
+Epoch 31, lr 0.001
+
+(31,210) 31 step loss : 0.000590
+Epoch 31, lr 0.001
+
+(31,210) 32 step loss : 0.000582
+Epoch 31, lr 0.001
+
+(31,210) 33 step loss : 0.000619
+Epoch 31, lr 0.001
+
+(31,210) 34 step loss : 0.000568
+Epoch 31, lr 0.001
+
+(31,210) 35 step loss : 0.000579
+Epoch 31, lr 0.001
+
+(31,210) 36 step loss : 0.000555
+Epoch 31, lr 0.001
+
+(31,210) 37 step loss : 0.000576
+Epoch 31, lr 0.001
+
+(31,210) 38 step loss : 0.000600
+Epoch 31, lr 0.001
+
+(31,210) 39 step loss : 0.000618
+Epoch 31, lr 0.001
+
+(31,210) 40 step loss : 0.000590
+Epoch 31, lr 0.001
+
+(31,210) 41 step loss : 0.000563
+Epoch 31, lr 0.001
+
+(31,210) 42 step loss : 0.000598
+Epoch 31, lr 0.001
+
+(31,210) 43 step loss : 0.000583
+Epoch 31, lr 0.001
+
+(31,210) 44 step loss : 0.000591
+Epoch 31, lr 0.001
+
+(31,210) 45 step loss : 0.000598
+Epoch 31, lr 0.001
+
+(31,210) 46 step loss : 0.000590
+Epoch 31, lr 0.001
+
+(31,210) 47 step loss : 0.000586
+Epoch 31, lr 0.001
+
+(31,210) 48 step loss : 0.000586
+Epoch 31, lr 0.001
+
+(31,210) 49 step loss : 0.000688
+(31,210) epoch loss : 0.000587
+Epoch 32, lr 0.001
+
+(32,210) 0 step loss : 0.000565
+Epoch 32, lr 0.001
+
+(32,210) 1 step loss : 0.000569
+Epoch 32, lr 0.001
+
+(32,210) 2 step loss : 0.000593
+Epoch 32, lr 0.001
+
+(32,210) 3 step loss : 0.000575
+Epoch 32, lr 0.001
+
+(32,210) 4 step loss : 0.000554
+Epoch 32, lr 0.001
+
+(32,210) 5 step loss : 0.000579
+Epoch 32, lr 0.001
+
+(32,210) 6 step loss : 0.000530
+Epoch 32, lr 0.001
+
+(32,210) 7 step loss : 0.000586
+Epoch 32, lr 0.001
+
+(32,210) 8 step loss : 0.000556
+Epoch 32, lr 0.001
+
+(32,210) 9 step loss : 0.000565
+Epoch 32, lr 0.001
+
+(32,210) 10 step loss : 0.000562
+Epoch 32, lr 0.001
+
+(32,210) 11 step loss : 0.000599
+Epoch 32, lr 0.001
+
+(32,210) 12 step loss : 0.000534
+Epoch 32, lr 0.001
+
+(32,210) 13 step loss : 0.000566
+Epoch 32, lr 0.001
+
+(32,210) 14 step loss : 0.000504
+Epoch 32, lr 0.001
+
+(32,210) 15 step loss : 0.000541
+Epoch 32, lr 0.001
+
+(32,210) 16 step loss : 0.000551
+Epoch 32, lr 0.001
+
+(32,210) 17 step loss : 0.000582
+Epoch 32, lr 0.001
+
+(32,210) 18 step loss : 0.000574
+Epoch 32, lr 0.001
+
+(32,210) 19 step loss : 0.000571
+Epoch 32, lr 0.001
+
+(32,210) 20 step loss : 0.000578
+Epoch 32, lr 0.001
+
+(32,210) 21 step loss : 0.000564
+Epoch 32, lr 0.001
+
+(32,210) 22 step loss : 0.000571
+Epoch 32, lr 0.001
+
+(32,210) 23 step loss : 0.000592
+Epoch 32, lr 0.001
+
+(32,210) 24 step loss : 0.000546
+Epoch 32, lr 0.001
+
+(32,210) 25 step loss : 0.000561
+Epoch 32, lr 0.001
+
+(32,210) 26 step loss : 0.000583
+Epoch 32, lr 0.001
+
+(32,210) 27 step loss : 0.000549
+Epoch 32, lr 0.001
+
+(32,210) 28 step loss : 0.000528
+Epoch 32, lr 0.001
+
+(32,210) 29 step loss : 0.000557
+Epoch 32, lr 0.001
+
+(32,210) 30 step loss : 0.000553
+Epoch 32, lr 0.001
+
+(32,210) 31 step loss : 0.000618
+Epoch 32, lr 0.001
+
+(32,210) 32 step loss : 0.000564
+Epoch 32, lr 0.001
+
+(32,210) 33 step loss : 0.000580
+Epoch 32, lr 0.001
+
+(32,210) 34 step loss : 0.000569
+Epoch 32, lr 0.001
+
+(32,210) 35 step loss : 0.000575
+Epoch 32, lr 0.001
+
+(32,210) 36 step loss : 0.000569
+Epoch 32, lr 0.001
+
+(32,210) 37 step loss : 0.000585
+Epoch 32, lr 0.001
+
+(32,210) 38 step loss : 0.000594
+Epoch 32, lr 0.001
+
+(32,210) 39 step loss : 0.000568
+Epoch 32, lr 0.001
+
+(32,210) 40 step loss : 0.000576
+Epoch 32, lr 0.001
+
+(32,210) 41 step loss : 0.000575
+Epoch 32, lr 0.001
+
+(32,210) 42 step loss : 0.000608
+Epoch 32, lr 0.001
+
+(32,210) 43 step loss : 0.000544
+Epoch 32, lr 0.001
+
+(32,210) 44 step loss : 0.000515
+Epoch 32, lr 0.001
+
+(32,210) 45 step loss : 0.000548
+Epoch 32, lr 0.001
+
+(32,210) 46 step loss : 0.000577
+Epoch 32, lr 0.001
+
+(32,210) 47 step loss : 0.000565
+Epoch 32, lr 0.001
+
+(32,210) 48 step loss : 0.000584
+Epoch 32, lr 0.001
+
+(32,210) 49 step loss : 0.000524
+(32,210) epoch loss : 0.000566
+Epoch 33, lr 0.001
+
+(33,210) 0 step loss : 0.000550
+Epoch 33, lr 0.001
+
+(33,210) 1 step loss : 0.000564
+Epoch 33, lr 0.001
+
+(33,210) 2 step loss : 0.000547
+Epoch 33, lr 0.001
+
+(33,210) 3 step loss : 0.000522
+Epoch 33, lr 0.001
+
+(33,210) 4 step loss : 0.000538
+Epoch 33, lr 0.001
+
+(33,210) 5 step loss : 0.000545
+Epoch 33, lr 0.001
+
+(33,210) 6 step loss : 0.000576
+Epoch 33, lr 0.001
+
+(33,210) 7 step loss : 0.000530
+Epoch 33, lr 0.001
+
+(33,210) 8 step loss : 0.000531
+Epoch 33, lr 0.001
+
+(33,210) 9 step loss : 0.000539
+Epoch 33, lr 0.001
+
+(33,210) 10 step loss : 0.000549
+Epoch 33, lr 0.001
+
+(33,210) 11 step loss : 0.000518
+Epoch 33, lr 0.001
+
+(33,210) 12 step loss : 0.000548
+Epoch 33, lr 0.001
+
+(33,210) 13 step loss : 0.000521
+Epoch 33, lr 0.001
+
+(33,210) 14 step loss : 0.000560
+Epoch 33, lr 0.001
+
+(33,210) 15 step loss : 0.000497
+Epoch 33, lr 0.001
+
+(33,210) 16 step loss : 0.000517
+Epoch 33, lr 0.001
+
+(33,210) 17 step loss : 0.000534
+Epoch 33, lr 0.001
+
+(33,210) 18 step loss : 0.000545
+Epoch 33, lr 0.001
+
+(33,210) 19 step loss : 0.000507
+Epoch 33, lr 0.001
+
+(33,210) 20 step loss : 0.000556
+Epoch 33, lr 0.001
+
+(33,210) 21 step loss : 0.000541
+Epoch 33, lr 0.001
+
+(33,210) 22 step loss : 0.000564
+Epoch 33, lr 0.001
+
+(33,210) 23 step loss : 0.000535
+Epoch 33, lr 0.001
+
+(33,210) 24 step loss : 0.000541
+Epoch 33, lr 0.001
+
+(33,210) 25 step loss : 0.000508
+Epoch 33, lr 0.001
+
+(33,210) 26 step loss : 0.000514
+Epoch 33, lr 0.001
+
+(33,210) 27 step loss : 0.000543
+Epoch 33, lr 0.001
+
+(33,210) 28 step loss : 0.000520
+Epoch 33, lr 0.001
+
+(33,210) 29 step loss : 0.000532
+Epoch 33, lr 0.001
+
+(33,210) 30 step loss : 0.000567
+Epoch 33, lr 0.001
+
+(33,210) 31 step loss : 0.000516
+Epoch 33, lr 0.001
+
+(33,210) 32 step loss : 0.000539
+Epoch 33, lr 0.001
+
+(33,210) 33 step loss : 0.000548
+Epoch 33, lr 0.001
+
+(33,210) 34 step loss : 0.000549
+Epoch 33, lr 0.001
+
+(33,210) 35 step loss : 0.000551
+Epoch 33, lr 0.001
+
+(33,210) 36 step loss : 0.000562
+Epoch 33, lr 0.001
+
+(33,210) 37 step loss : 0.000534
+Epoch 33, lr 0.001
+
+(33,210) 38 step loss : 0.000538
+Epoch 33, lr 0.001
+
+(33,210) 39 step loss : 0.000550
+Epoch 33, lr 0.001
+
+(33,210) 40 step loss : 0.000528
+Epoch 33, lr 0.001
+
+(33,210) 41 step loss : 0.000535
+Epoch 33, lr 0.001
+
+(33,210) 42 step loss : 0.000524
+Epoch 33, lr 0.001
+
+(33,210) 43 step loss : 0.000527
+Epoch 33, lr 0.001
+
+(33,210) 44 step loss : 0.000580
+Epoch 33, lr 0.001
+
+(33,210) 45 step loss : 0.000550
+Epoch 33, lr 0.001
+
+(33,210) 46 step loss : 0.000536
+Epoch 33, lr 0.001
+
+(33,210) 47 step loss : 0.000544
+Epoch 33, lr 0.001
+
+(33,210) 48 step loss : 0.000519
+Epoch 33, lr 0.001
+
+(33,210) 49 step loss : 0.000554
+(33,210) epoch loss : 0.000539
+Epoch 34, lr 0.001
+
+(34,210) 0 step loss : 0.000489
+Epoch 34, lr 0.001
+
+(34,210) 1 step loss : 0.000527
+Epoch 34, lr 0.001
+
+(34,210) 2 step loss : 0.000496
+Epoch 34, lr 0.001
+
+(34,210) 3 step loss : 0.000490
+Epoch 34, lr 0.001
+
+(34,210) 4 step loss : 0.000519
+Epoch 34, lr 0.001
+
+(34,210) 5 step loss : 0.000513
+Epoch 34, lr 0.001
+
+(34,210) 6 step loss : 0.000515
+Epoch 34, lr 0.001
+
+(34,210) 7 step loss : 0.000560
+Epoch 34, lr 0.001
+
+(34,210) 8 step loss : 0.000479
+Epoch 34, lr 0.001
+
+(34,210) 9 step loss : 0.000515
+Epoch 34, lr 0.001
+
+(34,210) 10 step loss : 0.000481
+Epoch 34, lr 0.001
+
+(34,210) 11 step loss : 0.000490
+Epoch 34, lr 0.001
+
+(34,210) 12 step loss : 0.000509
+Epoch 34, lr 0.001
+
+(34,210) 13 step loss : 0.000489
+Epoch 34, lr 0.001
+
+(34,210) 14 step loss : 0.000490
+Epoch 34, lr 0.001
+
+(34,210) 15 step loss : 0.000475
+Epoch 34, lr 0.001
+
+(34,210) 16 step loss : 0.000504
+Epoch 34, lr 0.001
+
+(34,210) 17 step loss : 0.000495
+Epoch 34, lr 0.001
+
+(34,210) 18 step loss : 0.000496
+Epoch 34, lr 0.001
+
+(34,210) 19 step loss : 0.000532
+Epoch 34, lr 0.001
+
+(34,210) 20 step loss : 0.000500
+Epoch 34, lr 0.001
+
+(34,210) 21 step loss : 0.000529
+Epoch 34, lr 0.001
+
+(34,210) 22 step loss : 0.000490
+Epoch 34, lr 0.001
+
+(34,210) 23 step loss : 0.000508
+Epoch 34, lr 0.001
+
+(34,210) 24 step loss : 0.000509
+Epoch 34, lr 0.001
+
+(34,210) 25 step loss : 0.000514
+Epoch 34, lr 0.001
+
+(34,210) 26 step loss : 0.000517
+Epoch 34, lr 0.001
+
+(34,210) 27 step loss : 0.000514
+Epoch 34, lr 0.001
+
+(34,210) 28 step loss : 0.000488
+Epoch 34, lr 0.001
+
+(34,210) 29 step loss : 0.000504
+Epoch 34, lr 0.001
+
+(34,210) 30 step loss : 0.000552
+Epoch 34, lr 0.001
+
+(34,210) 31 step loss : 0.000507
+Epoch 34, lr 0.001
+
+(34,210) 32 step loss : 0.000532
+Epoch 34, lr 0.001
+
+(34,210) 33 step loss : 0.000498
+Epoch 34, lr 0.001
+
+(34,210) 34 step loss : 0.000529
+Epoch 34, lr 0.001
+
+(34,210) 35 step loss : 0.000485
+Epoch 34, lr 0.001
+
+(34,210) 36 step loss : 0.000522
+Epoch 34, lr 0.001
+
+(34,210) 37 step loss : 0.000519
+Epoch 34, lr 0.001
+
+(34,210) 38 step loss : 0.000524
+Epoch 34, lr 0.001
+
+(34,210) 39 step loss : 0.000490
+Epoch 34, lr 0.001
+
+(34,210) 40 step loss : 0.000527
+Epoch 34, lr 0.001
+
+(34,210) 41 step loss : 0.000518
+Epoch 34, lr 0.001
+
+(34,210) 42 step loss : 0.000519
+Epoch 34, lr 0.001
+
+(34,210) 43 step loss : 0.000574
+Epoch 34, lr 0.001
+
+(34,210) 44 step loss : 0.000520
+Epoch 34, lr 0.001
+
+(34,210) 45 step loss : 0.000515
+Epoch 34, lr 0.001
+
+(34,210) 46 step loss : 0.000526
+Epoch 34, lr 0.001
+
+(34,210) 47 step loss : 0.000524
+Epoch 34, lr 0.001
+
+(34,210) 48 step loss : 0.000528
+Epoch 34, lr 0.001
+
+(34,210) 49 step loss : 0.000513
+(34,210) epoch loss : 0.000511
+Epoch 35, lr 0.001
+
+(35,210) 0 step loss : 0.000464
+Epoch 35, lr 0.001
+
+(35,210) 1 step loss : 0.000518
+Epoch 35, lr 0.001
+
+(35,210) 2 step loss : 0.000495
+Epoch 35, lr 0.001
+
+(35,210) 3 step loss : 0.000454
+Epoch 35, lr 0.001
+
+(35,210) 4 step loss : 0.000450
+Epoch 35, lr 0.001
+
+(35,210) 5 step loss : 0.000487
+Epoch 35, lr 0.001
+
+(35,210) 6 step loss : 0.000511
+Epoch 35, lr 0.001
+
+(35,210) 7 step loss : 0.000504
+Epoch 35, lr 0.001
+
+(35,210) 8 step loss : 0.000498
+Epoch 35, lr 0.001
+
+(35,210) 9 step loss : 0.000494
+Epoch 35, lr 0.001
+
+(35,210) 10 step loss : 0.000473
+Epoch 35, lr 0.001
+
+(35,210) 11 step loss : 0.000511
+Epoch 35, lr 0.001
+
+(35,210) 12 step loss : 0.000472
+Epoch 35, lr 0.001
+
+(35,210) 13 step loss : 0.000482
+Epoch 35, lr 0.001
+
+(35,210) 14 step loss : 0.000520
+Epoch 35, lr 0.001
+
+(35,210) 15 step loss : 0.000469
+Epoch 35, lr 0.001
+
+(35,210) 16 step loss : 0.000474
+Epoch 35, lr 0.001
+
+(35,210) 17 step loss : 0.000474
+Epoch 35, lr 0.001
+
+(35,210) 18 step loss : 0.000482
+Epoch 35, lr 0.001
+
+(35,210) 19 step loss : 0.000470
+Epoch 35, lr 0.001
+
+(35,210) 20 step loss : 0.000509
+Epoch 35, lr 0.001
+
+(35,210) 21 step loss : 0.000476
+Epoch 35, lr 0.001
+
+(35,210) 22 step loss : 0.000481
+Epoch 35, lr 0.001
+
+(35,210) 23 step loss : 0.000479
+Epoch 35, lr 0.001
+
+(35,210) 24 step loss : 0.000462
+Epoch 35, lr 0.001
+
+(35,210) 25 step loss : 0.000498
+Epoch 35, lr 0.001
+
+(35,210) 26 step loss : 0.000511
+Epoch 35, lr 0.001
+
+(35,210) 27 step loss : 0.000483
+Epoch 35, lr 0.001
+
+(35,210) 28 step loss : 0.000541
+Epoch 35, lr 0.001
+
+(35,210) 29 step loss : 0.000456
+Epoch 35, lr 0.001
+
+(35,210) 30 step loss : 0.000507
+Epoch 35, lr 0.001
+
+(35,210) 31 step loss : 0.000467
+Epoch 35, lr 0.001
+
+(35,210) 32 step loss : 0.000503
+Epoch 35, lr 0.001
+
+(35,210) 33 step loss : 0.000502
+Epoch 35, lr 0.001
+
+(35,210) 34 step loss : 0.000499
+Epoch 35, lr 0.001
+
+(35,210) 35 step loss : 0.000507
+Epoch 35, lr 0.001
+
+(35,210) 36 step loss : 0.000501
+Epoch 35, lr 0.001
+
+(35,210) 37 step loss : 0.000522
+Epoch 35, lr 0.001
+
+(35,210) 38 step loss : 0.000488
+Epoch 35, lr 0.001
+
+(35,210) 39 step loss : 0.000477
+Epoch 35, lr 0.001
+
+(35,210) 40 step loss : 0.000512
+Epoch 35, lr 0.001
+
+(35,210) 41 step loss : 0.000533
+Epoch 35, lr 0.001
+
+(35,210) 42 step loss : 0.000498
+Epoch 35, lr 0.001
+
+(35,210) 43 step loss : 0.000484
+Epoch 35, lr 0.001
+
+(35,210) 44 step loss : 0.000517
+Epoch 35, lr 0.001
+
+(35,210) 45 step loss : 0.000500
+Epoch 35, lr 0.001
+
+(35,210) 46 step loss : 0.000464
+Epoch 35, lr 0.001
+
+(35,210) 47 step loss : 0.000533
+Epoch 35, lr 0.001
+
+(35,210) 48 step loss : 0.000500
+Epoch 35, lr 0.001
+
+(35,210) 49 step loss : 0.000477
+(35,210) epoch loss : 0.000492
+Epoch 36, lr 0.001
+
+(36,210) 0 step loss : 0.000451
+Epoch 36, lr 0.001
+
+(36,210) 1 step loss : 0.000481
+Epoch 36, lr 0.001
+
+(36,210) 2 step loss : 0.000477
+Epoch 36, lr 0.001
+
+(36,210) 3 step loss : 0.000458
+Epoch 36, lr 0.001
+
+(36,210) 4 step loss : 0.000465
+Epoch 36, lr 0.001
+
+(36,210) 5 step loss : 0.000458
+Epoch 36, lr 0.001
+
+(36,210) 6 step loss : 0.000462
+Epoch 36, lr 0.001
+
+(36,210) 7 step loss : 0.000453
+Epoch 36, lr 0.001
+
+(36,210) 8 step loss : 0.000462
+Epoch 36, lr 0.001
+
+(36,210) 9 step loss : 0.000508
+Epoch 36, lr 0.001
+
+(36,210) 10 step loss : 0.000470
+Epoch 36, lr 0.001
+
+(36,210) 11 step loss : 0.000451
+Epoch 36, lr 0.001
+
+(36,210) 12 step loss : 0.000480
+Epoch 36, lr 0.001
+
+(36,210) 13 step loss : 0.000482
+Epoch 36, lr 0.001
+
+(36,210) 14 step loss : 0.000457
+Epoch 36, lr 0.001
+
+(36,210) 15 step loss : 0.000436
+Epoch 36, lr 0.001
+
+(36,210) 16 step loss : 0.000449
+Epoch 36, lr 0.001
+
+(36,210) 17 step loss : 0.000462
+Epoch 36, lr 0.001
+
+(36,210) 18 step loss : 0.000474
+Epoch 36, lr 0.001
+
+(36,210) 19 step loss : 0.000473
+Epoch 36, lr 0.001
+
+(36,210) 20 step loss : 0.000485
+Epoch 36, lr 0.001
+
+(36,210) 21 step loss : 0.000477
+Epoch 36, lr 0.001
+
+(36,210) 22 step loss : 0.000440
+Epoch 36, lr 0.001
+
+(36,210) 23 step loss : 0.000436
+Epoch 36, lr 0.001
+
+(36,210) 24 step loss : 0.000466
+Epoch 36, lr 0.001
+
+(36,210) 25 step loss : 0.000463
+Epoch 36, lr 0.001
+
+(36,210) 26 step loss : 0.000466
+Epoch 36, lr 0.001
+
+(36,210) 27 step loss : 0.000496
+Epoch 36, lr 0.001
+
+(36,210) 28 step loss : 0.000486
+Epoch 0, lr 0.001
+
+(0,210) 0 step loss : 0.002619
+Epoch 0, lr 0.001
+
+(0,210) 1 step loss : 0.018441
+Epoch 0, lr 0.001
+
+(0,210) 2 step loss : 0.002021
+Epoch 0, lr 0.001
+
+(0,210) 3 step loss : 0.001555
+Epoch 0, lr 0.001
+
+(0,210) 4 step loss : 0.002087
+Epoch 0, lr 0.001
+
+(0,210) 5 step loss : 0.002718
+Epoch 0, lr 0.001
+
+(0,210) 6 step loss : 0.004186
+Epoch 0, lr 0.001
+
+(0,210) 7 step loss : 0.003868
+Epoch 0, lr 0.001
+
+(0,210) 8 step loss : 0.002614
+Epoch 0, lr 0.001
+
+(0,210) 9 step loss : 0.001696
+Epoch 0, lr 0.001
+
+(0,210) 10 step loss : 0.001531
+Epoch 0, lr 0.001
+
+(0,210) 11 step loss : 0.001447
+Epoch 0, lr 0.001
+
+(0,210) 12 step loss : 0.001342
+Epoch 0, lr 0.001
+
+(0,210) 13 step loss : 0.001343
+Epoch 0, lr 0.001
+
+(0,210) 14 step loss : 0.001424
+Epoch 0, lr 0.001
+
+(0,210) 15 step loss : 0.001452
+Epoch 0, lr 0.001
+
+(0,210) 16 step loss : 0.001458
+Epoch 0, lr 0.001
+
+(0,210) 17 step loss : 0.001422
+Epoch 0, lr 0.001
+
+(0,210) 18 step loss : 0.001288
+Epoch 0, lr 0.001
+
+(0,210) 19 step loss : 0.001414
+Epoch 0, lr 0.001
+
+(0,210) 20 step loss : 0.001446
+Epoch 0, lr 0.001
+
+(0,210) 21 step loss : 0.001328
+Epoch 0, lr 0.001
+
+(0,210) 22 step loss : 0.001253
+Epoch 0, lr 0.001
+
+(0,210) 23 step loss : 0.001266
+Epoch 0, lr 0.001
+
+(0,210) 24 step loss : 0.001226
+Epoch 0, lr 0.001
+
+(0,210) 25 step loss : 0.001208
+Epoch 0, lr 0.001
+
+(0,210) 26 step loss : 0.001279
+Epoch 0, lr 0.001
+
+(0,210) 27 step loss : 0.001260
+Epoch 0, lr 0.001
+
+(0,210) 28 step loss : 0.001260
+Epoch 0, lr 0.001
+
+(0,210) 29 step loss : 0.001260
+Epoch 0, lr 0.001
+
+(0,210) 30 step loss : 0.001303
+Epoch 0, lr 0.001
+
+(0,210) 31 step loss : 0.001198
+Epoch 0, lr 0.001
+
+(0,210) 32 step loss : 0.001238
+Epoch 0, lr 0.001
+
+(0,210) 33 step loss : 0.001222
+Epoch 0, lr 0.001
+
+(0,210) 34 step loss : 0.001240
+Epoch 0, lr 0.001
+
+(0,210) 35 step loss : 0.001207
+Epoch 0, lr 0.001
+
+(0,210) 36 step loss : 0.001298
+Epoch 0, lr 0.001
+
+(0,210) 37 step loss : 0.001229
+Epoch 0, lr 0.001
+
+(0,210) 38 step loss : 0.001132
+Epoch 0, lr 0.001
+
+(0,210) 39 step loss : 0.001278
+Epoch 0, lr 0.001
+
+(0,210) 40 step loss : 0.001122
+Epoch 0, lr 0.001
+
+(0,210) 41 step loss : 0.001234
+Epoch 0, lr 0.001
+
+(0,210) 42 step loss : 0.001290
+Epoch 0, lr 0.001
+
+(0,210) 43 step loss : 0.001293
+Epoch 0, lr 0.001
+
+(0,210) 44 step loss : 0.001236
+Epoch 0, lr 0.001
+
+(0,210) 45 step loss : 0.001340
+Epoch 0, lr 0.001
+
+(0,210) 46 step loss : 0.001277
+Epoch 0, lr 0.001
+
+(0,210) 47 step loss : 0.001209
+Epoch 0, lr 0.001
+
+(0,210) 48 step loss : 0.001239
+Epoch 0, lr 0.001
+
+(0,210) 49 step loss : 0.001241
+(0,210) epoch loss : 0.001876
+Epoch 1, lr 0.001
+
+(1,210) 0 step loss : 0.001237
+Epoch 1, lr 0.001
+
+(1,210) 1 step loss : 0.001213
+Epoch 1, lr 0.001
+
+(1,210) 2 step loss : 0.001238
+Epoch 1, lr 0.001
+
+(1,210) 3 step loss : 0.001280
+Epoch 1, lr 0.001
+
+(1,210) 4 step loss : 0.001280
+Epoch 1, lr 0.001
+
+(1,210) 5 step loss : 0.001217
+Epoch 1, lr 0.001
+
+(1,210) 6 step loss : 0.001250
+Epoch 1, lr 0.001
+
+(1,210) 7 step loss : 0.001283
+Epoch 1, lr 0.001
+
+(1,210) 8 step loss : 0.001193
+Epoch 1, lr 0.001
+
+(1,210) 9 step loss : 0.001239
+Epoch 1, lr 0.001
+
+(1,210) 10 step loss : 0.001154
+Epoch 1, lr 0.001
+
+(1,210) 11 step loss : 0.001205
+Epoch 1, lr 0.001
+
+(1,210) 12 step loss : 0.001265
+Epoch 1, lr 0.001
+
+(1,210) 13 step loss : 0.001210
+Epoch 1, lr 0.001
+
+(1,210) 14 step loss : 0.001308
+Epoch 1, lr 0.001
+
+(1,210) 15 step loss : 0.001290
+Epoch 1, lr 0.001
+
+(1,210) 16 step loss : 0.001213
+Epoch 1, lr 0.001
+
+(1,210) 17 step loss : 0.001303
+Epoch 1, lr 0.001
+
+(1,210) 18 step loss : 0.001141
+Epoch 1, lr 0.001
+
+(1,210) 19 step loss : 0.001204
+Epoch 1, lr 0.001
+
+(1,210) 20 step loss : 0.001216
+Epoch 1, lr 0.001
+
+(1,210) 21 step loss : 0.001239
+Epoch 1, lr 0.001
+
+(1,210) 22 step loss : 0.001232
+Epoch 1, lr 0.001
+
+(1,210) 23 step loss : 0.001209
+Epoch 1, lr 0.001
+
+(1,210) 24 step loss : 0.001210
+Epoch 1, lr 0.001
+
+(1,210) 25 step loss : 0.001150
+Epoch 1, lr 0.001
+
+(1,210) 26 step loss : 0.001165
+Epoch 1, lr 0.001
+
+(1,210) 27 step loss : 0.001263
+Epoch 1, lr 0.001
+
+(1,210) 28 step loss : 0.001271
+Epoch 1, lr 0.001
+
+(1,210) 29 step loss : 0.001204
+Epoch 1, lr 0.001
+
+(1,210) 30 step loss : 0.001170
+Epoch 1, lr 0.001
+
+(1,210) 31 step loss : 0.001200
+Epoch 1, lr 0.001
+
+(1,210) 32 step loss : 0.001258
+Epoch 1, lr 0.001
+
+(1,210) 33 step loss : 0.001198
+Epoch 1, lr 0.001
+
+(1,210) 34 step loss : 0.001298
+Epoch 1, lr 0.001
+
+(1,210) 35 step loss : 0.001163
+Epoch 1, lr 0.001
+
+(1,210) 36 step loss : 0.001181
+Epoch 1, lr 0.001
+
+(1,210) 37 step loss : 0.001204
+Epoch 1, lr 0.001
+
+(1,210) 38 step loss : 0.001255
+Epoch 1, lr 0.001
+
+(1,210) 39 step loss : 0.001257
+Epoch 1, lr 0.001
+
+(1,210) 40 step loss : 0.001217
+Epoch 1, lr 0.001
+
+(1,210) 41 step loss : 0.001182
+Epoch 1, lr 0.001
+
+(1,210) 42 step loss : 0.001253
+Epoch 1, lr 0.001
+
+(1,210) 43 step loss : 0.001195
+Epoch 1, lr 0.001
+
+(1,210) 44 step loss : 0.001128
+Epoch 1, lr 0.001
+
+(1,210) 45 step loss : 0.001312
+Epoch 1, lr 0.001
+
+(1,210) 46 step loss : 0.001164
+Epoch 1, lr 0.001
+
+(1,210) 47 step loss : 0.001220
+Epoch 1, lr 0.001
+
+(1,210) 48 step loss : 0.001195
+Epoch 1, lr 0.001
+
+(1,210) 49 step loss : 0.001187
+(1,210) epoch loss : 0.001223
+Epoch 2, lr 0.001
+
+(2,210) 0 step loss : 0.001370
+Epoch 2, lr 0.001
+
+(2,210) 1 step loss : 0.001282
+Epoch 2, lr 0.001
+
+(2,210) 2 step loss : 0.001210
+Epoch 2, lr 0.001
+
+(2,210) 3 step loss : 0.001181
+Epoch 2, lr 0.001
+
+(2,210) 4 step loss : 0.001275
+Epoch 2, lr 0.001
+
+(2,210) 5 step loss : 0.001227
+Epoch 2, lr 0.001
+
+(2,210) 6 step loss : 0.001177
+Epoch 2, lr 0.001
+
+(2,210) 7 step loss : 0.001198
+Epoch 2, lr 0.001
+
+(2,210) 8 step loss : 0.001173
+Epoch 2, lr 0.001
+
+(2,210) 9 step loss : 0.001201
+Epoch 2, lr 0.001
+
+(2,210) 10 step loss : 0.001209
+Epoch 2, lr 0.001
+
+(2,210) 11 step loss : 0.001223
+Epoch 2, lr 0.001
+
+(2,210) 12 step loss : 0.001153
+Epoch 2, lr 0.001
+
+(2,210) 13 step loss : 0.001111
+Epoch 2, lr 0.001
+
+(2,210) 14 step loss : 0.001174
+Epoch 2, lr 0.001
+
+(2,210) 15 step loss : 0.001190
+Epoch 2, lr 0.001
+
+(2,210) 16 step loss : 0.001100
+Epoch 2, lr 0.001
+
+(2,210) 17 step loss : 0.001162
+Epoch 2, lr 0.001
+
+(2,210) 18 step loss : 0.001076
+Epoch 2, lr 0.001
+
+(2,210) 19 step loss : 0.001243
+Epoch 2, lr 0.001
+
+(2,210) 20 step loss : 0.001179
+Epoch 2, lr 0.001
+
+(2,210) 21 step loss : 0.001187
+Epoch 2, lr 0.001
+
+(2,210) 22 step loss : 0.001253
+Epoch 2, lr 0.001
+
+(2,210) 23 step loss : 0.001165
+Epoch 2, lr 0.001
+
+(2,210) 24 step loss : 0.001174
+Epoch 2, lr 0.001
+
+(2,210) 25 step loss : 0.001143
+Epoch 2, lr 0.001
+
+(2,210) 26 step loss : 0.001197
+Epoch 2, lr 0.001
+
+(2,210) 27 step loss : 0.001230
+Epoch 2, lr 0.001
+
+(2,210) 28 step loss : 0.001190
+Epoch 2, lr 0.001
+
+(2,210) 29 step loss : 0.001286
+Epoch 2, lr 0.001
+
+(2,210) 30 step loss : 0.001185
+Epoch 2, lr 0.001
+
+(2,210) 31 step loss : 0.001204
+Epoch 2, lr 0.001
+
+(2,210) 32 step loss : 0.001157
+Epoch 2, lr 0.001
+
+(2,210) 33 step loss : 0.001105
+Epoch 2, lr 0.001
+
+(2,210) 34 step loss : 0.001163
+Epoch 2, lr 0.001
+
+(2,210) 35 step loss : 0.001222
+Epoch 2, lr 0.001
+
+(2,210) 36 step loss : 0.001138
+Epoch 2, lr 0.001
+
+(2,210) 37 step loss : 0.001204
+Epoch 2, lr 0.001
+
+(2,210) 38 step loss : 0.001220
+Epoch 2, lr 0.001
+
+(2,210) 39 step loss : 0.001164
+Epoch 2, lr 0.001
+
+(2,210) 40 step loss : 0.001157
+Epoch 2, lr 0.001
+
+(2,210) 41 step loss : 0.001155
+Epoch 2, lr 0.001
+
+(2,210) 42 step loss : 0.001190
+Epoch 2, lr 0.001
+
+(2,210) 43 step loss : 0.001206
+Epoch 2, lr 0.001
+
+(2,210) 44 step loss : 0.001159
+Epoch 2, lr 0.001
+
+(2,210) 45 step loss : 0.001162
+Epoch 2, lr 0.001
+
+(2,210) 46 step loss : 0.001185
+Epoch 2, lr 0.001
+
+(2,210) 47 step loss : 0.001147
+Epoch 2, lr 0.001
+
+(2,210) 48 step loss : 0.001198
+Epoch 2, lr 0.001
+
+(2,210) 49 step loss : 0.001219
+(2,210) epoch loss : 0.001189
+Epoch 3, lr 0.001
+
+(3,210) 0 step loss : 0.001177
+Epoch 3, lr 0.001
+
+(3,210) 1 step loss : 0.001138
+Epoch 3, lr 0.001
+
+(3,210) 2 step loss : 0.001162
+Epoch 3, lr 0.001
+
+(3,210) 3 step loss : 0.001164
+Epoch 3, lr 0.001
+
+(3,210) 4 step loss : 0.001196
+Epoch 3, lr 0.001
+
+(3,210) 5 step loss : 0.001173
+Epoch 3, lr 0.001
+
+(3,210) 6 step loss : 0.001162
+Epoch 3, lr 0.001
+
+(3,210) 7 step loss : 0.001214
+Epoch 3, lr 0.001
+
+(3,210) 8 step loss : 0.001185
+Epoch 3, lr 0.001
+
+(3,210) 9 step loss : 0.001164
+Epoch 3, lr 0.001
+
+(3,210) 10 step loss : 0.001130
+Epoch 3, lr 0.001
+
+(3,210) 11 step loss : 0.001200
+Epoch 3, lr 0.001
+
+(3,210) 12 step loss : 0.001150
+Epoch 3, lr 0.001
+
+(3,210) 13 step loss : 0.001288
+Epoch 3, lr 0.001
+
+(3,210) 14 step loss : 0.001169
+Epoch 3, lr 0.001
+
+(3,210) 15 step loss : 0.001097
+Epoch 3, lr 0.001
+
+(3,210) 16 step loss : 0.001152
+Epoch 3, lr 0.001
+
+(3,210) 17 step loss : 0.001189
+Epoch 3, lr 0.001
+
+(3,210) 18 step loss : 0.001185
+Epoch 3, lr 0.001
+
+(3,210) 19 step loss : 0.001164
+Epoch 3, lr 0.001
+
+(3,210) 20 step loss : 0.001138
+Epoch 3, lr 0.001
+
+(3,210) 21 step loss : 0.001087
+Epoch 3, lr 0.001
+
+(3,210) 22 step loss : 0.001221
+Epoch 3, lr 0.001
+
+(3,210) 23 step loss : 0.001166
+Epoch 3, lr 0.001
+
+(3,210) 24 step loss : 0.001174
+Epoch 3, lr 0.001
+
+(3,210) 25 step loss : 0.001101
+Epoch 3, lr 0.001
+
+(3,210) 26 step loss : 0.001195
+Epoch 3, lr 0.001
+
+(3,210) 27 step loss : 0.001231
+Epoch 3, lr 0.001
+
+(3,210) 28 step loss : 0.001173
+Epoch 3, lr 0.001
+
+(3,210) 29 step loss : 0.001118
+Epoch 3, lr 0.001
+
+(3,210) 30 step loss : 0.001097
+Epoch 3, lr 0.001
+
+(3,210) 31 step loss : 0.001152
+Epoch 3, lr 0.001
+
+(3,210) 32 step loss : 0.001118
+Epoch 3, lr 0.001
+
+(3,210) 33 step loss : 0.001156
+Epoch 3, lr 0.001
+
+(3,210) 34 step loss : 0.001221
+Epoch 3, lr 0.001
+
+(3,210) 35 step loss : 0.001189
+Epoch 3, lr 0.001
+
+(3,210) 36 step loss : 0.001180
+Epoch 3, lr 0.001
+
+(3,210) 37 step loss : 0.001156
+Epoch 3, lr 0.001
+
+(3,210) 38 step loss : 0.001124
+Epoch 3, lr 0.001
+
+(3,210) 39 step loss : 0.001172
+Epoch 3, lr 0.001
+
+(3,210) 40 step loss : 0.001148
+Epoch 3, lr 0.001
+
+(3,210) 41 step loss : 0.001158
+Epoch 3, lr 0.001
+
+(3,210) 42 step loss : 0.001131
+Epoch 3, lr 0.001
+
+(3,210) 43 step loss : 0.001107
+Epoch 3, lr 0.001
+
+(3,210) 44 step loss : 0.001130
+Epoch 3, lr 0.001
+
+(3,210) 45 step loss : 0.001142
+Epoch 3, lr 0.001
+
+(3,210) 46 step loss : 0.001196
+Epoch 3, lr 0.001
+
+(3,210) 47 step loss : 0.001108
+Epoch 3, lr 0.001
+
+(3,210) 48 step loss : 0.001165
+Epoch 3, lr 0.001
+
+(3,210) 49 step loss : 0.001187
+(3,210) epoch loss : 0.001162
+Epoch 4, lr 0.001
+
+(4,210) 0 step loss : 0.001182
+Epoch 4, lr 0.001
+
+(4,210) 1 step loss : 0.001179
+Epoch 4, lr 0.001
+
+(4,210) 2 step loss : 0.001173
+Epoch 4, lr 0.001
+
+(4,210) 3 step loss : 0.001122
+Epoch 4, lr 0.001
+
+(4,210) 4 step loss : 0.001143
+Epoch 4, lr 0.001
+
+(4,210) 5 step loss : 0.001239
+Epoch 4, lr 0.001
+
+(4,210) 6 step loss : 0.001223
+Epoch 4, lr 0.001
+
+(4,210) 7 step loss : 0.001171
+Epoch 4, lr 0.001
+
+(4,210) 8 step loss : 0.001122
+Epoch 4, lr 0.001
+
+(4,210) 9 step loss : 0.001181
+Epoch 4, lr 0.001
+
+(4,210) 10 step loss : 0.001145
+Epoch 4, lr 0.001
+
+(4,210) 11 step loss : 0.001194
+Epoch 4, lr 0.001
+
+(4,210) 12 step loss : 0.001154
+Epoch 4, lr 0.001
+
+(4,210) 13 step loss : 0.001137
+Epoch 4, lr 0.001
+
+(4,210) 14 step loss : 0.001174
+Epoch 4, lr 0.001
+
+(4,210) 15 step loss : 0.001186
+Epoch 4, lr 0.001
+
+(4,210) 16 step loss : 0.001141
+Epoch 4, lr 0.001
+
+(4,210) 17 step loss : 0.001118
+Epoch 4, lr 0.001
+
+(4,210) 18 step loss : 0.001176
+Epoch 4, lr 0.001
+
+(4,210) 19 step loss : 0.001140
+Epoch 4, lr 0.001
+
+(4,210) 20 step loss : 0.001031
+Epoch 4, lr 0.001
+
+(4,210) 21 step loss : 0.001113
+Epoch 4, lr 0.001
+
+(4,210) 22 step loss : 0.001168
+Epoch 4, lr 0.001
+
+(4,210) 23 step loss : 0.001116
+Epoch 4, lr 0.001
+
+(4,210) 24 step loss : 0.001190
+Epoch 4, lr 0.001
+
+(4,210) 25 step loss : 0.001117
+Epoch 4, lr 0.001
+
+(4,210) 26 step loss : 0.001095
+Epoch 4, lr 0.001
+
+(4,210) 27 step loss : 0.001135
+Epoch 4, lr 0.001
+
+(4,210) 28 step loss : 0.001103
+Epoch 4, lr 0.001
+
+(4,210) 29 step loss : 0.001086
+Epoch 4, lr 0.001
+
+(4,210) 30 step loss : 0.001096
+Epoch 4, lr 0.001
+
+(4,210) 31 step loss : 0.001106
+Epoch 4, lr 0.001
+
+(4,210) 32 step loss : 0.001186
+Epoch 4, lr 0.001
+
+(4,210) 33 step loss : 0.001062
+Epoch 4, lr 0.001
+
+(4,210) 34 step loss : 0.001166
+Epoch 4, lr 0.001
+
+(4,210) 35 step loss : 0.001049
+Epoch 4, lr 0.001
+
+(4,210) 36 step loss : 0.001081
+Epoch 4, lr 0.001
+
+(4,210) 37 step loss : 0.001160
+Epoch 4, lr 0.001
+
+(4,210) 38 step loss : 0.001175
+Epoch 4, lr 0.001
+
+(4,210) 39 step loss : 0.001148
+Epoch 4, lr 0.001
+
+(4,210) 40 step loss : 0.001125
+Epoch 4, lr 0.001
+
+(4,210) 41 step loss : 0.001105
+Epoch 4, lr 0.001
+
+(4,210) 42 step loss : 0.001116
+Epoch 4, lr 0.001
+
+(4,210) 43 step loss : 0.001117
+Epoch 4, lr 0.001
+
+(4,210) 44 step loss : 0.001181
+Epoch 4, lr 0.001
+
+(4,210) 45 step loss : 0.001048
+Epoch 4, lr 0.001
+
+(4,210) 46 step loss : 0.001056
+Epoch 4, lr 0.001
+
+(4,210) 47 step loss : 0.001109
+Epoch 4, lr 0.001
+
+(4,210) 48 step loss : 0.001163
+Epoch 4, lr 0.001
+
+(4,210) 49 step loss : 0.001033
+(4,210) epoch loss : 0.001135
+Epoch 5, lr 0.001
+
+(5,210) 0 step loss : 0.001110
+Epoch 5, lr 0.001
+
+(5,210) 1 step loss : 0.001130
+Epoch 5, lr 0.001
+
+(5,210) 2 step loss : 0.001086
+Epoch 5, lr 0.001
+
+(5,210) 3 step loss : 0.001079
+Epoch 5, lr 0.001
+
+(5,210) 4 step loss : 0.001085
+Epoch 5, lr 0.001
+
+(5,210) 5 step loss : 0.001137
+Epoch 5, lr 0.001
+
+(5,210) 6 step loss : 0.001161
+Epoch 5, lr 0.001
+
+(5,210) 7 step loss : 0.001146
+Epoch 5, lr 0.001
+
+(5,210) 8 step loss : 0.001116
+Epoch 5, lr 0.001
+
+(5,210) 9 step loss : 0.001154
+Epoch 5, lr 0.001
+
+(5,210) 10 step loss : 0.001064
+Epoch 5, lr 0.001
+
+(5,210) 11 step loss : 0.001123
+Epoch 5, lr 0.001
+
+(5,210) 12 step loss : 0.001160
+Epoch 5, lr 0.001
+
+(5,210) 13 step loss : 0.001131
+Epoch 5, lr 0.001
+
+(5,210) 14 step loss : 0.001135
+Epoch 5, lr 0.001
+
+(5,210) 15 step loss : 0.001146
+Epoch 5, lr 0.001
+
+(5,210) 16 step loss : 0.001099
+Epoch 5, lr 0.001
+
+(5,210) 17 step loss : 0.001099
+Epoch 5, lr 0.001
+
+(5,210) 18 step loss : 0.001088
+Epoch 5, lr 0.001
+
+(5,210) 19 step loss : 0.001121
+Epoch 5, lr 0.001
+
+(5,210) 20 step loss : 0.001158
+Epoch 5, lr 0.001
+
+(5,210) 21 step loss : 0.001046
+Epoch 5, lr 0.001
+
+(5,210) 22 step loss : 0.001119
+Epoch 5, lr 0.001
+
+(5,210) 23 step loss : 0.001098
+Epoch 5, lr 0.001
+
+(5,210) 24 step loss : 0.001139
+Epoch 5, lr 0.001
+
+(5,210) 25 step loss : 0.001136
+Epoch 5, lr 0.001
+
+(5,210) 26 step loss : 0.001112
+Epoch 5, lr 0.001
+
+(5,210) 27 step loss : 0.001099
+Epoch 5, lr 0.001
+
+(5,210) 28 step loss : 0.001072
+Epoch 5, lr 0.001
+
+(5,210) 29 step loss : 0.001143
+Epoch 5, lr 0.001
+
+(5,210) 30 step loss : 0.001140
+Epoch 5, lr 0.001
+
+(5,210) 31 step loss : 0.001153
+Epoch 5, lr 0.001
+
+(5,210) 32 step loss : 0.001043
+Epoch 5, lr 0.001
+
+(5,210) 33 step loss : 0.001040
+Epoch 5, lr 0.001
+
+(5,210) 34 step loss : 0.001158
+Epoch 5, lr 0.001
+
+(5,210) 35 step loss : 0.001127
+Epoch 5, lr 0.001
+
+(5,210) 36 step loss : 0.001130
+Epoch 5, lr 0.001
+
+(5,210) 37 step loss : 0.001150
+Epoch 5, lr 0.001
+
+(5,210) 38 step loss : 0.001152
+Epoch 5, lr 0.001
+
+(5,210) 39 step loss : 0.001170
+Epoch 5, lr 0.001
+
+(5,210) 40 step loss : 0.001143
+Epoch 5, lr 0.001
+
+(5,210) 41 step loss : 0.001033
+Epoch 5, lr 0.001
+
+(5,210) 42 step loss : 0.001127
+Epoch 5, lr 0.001
+
+(5,210) 43 step loss : 0.001102
+Epoch 5, lr 0.001
+
+(5,210) 44 step loss : 0.001167
+Epoch 5, lr 0.001
+
+(5,210) 45 step loss : 0.001160
+Epoch 5, lr 0.001
+
+(5,210) 46 step loss : 0.001067
+Epoch 5, lr 0.001
+
+(5,210) 47 step loss : 0.001070
+Epoch 5, lr 0.001
+
+(5,210) 48 step loss : 0.001113
+Epoch 5, lr 0.001
+
+(5,210) 49 step loss : 0.001104
+(5,210) epoch loss : 0.001117
+Epoch 6, lr 0.001
+
+(6,210) 0 step loss : 0.001091
+Epoch 6, lr 0.001
+
+(6,210) 1 step loss : 0.001105
+Epoch 6, lr 0.001
+
+(6,210) 2 step loss : 0.001100
+Epoch 6, lr 0.001
+
+(6,210) 3 step loss : 0.001122
+Epoch 6, lr 0.001
+
+(6,210) 4 step loss : 0.001069
+Epoch 6, lr 0.001
+
+(6,210) 5 step loss : 0.001081
+Epoch 6, lr 0.001
+
+(6,210) 6 step loss : 0.001186
+Epoch 6, lr 0.001
+
+(6,210) 7 step loss : 0.001122
+Epoch 6, lr 0.001
+
+(6,210) 8 step loss : 0.001095
+Epoch 6, lr 0.001
+
+(6,210) 9 step loss : 0.001029
+Epoch 6, lr 0.001
+
+(6,210) 10 step loss : 0.001171
+Epoch 6, lr 0.001
+
+(6,210) 11 step loss : 0.001099
+Epoch 6, lr 0.001
+
+(6,210) 12 step loss : 0.001106
+Epoch 6, lr 0.001
+
+(6,210) 13 step loss : 0.001125
+Epoch 6, lr 0.001
+
+(6,210) 14 step loss : 0.001140
+Epoch 6, lr 0.001
+
+(6,210) 15 step loss : 0.001031
+Epoch 6, lr 0.001
+
+(6,210) 16 step loss : 0.001092
+Epoch 6, lr 0.001
+
+(6,210) 17 step loss : 0.001104
+Epoch 6, lr 0.001
+
+(6,210) 18 step loss : 0.001142
+Epoch 6, lr 0.001
+
+(6,210) 19 step loss : 0.001048
+Epoch 6, lr 0.001
+
+(6,210) 20 step loss : 0.001079
+Epoch 6, lr 0.001
+
+(6,210) 21 step loss : 0.001102
+Epoch 6, lr 0.001
+
+(6,210) 22 step loss : 0.001073
+Epoch 6, lr 0.001
+
+(6,210) 23 step loss : 0.001099
+Epoch 6, lr 0.001
+
+(6,210) 24 step loss : 0.001118
+Epoch 6, lr 0.001
+
+(6,210) 25 step loss : 0.001054
+Epoch 6, lr 0.001
+
+(6,210) 26 step loss : 0.001110
+Epoch 6, lr 0.001
+
+(6,210) 27 step loss : 0.001088
+Epoch 6, lr 0.001
+
+(6,210) 28 step loss : 0.001124
+Epoch 6, lr 0.001
+
+(6,210) 29 step loss : 0.001082
+Epoch 6, lr 0.001
+
+(6,210) 30 step loss : 0.001006
+Epoch 6, lr 0.001
+
+(6,210) 31 step loss : 0.001096
+Epoch 6, lr 0.001
+
+(6,210) 32 step loss : 0.001089
+Epoch 6, lr 0.001
+
+(6,210) 33 step loss : 0.001113
+Epoch 6, lr 0.001
+
+(6,210) 34 step loss : 0.001119
+Epoch 6, lr 0.001
+
+(6,210) 35 step loss : 0.001051
+Epoch 6, lr 0.001
+
+(6,210) 36 step loss : 0.001134
+Epoch 6, lr 0.001
+
+(6,210) 37 step loss : 0.001123
+Epoch 6, lr 0.001
+
+(6,210) 38 step loss : 0.001111
+Epoch 6, lr 0.001
+
+(6,210) 39 step loss : 0.001042
+Epoch 6, lr 0.001
+
+(6,210) 40 step loss : 0.001033
+Epoch 6, lr 0.001
+
+(6,210) 41 step loss : 0.001021
+Epoch 6, lr 0.001
+
+(6,210) 42 step loss : 0.001114
+Epoch 6, lr 0.001
+
+(6,210) 43 step loss : 0.001129
+Epoch 6, lr 0.001
+
+(6,210) 44 step loss : 0.001084
+Epoch 6, lr 0.001
+
+(6,210) 45 step loss : 0.001080
+Epoch 6, lr 0.001
+
+(6,210) 46 step loss : 0.001057
+Epoch 6, lr 0.001
+
+(6,210) 47 step loss : 0.001053
+Epoch 6, lr 0.001
+
+(6,210) 48 step loss : 0.001118
+Epoch 6, lr 0.001
+
+(6,210) 49 step loss : 0.001122
+(6,210) epoch loss : 0.001093
+Epoch 7, lr 0.001
+
+(7,210) 0 step loss : 0.001119
+Epoch 7, lr 0.001
+
+(7,210) 1 step loss : 0.001089
+Epoch 7, lr 0.001
+
+(7,210) 2 step loss : 0.001067
+Epoch 7, lr 0.001
+
+(7,210) 3 step loss : 0.001085
+Epoch 7, lr 0.001
+
+(7,210) 4 step loss : 0.001060
+Epoch 7, lr 0.001
+
+(7,210) 5 step loss : 0.001130
+Epoch 7, lr 0.001
+
+(7,210) 6 step loss : 0.001121
+Epoch 7, lr 0.001
+
+(7,210) 7 step loss : 0.001075
+Epoch 7, lr 0.001
+
+(7,210) 8 step loss : 0.001094
+Epoch 7, lr 0.001
+
+(7,210) 9 step loss : 0.001120
+Epoch 7, lr 0.001
+
+(7,210) 10 step loss : 0.000999
+Epoch 7, lr 0.001
+
+(7,210) 11 step loss : 0.001066
+Epoch 7, lr 0.001
+
+(7,210) 12 step loss : 0.001111
+Epoch 7, lr 0.001
+
+(7,210) 13 step loss : 0.001072
+Epoch 7, lr 0.001
+
+(7,210) 14 step loss : 0.001139
+Epoch 7, lr 0.001
+
+(7,210) 15 step loss : 0.001031
+Epoch 7, lr 0.001
+
+(7,210) 16 step loss : 0.001091
+Epoch 7, lr 0.001
+
+(7,210) 17 step loss : 0.001035
+Epoch 7, lr 0.001
+
+(7,210) 18 step loss : 0.001107
+Epoch 7, lr 0.001
+
+(7,210) 19 step loss : 0.001065
+Epoch 7, lr 0.001
+
+(7,210) 20 step loss : 0.001104
+Epoch 7, lr 0.001
+
+(7,210) 21 step loss : 0.001024
+Epoch 7, lr 0.001
+
+(7,210) 22 step loss : 0.001076
+Epoch 7, lr 0.001
+
+(7,210) 23 step loss : 0.001005
+Epoch 7, lr 0.001
+
+(7,210) 24 step loss : 0.001022
+Epoch 7, lr 0.001
+
+(7,210) 25 step loss : 0.001074
+Epoch 7, lr 0.001
+
+(7,210) 26 step loss : 0.001095
+Epoch 7, lr 0.001
+
+(7,210) 27 step loss : 0.001094
+Epoch 7, lr 0.001
+
+(7,210) 28 step loss : 0.001090
+Epoch 7, lr 0.001
+
+(7,210) 29 step loss : 0.001098
+Epoch 7, lr 0.001
+
+(7,210) 30 step loss : 0.001115
+Epoch 7, lr 0.001
+
+(7,210) 31 step loss : 0.001087
+Epoch 7, lr 0.001
+
+(7,210) 32 step loss : 0.001103
+Epoch 7, lr 0.001
+
+(7,210) 33 step loss : 0.001066
+Epoch 7, lr 0.001
+
+(7,210) 34 step loss : 0.001089
+Epoch 7, lr 0.001
+
+(7,210) 35 step loss : 0.001001
+Epoch 7, lr 0.001
+
+(7,210) 36 step loss : 0.001128
+Epoch 7, lr 0.001
+
+(7,210) 37 step loss : 0.001022
+Epoch 7, lr 0.001
+
+(7,210) 38 step loss : 0.001086
+Epoch 7, lr 0.001
+
+(7,210) 39 step loss : 0.001051
+Epoch 7, lr 0.001
+
+(7,210) 40 step loss : 0.001103
+Epoch 7, lr 0.001
+
+(7,210) 41 step loss : 0.001153
+Epoch 7, lr 0.001
+
+(7,210) 42 step loss : 0.001065
+Epoch 7, lr 0.001
+
+(7,210) 43 step loss : 0.001062
+Epoch 7, lr 0.001
+
+(7,210) 44 step loss : 0.001020
+Epoch 7, lr 0.001
+
+(7,210) 45 step loss : 0.001059
+Epoch 7, lr 0.001
+
+(7,210) 46 step loss : 0.001123
+Epoch 7, lr 0.001
+
+(7,210) 47 step loss : 0.001069
+Epoch 7, lr 0.001
+
+(7,210) 48 step loss : 0.001029
+Epoch 7, lr 0.001
+
+(7,210) 49 step loss : 0.001066
+(7,210) epoch loss : 0.001077
+Epoch 8, lr 0.001
+
+(8,210) 0 step loss : 0.001114
+Epoch 8, lr 0.001
+
+(8,210) 1 step loss : 0.001048
+Epoch 8, lr 0.001
+
+(8,210) 2 step loss : 0.001044
+Epoch 8, lr 0.001
+
+(8,210) 3 step loss : 0.001038
+Epoch 8, lr 0.001
+
+(8,210) 4 step loss : 0.001031
+Epoch 8, lr 0.001
+
+(8,210) 5 step loss : 0.001084
+Epoch 8, lr 0.001
+
+(8,210) 6 step loss : 0.001029
+Epoch 8, lr 0.001
+
+(8,210) 7 step loss : 0.000994
+Epoch 8, lr 0.001
+
+(8,210) 8 step loss : 0.001065
+Epoch 8, lr 0.001
+
+(8,210) 9 step loss : 0.001026
+Epoch 8, lr 0.001
+
+(8,210) 10 step loss : 0.001034
+Epoch 8, lr 0.001
+
+(8,210) 11 step loss : 0.001070
+Epoch 8, lr 0.001
+
+(8,210) 12 step loss : 0.001089
+Epoch 8, lr 0.001
+
+(8,210) 13 step loss : 0.001035
+Epoch 8, lr 0.001
+
+(8,210) 14 step loss : 0.001021
+Epoch 8, lr 0.001
+
+(8,210) 15 step loss : 0.001095
+Epoch 8, lr 0.001
+
+(8,210) 16 step loss : 0.001075
+Epoch 8, lr 0.001
+
+(8,210) 17 step loss : 0.001057
+Epoch 8, lr 0.001
+
+(8,210) 18 step loss : 0.001099
+Epoch 8, lr 0.001
+
+(8,210) 19 step loss : 0.001101
+Epoch 8, lr 0.001
+
+(8,210) 20 step loss : 0.001002
+Epoch 8, lr 0.001
+
+(8,210) 21 step loss : 0.001053
+Epoch 8, lr 0.001
+
+(8,210) 22 step loss : 0.001026
+Epoch 8, lr 0.001
+
+(8,210) 23 step loss : 0.001071
+Epoch 8, lr 0.001
+
+(8,210) 24 step loss : 0.001065
+Epoch 8, lr 0.001
+
+(8,210) 25 step loss : 0.001054
+Epoch 8, lr 0.001
+
+(8,210) 26 step loss : 0.001113
+Epoch 8, lr 0.001
+
+(8,210) 27 step loss : 0.001089
+Epoch 8, lr 0.001
+
+(8,210) 28 step loss : 0.000980
+Epoch 8, lr 0.001
+
+(8,210) 29 step loss : 0.001074
+Epoch 8, lr 0.001
+
+(8,210) 30 step loss : 0.001082
+Epoch 8, lr 0.001
+
+(8,210) 31 step loss : 0.001066
+Epoch 8, lr 0.001
+
+(8,210) 32 step loss : 0.001098
+Epoch 8, lr 0.001
+
+(8,210) 33 step loss : 0.001030
+Epoch 8, lr 0.001
+
+(8,210) 34 step loss : 0.001056
+Epoch 8, lr 0.001
+
+(8,210) 35 step loss : 0.001068
+Epoch 8, lr 0.001
+
+(8,210) 36 step loss : 0.001102
+Epoch 8, lr 0.001
+
+(8,210) 37 step loss : 0.001102
+Epoch 8, lr 0.001
+
+(8,210) 38 step loss : 0.001081
+Epoch 8, lr 0.001
+
+(8,210) 39 step loss : 0.001048
+Epoch 8, lr 0.001
+
+(8,210) 40 step loss : 0.001049
+Epoch 8, lr 0.001
+
+(8,210) 41 step loss : 0.001061
+Epoch 8, lr 0.001
+
+(8,210) 42 step loss : 0.001002
+Epoch 8, lr 0.001
+
+(8,210) 43 step loss : 0.001017
+Epoch 8, lr 0.001
+
+(8,210) 44 step loss : 0.001085
+Epoch 8, lr 0.001
+
+(8,210) 45 step loss : 0.001147
+Epoch 8, lr 0.001
+
+(8,210) 46 step loss : 0.001099
+Epoch 8, lr 0.001
+
+(8,210) 47 step loss : 0.001049
+Epoch 8, lr 0.001
+
+(8,210) 48 step loss : 0.001037
+Epoch 8, lr 0.001
+
+(8,210) 49 step loss : 0.001058
+(8,210) epoch loss : 0.001060
+Epoch 9, lr 0.001
+
+(9,210) 0 step loss : 0.001065
+Epoch 9, lr 0.001
+
+(9,210) 1 step loss : 0.001074
+Epoch 9, lr 0.001
+
+(9,210) 2 step loss : 0.001013
+Epoch 9, lr 0.001
+
+(9,210) 3 step loss : 0.001068
+Epoch 9, lr 0.001
+
+(9,210) 4 step loss : 0.001074
+Epoch 9, lr 0.001
+
+(9,210) 5 step loss : 0.001048
+Epoch 9, lr 0.001
+
+(9,210) 6 step loss : 0.001024
+Epoch 9, lr 0.001
+
+(9,210) 7 step loss : 0.001035
+Epoch 9, lr 0.001
+
+(9,210) 8 step loss : 0.000997
+Epoch 9, lr 0.001
+
+(9,210) 9 step loss : 0.001082
+Epoch 9, lr 0.001
+
+(9,210) 10 step loss : 0.001090
+Epoch 9, lr 0.001
+
+(9,210) 11 step loss : 0.000990
+Epoch 9, lr 0.001
+
+(9,210) 12 step loss : 0.001036
+Epoch 9, lr 0.001
+
+(9,210) 13 step loss : 0.001000
+Epoch 9, lr 0.001
+
+(9,210) 14 step loss : 0.001102
+Epoch 9, lr 0.001
+
+(9,210) 15 step loss : 0.001000
+Epoch 9, lr 0.001
+
+(9,210) 16 step loss : 0.001021
+Epoch 9, lr 0.001
+
+(9,210) 17 step loss : 0.001004
+Epoch 9, lr 0.001
+
+(9,210) 18 step loss : 0.000983
+Epoch 9, lr 0.001
+
+(9,210) 19 step loss : 0.001070
+Epoch 9, lr 0.001
+
+(9,210) 20 step loss : 0.001093
+Epoch 9, lr 0.001
+
+(9,210) 21 step loss : 0.001053
+Epoch 9, lr 0.001
+
+(9,210) 22 step loss : 0.001035
+Epoch 9, lr 0.001
+
+(9,210) 23 step loss : 0.001101
+Epoch 9, lr 0.001
+
+(9,210) 24 step loss : 0.001007
+Epoch 9, lr 0.001
+
+(9,210) 25 step loss : 0.001026
+Epoch 9, lr 0.001
+
+(9,210) 26 step loss : 0.001071
+Epoch 9, lr 0.001
+
+(9,210) 27 step loss : 0.001036
+Epoch 9, lr 0.001
+
+(9,210) 28 step loss : 0.001036
+Epoch 9, lr 0.001
+
+(9,210) 29 step loss : 0.001022
+Epoch 9, lr 0.001
+
+(9,210) 30 step loss : 0.001069
+Epoch 9, lr 0.001
+
+(9,210) 31 step loss : 0.000972
+Epoch 9, lr 0.001
+
+(9,210) 32 step loss : 0.001045
+Epoch 9, lr 0.001
+
+(9,210) 33 step loss : 0.001037
+Epoch 9, lr 0.001
+
+(9,210) 34 step loss : 0.001079
+Epoch 9, lr 0.001
+
+(9,210) 35 step loss : 0.001058
+Epoch 9, lr 0.001
+
+(9,210) 36 step loss : 0.000995
+Epoch 9, lr 0.001
+
+(9,210) 37 step loss : 0.001085
+Epoch 9, lr 0.001
+
+(9,210) 38 step loss : 0.001011
+Epoch 9, lr 0.001
+
+(9,210) 39 step loss : 0.001096
+Epoch 9, lr 0.001
+
+(9,210) 40 step loss : 0.001061
+Epoch 9, lr 0.001
+
+(9,210) 41 step loss : 0.001075
+Epoch 9, lr 0.001
+
+(9,210) 42 step loss : 0.001023
+Epoch 9, lr 0.001
+
+(9,210) 43 step loss : 0.001011
+Epoch 9, lr 0.001
+
+(9,210) 44 step loss : 0.001101
+Epoch 9, lr 0.001
+
+(9,210) 45 step loss : 0.001059
+Epoch 9, lr 0.001
+
+(9,210) 46 step loss : 0.001044
+Epoch 9, lr 0.001
+
+(9,210) 47 step loss : 0.000971
+Epoch 9, lr 0.001
+
+(9,210) 48 step loss : 0.000997
+Epoch 9, lr 0.001
+
+(9,210) 49 step loss : 0.001056
+(9,210) epoch loss : 0.001042
+Epoch 10, lr 0.001
+
+(10,210) 0 step loss : 0.001026
+Epoch 10, lr 0.001
+
+(10,210) 1 step loss : 0.000998
+Epoch 10, lr 0.001
+
+(10,210) 2 step loss : 0.001001
+Epoch 10, lr 0.001
+
+(10,210) 3 step loss : 0.000997
+Epoch 10, lr 0.001
+
+(10,210) 4 step loss : 0.001075
+Epoch 10, lr 0.001
+
+(10,210) 5 step loss : 0.001040
+Epoch 10, lr 0.001
+
+(10,210) 6 step loss : 0.001050
+Epoch 10, lr 0.001
+
+(10,210) 7 step loss : 0.001015
+Epoch 10, lr 0.001
+
+(10,210) 8 step loss : 0.001015
+Epoch 10, lr 0.001
+
+(10,210) 9 step loss : 0.001027
+Epoch 10, lr 0.001
+
+(10,210) 10 step loss : 0.001032
+Epoch 10, lr 0.001
+
+(10,210) 11 step loss : 0.001027
+Epoch 10, lr 0.001
+
+(10,210) 12 step loss : 0.001052
+Epoch 10, lr 0.001
+
+(10,210) 13 step loss : 0.001007
+Epoch 10, lr 0.001
+
+(10,210) 14 step loss : 0.000994
+Epoch 10, lr 0.001
+
+(10,210) 15 step loss : 0.001076
+Epoch 10, lr 0.001
+
+(10,210) 16 step loss : 0.000999
+Epoch 10, lr 0.001
+
+(10,210) 17 step loss : 0.000935
+Epoch 10, lr 0.001
+
+(10,210) 18 step loss : 0.000966
+Epoch 10, lr 0.001
+
+(10,210) 19 step loss : 0.001002
+Epoch 10, lr 0.001
+
+(10,210) 20 step loss : 0.000959
+Epoch 10, lr 0.001
+
+(10,210) 21 step loss : 0.000982
+Epoch 10, lr 0.001
+
+(10,210) 22 step loss : 0.001024
+Epoch 10, lr 0.001
+
+(10,210) 23 step loss : 0.000999
+Epoch 10, lr 0.001
+
+(10,210) 24 step loss : 0.001055
+Epoch 10, lr 0.001
+
+(10,210) 25 step loss : 0.000989
+Epoch 10, lr 0.001
+
+(10,210) 26 step loss : 0.000947
+Epoch 10, lr 0.001
+
+(10,210) 27 step loss : 0.001094
+Epoch 10, lr 0.001
+
+(10,210) 28 step loss : 0.000963
+Epoch 10, lr 0.001
+
+(10,210) 29 step loss : 0.001041
+Epoch 10, lr 0.001
+
+(10,210) 30 step loss : 0.001059
+Epoch 10, lr 0.001
+
+(10,210) 31 step loss : 0.001076
+Epoch 10, lr 0.001
+
+(10,210) 32 step loss : 0.001024
+Epoch 10, lr 0.001
+
+(10,210) 33 step loss : 0.000974
+Epoch 10, lr 0.001
+
+(10,210) 34 step loss : 0.001057
+Epoch 10, lr 0.001
+
+(10,210) 35 step loss : 0.001030
+Epoch 10, lr 0.001
+
+(10,210) 36 step loss : 0.001022
+Epoch 10, lr 0.001
+
+(10,210) 37 step loss : 0.001090
+Epoch 10, lr 0.001
+
+(10,210) 38 step loss : 0.001052
+Epoch 10, lr 0.001
+
+(10,210) 39 step loss : 0.001025
+Epoch 10, lr 0.001
+
+(10,210) 40 step loss : 0.001038
+Epoch 10, lr 0.001
+
+(10,210) 41 step loss : 0.001040
+Epoch 10, lr 0.001
+
+(10,210) 42 step loss : 0.001037
+Epoch 10, lr 0.001
+
+(10,210) 43 step loss : 0.000998
+Epoch 10, lr 0.001
+
+(10,210) 44 step loss : 0.001004
+Epoch 10, lr 0.001
+
+(10,210) 45 step loss : 0.001027
+Epoch 10, lr 0.001
+
+(10,210) 46 step loss : 0.000973
+Epoch 10, lr 0.001
+
+(10,210) 47 step loss : 0.001055
+Epoch 10, lr 0.001
+
+(10,210) 48 step loss : 0.001047
+Epoch 10, lr 0.001
+
+(10,210) 49 step loss : 0.001033
+(10,210) epoch loss : 0.001021
+Epoch 11, lr 0.001
+
+(11,210) 0 step loss : 0.000974
+Epoch 11, lr 0.001
+
+(11,210) 1 step loss : 0.001023
+Epoch 11, lr 0.001
+
+(11,210) 2 step loss : 0.001010
+Epoch 11, lr 0.001
+
+(11,210) 3 step loss : 0.001074
+Epoch 11, lr 0.001
+
+(11,210) 4 step loss : 0.001079
+Epoch 11, lr 0.001
+
+(11,210) 5 step loss : 0.000978
+Epoch 11, lr 0.001
+
+(11,210) 6 step loss : 0.000949
+Epoch 11, lr 0.001
+
+(11,210) 7 step loss : 0.001024
+Epoch 11, lr 0.001
+
+(11,210) 8 step loss : 0.000989
+Epoch 11, lr 0.001
+
+(11,210) 9 step loss : 0.001055
+Epoch 11, lr 0.001
+
+(11,210) 10 step loss : 0.001025
+Epoch 11, lr 0.001
+
+(11,210) 11 step loss : 0.001039
+Epoch 11, lr 0.001
+
+(11,210) 12 step loss : 0.001016
+Epoch 11, lr 0.001
+
+(11,210) 13 step loss : 0.001025
+Epoch 11, lr 0.001
+
+(11,210) 14 step loss : 0.001040
+Epoch 11, lr 0.001
+
+(11,210) 15 step loss : 0.001032
+Epoch 11, lr 0.001
+
+(11,210) 16 step loss : 0.000992
+Epoch 11, lr 0.001
+
+(11,210) 17 step loss : 0.000970
+Epoch 11, lr 0.001
+
+(11,210) 18 step loss : 0.000993
+Epoch 11, lr 0.001
+
+(11,210) 19 step loss : 0.001015
+Epoch 11, lr 0.001
+
+(11,210) 20 step loss : 0.001027
+Epoch 11, lr 0.001
+
+(11,210) 21 step loss : 0.001061
+Epoch 11, lr 0.001
+
+(11,210) 22 step loss : 0.001002
+Epoch 11, lr 0.001
+
+(11,210) 23 step loss : 0.001045
+Epoch 11, lr 0.001
+
+(11,210) 24 step loss : 0.000984
+Epoch 11, lr 0.001
+
+(11,210) 25 step loss : 0.001032
+Epoch 11, lr 0.001
+
+(11,210) 26 step loss : 0.000938
+Epoch 11, lr 0.001
+
+(11,210) 27 step loss : 0.000984
+Epoch 11, lr 0.001
+
+(11,210) 28 step loss : 0.001035
+Epoch 11, lr 0.001
+
+(11,210) 29 step loss : 0.000972
+Epoch 11, lr 0.001
+
+(11,210) 30 step loss : 0.001078
+Epoch 11, lr 0.001
+
+(11,210) 31 step loss : 0.000938
+Epoch 11, lr 0.001
+
+(11,210) 32 step loss : 0.001049
+Epoch 11, lr 0.001
+
+(11,210) 33 step loss : 0.000949
+Epoch 11, lr 0.001
+
+(11,210) 34 step loss : 0.001004
+Epoch 11, lr 0.001
+
+(11,210) 35 step loss : 0.001065
+Epoch 11, lr 0.001
+
+(11,210) 36 step loss : 0.001042
+Epoch 11, lr 0.001
+
+(11,210) 37 step loss : 0.000973
+Epoch 11, lr 0.001
+
+(11,210) 38 step loss : 0.000964
+Epoch 11, lr 0.001
+
+(11,210) 39 step loss : 0.001070
+Epoch 11, lr 0.001
+
+(11,210) 40 step loss : 0.001038
+Epoch 11, lr 0.001
+
+(11,210) 41 step loss : 0.000999
+Epoch 11, lr 0.001
+
+(11,210) 42 step loss : 0.000931
+Epoch 11, lr 0.001
+
+(11,210) 43 step loss : 0.000954
+Epoch 11, lr 0.001
+
+(11,210) 44 step loss : 0.000996
+Epoch 11, lr 0.001
+
+(11,210) 45 step loss : 0.001008
+Epoch 11, lr 0.001
+
+(11,210) 46 step loss : 0.000994
+Epoch 11, lr 0.001
+
+(11,210) 47 step loss : 0.000995
+Epoch 11, lr 0.001
+
+(11,210) 48 step loss : 0.000992
+Epoch 11, lr 0.001
+
+(11,210) 49 step loss : 0.001024
+(11,210) epoch loss : 0.001009
+Epoch 12, lr 0.001
+
+(12,210) 0 step loss : 0.000974
+Epoch 12, lr 0.001
+
+(12,210) 1 step loss : 0.000945
+Epoch 12, lr 0.001
+
+(12,210) 2 step loss : 0.001013
+Epoch 12, lr 0.001
+
+(12,210) 3 step loss : 0.001061
+Epoch 12, lr 0.001
+
+(12,210) 4 step loss : 0.001007
+Epoch 12, lr 0.001
+
+(12,210) 5 step loss : 0.000971
+Epoch 12, lr 0.001
+
+(12,210) 6 step loss : 0.000965
+Epoch 12, lr 0.001
+
+(12,210) 7 step loss : 0.001003
+Epoch 12, lr 0.001
+
+(12,210) 8 step loss : 0.001017
+Epoch 12, lr 0.001
+
+(12,210) 9 step loss : 0.001021
+Epoch 12, lr 0.001
+
+(12,210) 10 step loss : 0.001031
+Epoch 12, lr 0.001
+
+(12,210) 11 step loss : 0.000946
+Epoch 12, lr 0.001
+
+(12,210) 12 step loss : 0.001009
+Epoch 12, lr 0.001
+
+(12,210) 13 step loss : 0.001005
+Epoch 12, lr 0.001
+
+(12,210) 14 step loss : 0.001031
+Epoch 12, lr 0.001
+
+(12,210) 15 step loss : 0.000983
+Epoch 12, lr 0.001
+
+(12,210) 16 step loss : 0.001032
+Epoch 12, lr 0.001
+
+(12,210) 17 step loss : 0.000991
+Epoch 12, lr 0.001
+
+(12,210) 18 step loss : 0.000993
+Epoch 12, lr 0.001
+
+(12,210) 19 step loss : 0.000988
+Epoch 12, lr 0.001
+
+(12,210) 20 step loss : 0.000979
+Epoch 12, lr 0.001
+
+(12,210) 21 step loss : 0.001002
+Epoch 12, lr 0.001
+
+(12,210) 22 step loss : 0.000949
+Epoch 12, lr 0.001
+
+(12,210) 23 step loss : 0.000995
+Epoch 12, lr 0.001
+
+(12,210) 24 step loss : 0.001018
+Epoch 12, lr 0.001
+
+(12,210) 25 step loss : 0.001046
+Epoch 12, lr 0.001
+
+(12,210) 26 step loss : 0.001008
+Epoch 12, lr 0.001
+
+(12,210) 27 step loss : 0.000955
+Epoch 12, lr 0.001
+
+(12,210) 28 step loss : 0.000955
+Epoch 12, lr 0.001
+
+(12,210) 29 step loss : 0.000952
+Epoch 12, lr 0.001
+
+(12,210) 30 step loss : 0.000962
+Epoch 12, lr 0.001
+
+(12,210) 31 step loss : 0.001022
+Epoch 12, lr 0.001
+
+(12,210) 32 step loss : 0.000964
+Epoch 12, lr 0.001
+
+(12,210) 33 step loss : 0.000967
+Epoch 12, lr 0.001
+
+(12,210) 34 step loss : 0.000964
+Epoch 12, lr 0.001
+
+(12,210) 35 step loss : 0.000968
+Epoch 12, lr 0.001
+
+(12,210) 36 step loss : 0.000964
+Epoch 12, lr 0.001
+
+(12,210) 37 step loss : 0.000946
+Epoch 12, lr 0.001
+
+(12,210) 38 step loss : 0.000957
+Epoch 12, lr 0.001
+
+(12,210) 39 step loss : 0.000991
+Epoch 12, lr 0.001
+
+(12,210) 40 step loss : 0.000995
+Epoch 12, lr 0.001
+
+(12,210) 41 step loss : 0.000957
+Epoch 12, lr 0.001
+
+(12,210) 42 step loss : 0.000947
+Epoch 12, lr 0.001
+
+(12,210) 43 step loss : 0.000992
+Epoch 12, lr 0.001
+
+(12,210) 44 step loss : 0.001033
+Epoch 12, lr 0.001
+
+(12,210) 45 step loss : 0.001015
+Epoch 12, lr 0.001
+
+(12,210) 46 step loss : 0.000944
+Epoch 12, lr 0.001
+
+(12,210) 47 step loss : 0.000980
+Epoch 12, lr 0.001
+
+(12,210) 48 step loss : 0.000934
+Epoch 12, lr 0.001
+
+(12,210) 49 step loss : 0.001009
+(12,210) epoch loss : 0.000987

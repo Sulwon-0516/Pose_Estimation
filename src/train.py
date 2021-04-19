@@ -12,6 +12,7 @@ import visdom
 import json
 from baseline import baseline
 from HRNet import HRNet, HigherHRNet
+from HR_official import get_pose_net
 # import all model files right know.
 from .functions._train import _train
 from .functions._train_BU import _train_BU
@@ -20,6 +21,8 @@ from .utils.monitor import VisdomLinePlotter
 from .utils.bottom_up_utils import AELoss
 from .dataloader.coco_data_loader import COCO_DataLoader, Bottom_Up_COCO_DataLoader
 from .dataloader import coco_data_loader
+from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
 
 def train(config,device):
     # Define the training
@@ -53,15 +56,14 @@ def train(config,device):
     
     if config.TRAIN.OPTIM == 'Adam':
         optimizer = torch.optim.Adam(model.parameters(), 
-                                     lr = config.TRAIN.LR, 
-                                     weight_decay=0.0001)
+                                     lr = config.TRAIN.LR)
         
     elif config.TRAIN.OPTIM == 'SGD':
         optimizer = torch.optim.SGD(model.parameters(),
                                     lr = config.TRAIN.LR,
                                     momentum = 0.9,
-                                    weight_decay = 0.0005,
-                                    nesterov = True)
+                                    weight_decay = 0.0001,
+                                    nesterov = False)
                                     
     elif config.TRAIN.OPTIM == 'RMSProp':
         optimizer = torch.optim.RMSprop(model.parameters(), 
@@ -285,70 +287,92 @@ def train(config,device):
             else:
                 scheduler.step()
 
-    
-    
-    
-
-    if False:
-        with torch.no_grad():
-            model.eval()
-            dataset = train_dataset
-        
-        
-            n_keys = dataset.__len__()
-            tot_data = []
-            tot_loss = 0
-            tot_OKS = 0
-            t = TicToc()
-            save_predict_heatmap = config.TEST.SAVE_HEATMAP
-            for i, data in enumerate(train_dataloader):
-                t.tic()
-                imgs, heatmaps, old_bboxs, ids , keypoints, n_keys, _ = data
-                #print(old_bboxs)
-                old_bboxs, keypoints = old_bboxs.to(device), keypoints.to(device)
-
-                
-                imgs, heatmaps = imgs.float().to(device), heatmaps.float().to(device)
-
-
-                p_heatmaps = model(imgs)
-                loss = criterion(heatmaps,p_heatmaps)
-                loss = loss.mean(axis = (2,3))
-                
-                cpu_p_heatmaps = p_heatmaps.cpu()
-                for j in range(ids.shape[0]):
-                    re_keypoints = coco_data_loader.restore_heatmap_gpu(p_heatmaps[j],
-                                                                        old_bboxs[j],
-                                                                        keypoints[j],
-                                                                        device)
-                    
-                    if config.TEST.SAVE_PREDICTED and j<config.TEST.SAVE_IMG_PER_BATCH:
-                        re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu(),True)
-                    else:
-                        re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu())
-                    if save_predict_heatmap > 0 and n_keys[j]>8:
-                        print("called")
-                        dataset.show_heatmaps(ids[j],cpu_p_heatmaps[j],imgs[j].cpu(),True)
-                        save_predict_heatmap -= 1
-                    
-                    re_anns['score'] = - loss[j].cpu().sum().item()
-                    tot_data.append(re_anns)
-                
-                tot_loss += loss.cpu().sum(axis = (0,1))
-
-                print("step %d, loss : %f" %(i,loss.mean()))
-                t.toc() 
-            tot_loss = tot_loss/n_keys
-
-
-            # check the path exists.
-            Path(config.PATH.RESULT_PATH).mkdir(exist_ok=True)
-            f_name = os.path.join(config.PATH.RESULT_PATH,config.PATH.MODEL)
-            Path(f_name).mkdir(exist_ok=True)
-            f_name = os.path.join(f_name,config.PATH.PRED_PATH)
-            Path(f_name).mkdir(exist_ok=True)
-            n_file = len(os.listdir(f_name))
-            file_path = os.path.join(f_name,config.PATH.PRED_NAME%(config.THEME,n_file+1))
             
-            with open(file_path,"w") as res_file:
-                json.dump(tot_data,res_file)
+
+        if epoch%10==0:
+            with torch.no_grad():
+                model.eval()
+                dataset = train_dataset
+            
+            
+                n_keys = dataset.__len__()
+                tot_data = []
+                tot_loss = 0
+                tot_OKS = 0
+                t = TicToc()
+                save_predict_heatmap = config.TEST.SAVE_HEATMAP
+                for i, data in enumerate(train_dataloader):
+                    t.tic()
+                    imgs, heatmaps, old_bboxs, ids , keypoints, n_keys, _ = data
+                    #print(old_bboxs)
+                    old_bboxs, keypoints = old_bboxs.to(device), keypoints.to(device)
+
+                    
+                    imgs, heatmaps = imgs.float().to(device), heatmaps.float().to(device)
+
+
+                    p_heatmaps = model(imgs)
+                    loss = criterion(heatmaps,p_heatmaps)
+                    loss = 0.5*loss.mean(axis = (2,3))
+                    
+                    cpu_p_heatmaps = p_heatmaps.cpu()
+                    for j in range(ids.shape[0]):
+                        re_keypoints = coco_data_loader.restore_heatmap_gpu(p_heatmaps[j],
+                                                                            old_bboxs[j],
+                                                                            keypoints[j],
+                                                                            device)
+                        
+                        if config.TEST.SAVE_PREDICTED and j<config.TEST.SAVE_IMG_PER_BATCH:
+                            re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu(),False)
+                        else:
+                            re_anns = dataset.save_key_img(ids[j],True,re_keypoints.cpu())
+                        if save_predict_heatmap > 0 and n_keys[j]>8:
+                            print("called")
+                            dataset.show_heatmaps(ids[j],cpu_p_heatmaps[j],imgs[j].cpu(),False)
+                            save_predict_heatmap -= 1
+                        
+                        re_anns['score'] = - loss[j].cpu().sum().item()
+                        tot_data.append(re_anns)
+                    
+                    tot_loss += loss.cpu().sum(axis = (0,1))
+
+                    print("step %d, loss : %f" %(i,loss.mean()))
+                    t.toc() 
+                tot_loss = tot_loss/n_keys
+
+
+                # check the path exists.
+                Path(config.PATH.RESULT_PATH).mkdir(exist_ok=True)
+                f_name = os.path.join(config.PATH.RESULT_PATH,config.PATH.MODEL)
+                Path(f_name).mkdir(exist_ok=True)
+                f_name = os.path.join(f_name,config.PATH.PRED_PATH)
+                Path(f_name).mkdir(exist_ok=True)
+                n_file = len(os.listdir(f_name))
+                file_path = os.path.join(f_name,config.PATH.PRED_NAME%("temp",n_file+1))
+                
+                with open(file_path,"w") as res_file:
+                    json.dump(tot_data,res_file)
+
+            model.train()
+            
+            val_dataset = COCO_DataLoader(config.VAL.IS_TRAIN,config)
+
+            annType = ['segm','bbox','keypoints']
+            annType = annType[config.TYPE]      #specify type here
+            prefix = 'person_keypoints' if annType=='keypoints' else 'instances'
+
+            # GT means Ground Truth
+            cocoGT = val_dataset.coco
+
+            cocoDT = cocoGT.loadRes(file_path)
+
+            # Get the Img Ids
+            imgIds = sorted(val_dataset.get_imgIds())
+            # print(imgIds)
+
+            # Evaluation
+            cocoEval = COCOeval(cocoGT,cocoDT,annType)
+            cocoEval.params.imgIds = imgIds
+            cocoEval.evaluate()
+            cocoEval.accumulate()
+            cocoEval.summarize()

@@ -5,6 +5,8 @@ import os
 from . import _init_paths
 from baseline import baseline
 from HRNet import HRNet
+from HR_official import get_pose_net
+
 from .functions._test import _test
 from .utils.tools import coco_loss_mask
 from .dataloader.coco_data_loader import COCO_DataLoader
@@ -30,7 +32,7 @@ def test(config,device):
     if config.MODEL == "baseline":
         model = baseline()
     elif config.MODEL == "HRNet":
-        model = HRNet(device)
+        model = HRNet(device,False)
     else:
         print("wrong model name : {}".format(config.MODEL))
         assert(0)

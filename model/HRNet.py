@@ -164,7 +164,7 @@ class HRNet_Stage(nn.Module):
             channels = num_channels * (2**i)
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
-            self.subNets.append(nn.Sequential(*Blocks).to(device))
+            self.subNets.append(nn.Sequential(*Blocks))
         self.subNets = nn.ModuleList(self.subNets)
         
         '''exchange stage'''
@@ -187,7 +187,7 @@ class HRNet_Stage(nn.Module):
                                          momentum = BN_MOMENTUM,
                                          track_running_stats=BN_TRACK_OPT))
             expand.append(nn.ReLU())
-            self.expand = nn.Sequential(*expand).to(self.device)
+            self.expand = nn.Sequential(*expand)
 
     def _exchange_init_(self,num_channels, num_subNets, current_order):
         if current_order >= num_subNets:
@@ -213,9 +213,9 @@ class HRNet_Stage(nn.Module):
                                              momentum = BN_MOMENTUM,
                                              track_running_stats=BN_TRACK_OPT))
                 module.append(nn.ReLU())
-                result.append(nn.Sequential(*module).to(self.device))
+                result.append(nn.Sequential(*module))
         
-        result.append(nn.Identity().to(self.device))
+        result.append(nn.Identity())
 
         if num_down>0:
             for i in range(num_down):
@@ -235,7 +235,7 @@ class HRNet_Stage(nn.Module):
                                                  track_running_stats=BN_TRACK_OPT))
                     module.append(nn.ReLU())
                     channel = channel*2
-                result.append(nn.Sequential(*module).to(self.device))
+                result.append(nn.Sequential(*module))
         
         result = nn.ModuleList(result)
         return result
@@ -283,7 +283,7 @@ class HRNet_Final(nn.Module):
             channels = num_channels * (2**i)
             for j in range(STAGE_NUM_BLOCK):
                 Blocks.append(Base_Block(channels))
-            self.subNets.append(nn.Sequential(*Blocks).to(device))
+            self.subNets.append(nn.Sequential(*Blocks))
         self.subNets = nn.ModuleList(self.subNets)
 
         '''connect all blocks into one'''
@@ -311,7 +311,7 @@ class HRNet_Final(nn.Module):
                                 track_running_stats=BN_TRACK_OPT
             ))
             module.append(nn.ReLU())
-            fuse.append(nn.Sequential(*module).to(self.device))
+            fuse.append(nn.Sequential(*module))
         fuse = nn.ModuleList(fuse)
         return fuse
     
@@ -381,7 +381,7 @@ class back_HRNet(nn.Module):
                             track_running_stats=BN_TRACK_OPT
             ))
             module.append(nn.ReLU())
-            self.first_trans.append(nn.Sequential(*module).to(device))
+            self.first_trans.append(nn.Sequential(*module))
         self.first_trans = nn.ModuleList(self.first_trans)
         
         if self.num_stage[0] != 1:
@@ -575,7 +575,7 @@ class Add_Module(nn.Module):
                             momentum=BN_MOMENTUM,
                             track_running_stats=BN_TRACK_OPT))
         deconv_blocks.append(nn.ReLU())
-        deconv_block = nn.Sequential(*deconv_blocks).to(self.device)
+        deconv_block = nn.Sequential(*deconv_blocks)
 
         res_blocks = []
         for i in range(4):
@@ -586,7 +586,7 @@ class Add_Module(nn.Module):
                             kernel_size = 1,
                             stride = 1,
                             padding = (0,0)))
-        res_block = nn.Sequential(*res_blocks).to(self.device)
+        res_block = nn.Sequential(*res_blocks)
         
         return deconv_block, res_block
 

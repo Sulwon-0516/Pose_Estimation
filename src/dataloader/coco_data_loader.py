@@ -11,7 +11,9 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import torch
 import copy
+import visdom
 
+ 
 
 
 
@@ -21,7 +23,7 @@ VAL_KEY_PATH = os.path.join(COCO_PATH,"annotations/person_keypoints_val2017.json
 SAMPLE_PATH = "./sample"
 
 
-
+# deprecated
 def restore_heatmap(
             heatmaps_in, 
             old_bbox,
@@ -139,7 +141,10 @@ class COCO_DataLoader(Dataset):
     def __init__(self, train, in_config):
 
         '''make sure images are located in directories that the label files mention'''
-
+        self.upper_body_ids = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+        self.lower_body_ids = (11, 12, 13, 14, 15, 16)
+        
+        self.IS_TRAIN = in_config.IS_TRAIN
         self.config = in_config.DATA
         self.THEME = in_config.THEME
         self.COCO_PATH = in_config.PATH.COCO_PATH
@@ -229,6 +234,8 @@ class COCO_DataLoader(Dataset):
                 data['width']=width
                 data['is_loaded']=False
                 self.data.append(data)
+            
+            
 
     def __len__(self):
         if self.config.NUM_TOT_DATA == 0:
@@ -238,7 +245,9 @@ class COCO_DataLoader(Dataset):
 
     def __getitem__(self, id):
         annotations = self.data[id]
+        n_keys = annotations['num_keypoints']
         img_id = annotations['image_id']
+        keypoints = annotations['keypoints']
 
         #load and modify info here
         # define file name (12 zeros)
@@ -253,9 +262,15 @@ class COCO_DataLoader(Dataset):
         #org_image = img.imread(img_file_name)
         org_image = Image.open(img_file_name).convert('RGB')
         org_image = np.array(org_image)/255
+        prev_bbox = annotations['bbox']        
         
+        
+        if (np.random.rand() < self.config.HALF_BODY_PROB) and \
+            (n_keys > self.config.HALF_JOINTS):
+                prev_bbox, keypoints = self.half_body_transform(keypoints,id)
 
-        new_bbox, tot_pad = self.image_crop_resize(id)
+
+        new_bbox, tot_pad = self.image_crop_resize(id, prev_bbox)
 
         new_x = new_bbox[0]+tot_pad[0][0]
         new_y = new_bbox[1]+tot_pad[1][0]
@@ -277,24 +292,8 @@ class COCO_DataLoader(Dataset):
                                        value=[0,0,0])
         re_image = pad_image[new_y:new_y+new_bbox[3],new_x:new_x+new_bbox[2],:]
 
-        if self.config.LARGE_HEATMAP:
-            heatmaps = self.Large_heatmap_generation(id,ratio)
-            re_heatmaps = np.zeros((1,re_image.shape[0],re_image.shape[1]))
-            for heatmap in heatmaps:
-                pad_heat_map = cv2.copyMakeBorder(heatmap,
-                                                  tot_pad[1][0],
-                                                  tot_pad[1][1],
-                                                  tot_pad[0][0],
-                                                  tot_pad[0][1],
-                                                  cv2.BORDER_CONSTANT,
-                                                  value=0)
-                re_heatmap = pad_heat_map[new_y:new_y+new_bbox[3],
-                                          new_x:new_x+new_bbox[2]]
-                re_heatmaps = np.append(re_heatmaps,[re_heatmap],axis=0)
-                re_heatmaps[0] +=re_heatmap
-            re_heatmaps = self.transforms_heatmaps(torch.from_numpy(re_heatmaps))
-        else:
-            re_heatmaps = self.Small_heatmap_generation(id,new_bbox)
+       
+        re_heatmaps = self.Small_heatmap_generation(id,new_bbox, keypoints)
         
         #print(re_image)
         # I need to change the channel dimension
@@ -329,9 +328,73 @@ class COCO_DataLoader(Dataset):
             self.show_heatmaps(id,re_heatmaps,re_image)
             self.check_heatmaps -= 1
         
+        n_keys = 0
+        for i in range(self.config.NUM_KEYS):
+            if keypoints[i*3+2] > 0:
+                n_keys+=1
         
-        return re_image, re_heatmaps, np.array(new_bbox), id, np.array(annotations['keypoints']), annotations['num_keypoints'], img_id
-    
+        return re_image, re_heatmaps, np.array(new_bbox), id, np.array(keypoints), n_keys, img_id
+
+    def half_body_transform(self,keypoints, id):
+        image_height = self.data[id]['height']
+        image_width = self.data[id]['width']
+        upper_coor = []
+        lower_coor = []
+        
+        for joint_id in range(self.config.NUM_KEYS):
+            if keypoints[3*joint_id+2] > 0:
+                temp = [keypoints[joint_id*3], keypoints[joint_id*3+1]]
+                if joint_id in self.upper_body_ids:
+                    upper_coor.append(temp)
+                else:
+                    lower_coor.append(temp)
+
+        re_keys = copy.deepcopy(keypoints)
+        if np.random.randn() < 0.5 and len(upper_coor) > 2:
+            winner = upper_coor
+            for i in range(self.config.NUM_KEYS):
+                if i in self.lower_body_ids:
+                     re_keys[i*3] = 0
+                     re_keys[i*3+1] = 0
+                     re_keys[i*3+2] = 0
+        elif len(lower_coor) > 2:
+            winner = lower_coor
+            for i in range(self.config.NUM_KEYS):
+                if i in self.upper_body_ids:
+                     re_keys[i*3] = 0
+                     re_keys[i*3+1] = 0
+                     re_keys[i*3+2] = 0
+        else:
+            winner = upper_coor
+            for i in range(self.config.NUM_KEYS):
+                if i in self.lower_body_ids:
+                     re_keys[i*3] = 0
+                     re_keys[i*3+1] = 0
+                     re_keys[i*3+2] = 0
+            
+        if len(winner) < 2:
+            print("I selected more than 8 keys cases but it returns less than 2")
+            assert(0)
+        
+        winner = np.array(winner, dtype = np.float32)
+        
+        center = winner.mean(axis = 0)
+        l_top = np.amin(winner, axis = 0)
+        r_bot = np.amax(winner, axis = 0)
+        
+        w = r_bot[0] - l_top[0]
+        h = r_bot[1] - l_top[1]
+        x = l_top[0] - w//4 if l_top[0]>w//4 else 0
+        y = l_top[1] - h//4 if l_top[1]>h//4 else 0
+        w = math.ceil(w*1.5) if math.ceil(w*1.5)+x < image_width\
+                                else  image_width-1-x 
+        h = math.ceil(h*1.5) if math.ceil(h*1.5)+y < image_height\
+                                else image_height-1-y
+        
+        result = [x,y,w,h]
+        
+        return result, re_keys       
+                
     def save_key_img(self, id, is_key = False, key=None, save_img = False):
         annotations = self.data[id]
         inst_id = annotations['id']
@@ -384,11 +447,12 @@ class COCO_DataLoader(Dataset):
 
         return annotations
     
-    def image_crop_resize(self,id):
+    def image_crop_resize(self,id, bbox):
         img_height = self.data[id]['height']
-        img_width = self.data[id]['width']
-        bbox = self.data[id]['bbox']
-
+        img_width = self.data[id]['width']      
+        
+        
+        
         # I need to check the scale of the bbox.
         # First, I need to make it clear (the bbox coordinates)
         new_bbox = []
@@ -519,10 +583,12 @@ class COCO_DataLoader(Dataset):
 
         return result
 
-    def Small_heatmap_generation(self,id, new_bbox):
+    def Small_heatmap_generation(self,id, new_bbox, new_keys = None):
         anns = self.data[id]
-        n_key = anns['num_keypoints']
-        keypoints = anns['keypoints']
+        if new_keys != None:
+            keypoints = new_keys
+        else:
+            keypoints = anns['keypoints']
 
         ratio = self.config.HEIGHT/(new_bbox[3]*self.config.IN_OUT_RATIO)
 

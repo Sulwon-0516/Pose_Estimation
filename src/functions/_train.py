@@ -38,12 +38,14 @@ def _train(
         step_loss = criterion(output,heatmaps)
         step_loss = step_loss.mean(axis = (2,3))
         
+        if False:
+            debug_HR(model)
         if loss_mask != None:
             mask = loss_mask(keypoints).to(device)
             step_loss = step_loss * mask.float()
         
         optimizer.zero_grad()
-        step_loss = step_loss.mean(axis=(0,1))
+        step_loss = 0.5 * step_loss.mean(axis=(0,1))
         step_loss.backward()
         optimizer.step()
 
@@ -114,3 +116,14 @@ def _train(
     # log for epoch_loss
 
     return epoch_loss.cpu()
+
+
+
+
+def debug_HR(model):
+    grads = []
+    
+    for param in model.parameters():
+        print(param.shape)
+        grads.append(param.grad.view(-1))
+        print(torch.mean(grads[-1]))

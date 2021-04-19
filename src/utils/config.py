@@ -27,6 +27,11 @@ config.DATA.IMG_RATIO = [3,4]
 config.DATA.IS_FLIP = False         # Augmentation
 config.DATA.IS_ROTATE = False
 config.DATA.IS_SCALE = False
+
+config.DATA.HALF_BODY_TRANS = True
+config.DATA.HALF_JOINTS = 8
+config.DATA.HALF_BODY_PROB = 1
+
 config.DATA.ROTATE_RANGE = [-40, 40]
 config.DATA.SCALE_RANGE = [0.7, 1.3]
 config.DATA.IS_INCRE = False        # Img crop increment ratio
@@ -36,7 +41,7 @@ config.DATA.IN_OUT_RATIO = 4        # the ratio between input and output width
 
 config.DATA.SAVE_RESIZED = False    # Save resized image
 config.DATA.CHECK_HEATMAP = 5       # Check the input data file.
-config.DATA.LARGE_HEATMAP = False   # Use small heatmaps
+config.DATA.LARGE_HEATMAP = False
 
 # Train Hyper params
 config.TRAIN = edict()

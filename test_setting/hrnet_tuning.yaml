@@ -1,16 +1,14 @@
 GPU_NUM:  
 - 1
-- 2
-- 3
-IS_PARALLEL: true
+IS_PARALLEL: false
 IS_TRAIN: true
 IS_TEST: false
 IS_VALID: false
 MODEL: HRNet
-THEME: full_train_trial11
+THEME: tunin_3
 TYPE: 2
 DATA:
-  MINIMUM_KEY: 1
+  MINIMUM_KEY: 16
   CHECK_HEATMAP: 0
   GAUSSIAN_SCALE: 1
   HEIGHT: 256
@@ -43,15 +41,15 @@ TEST:
   FLIP_ENSEMBLE: false
   GET_RESULT: true
   IS_TEST: false
-  MODEL_FILE: full_train_trial10_HRNet6352_best_model.pt
+  MODEL_FILE: tunin_2_HRNet6352_best_model.pt
   MODEL_PATH: result/%s/best
   SAVE_HEATMAP: 10
   SAVE_IMG_PER_BATCH: 0
   SAVE_PREDICTED: false
 TRAIN:
   NUM_WORKER: 24
-  BATCH_SIZE: 128
-  CHECK_FREQ: 30
+  BATCH_SIZE: 40
+  CHECK_FREQ: 300
   DECAY_RATE: 0.1
   EPOCH: 210
   IS_LOSS_MASK: true
@@ -61,16 +59,16 @@ TRAIN:
   LOAD_PREV_OPTIM: true
   LOAD_PREV_SCHED: false
   LOSS: MSE
-  LR: 0.001
+  LR: 0.0001
   SCHED: MultiStepLR
   MILTESTONES: 
   - 170
   - 200
   OPTIM: Adam
-  PREV_MODEL: full_train_trial9_HRNet6352_best_model.pt
-  PREV_PATH: '%s/best'
+  PREV_MODEL: full_train_trial10_HRNet6352_best_loss0.000035(150_210).pt
+  PREV_PATH: '%s/checkpoint'
   TEST_EPOCH: 0
   TEST_PER_BATCH: 5
 VAL:
   IS_TRAIN: false
-  RES_FILE: 68
+  RES_FILE: 91
