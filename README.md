@@ -6,7 +6,7 @@ All rights on Inhee Lee maybe..? (most of)
 Pose Estimation basic model implementation + practice GCP &amp; full training.
 
 
-### What models are implemented?
+### Which models are implemented?
 
 <Top Down>
 - SimpleBaselin (2018)
